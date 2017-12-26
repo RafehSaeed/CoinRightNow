@@ -1,0 +1,162 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1  class="display-1 con-white">{{coin.name| lowercase}}
+        <img src="img/coin/{{coin.id}}.png" height="40px" alt="">
+        </h1>
+        <div>
+          <button type="button" class=" btn btn-secondary solid dropdown-toggle mt-3 smallbutton  " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{selectedcurrency}}
+          </button>
+          <div class="dropdown-menu dropdown-menu-left text-right">
+            <a href="" data-toggle="dropdown" ng-repeat="(currencyid,currency) in exchangerates" class="dropdown-item" ng-click="convertPrice(currencyid)">{{currencyid}} </a>
+            
+          </div>
+        </div>
+           <div>
+          <input  type="text" class=" w-rem10 mt-3" ng-change="update('toconvert')"ng-model="amounttoconvert" placeholder="{{coin.symbol}}">
+          <img src="img/viceversa.png" height="22" alt="viceversa">
+          <input class="w-rem10" ng-change="update('converted')"ng-model="convertedamount" placeholder="{{selectedcurrency}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-0">
+  <div class="container">
+    <div class="row table-responsive">
+      <table class="table table-bordered table-striped homepagelist animated fadeIn con-white ">
+        <thead>
+          <tr>
+            <div class="col-md-12 text-center">
+              <td class="display-5">Rank</td>
+              <td class="display-5">Market Cap</td>
+              <td class="display-5 ">Price&nbsp;({{selectedcurrency}})</td>
+              <td class="display-5 ">Price&nbsp;BTC</td>
+              <td class="display-5">Volume-24h</td>
+              <td class="display-5">Supply</td>
+              <td class="display-5 ">1h</td>
+              <td class="display-5 ">24h</td>
+              <td class="display-5 ">7d</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+              <td class="display-5 orange ">{{ coin.rank }}</td>
+              <td class="display-5">{{selectedcurrency| getCurrencySymbol}}{{ coins[coin.rank-1].market_cap_usd|currency:""}}</td>
+              <td class="display-5 greens">{{selectedcurrency| getCurrencySymbol}}{{ coins[coin.rank-1].price_usd | currency:""}}</td>
+              <td class="display-5 greens">{{ coin.price_btc}}&nbsp;BTC</td>
+              <td class="display-5">{{selectedcurrency| getCurrencySymbol}}{{ coins[coin.rank-1]["24h_volume_usd"] | currency:"" }}</td>
+              <td class="display-5">{{ coin.available_supply }}</td>
+              <td ng-class="{reds: coin.percent_change_1h < 0, greens: coin.percent_change_1h > 0, zero: coin.percent_change_24h == 0}">{{ coin.percent_change_1h }}%</td>
+              <td ng-class="{reds: coin.percent_change_24h < 0, greens: coin.percent_change_24h > 0, zero: coin.percent_change_24h == 0}">{{ coin.percent_change_24h }}%</td>
+              <td ng-class="{reds: coin.percent_change_7d < 0, greens: coin.percent_change_7d > 0, zero: coin.percent_change_24h == 0}">{{ coin.percent_change_7d }}%</td>
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h1 id="market" ng-click="renderMarket(coin.id); loaddiscussion=false; loadgraph=false" ng-class="{active:loadmarket==true}" class="display-1 inactive con-white d-inline-flex coinbuttontoggle">market
+          <img src="" height="40px" alt="">
+          </h1>
+        </div>
+        <div class="col-md-4 text-center">
+          <h1  id="graph" ng-click="loadgraph=true; loadmarket= false; loaddiscussion=false" ng-class="{inactive: loadmarket==true ||  loaddiscussion==true}" class="display-1  con-white d-inline-flex coinbuttontoggle">graph
+          <img src="" height="40px" alt="">
+          </h1>
+        </div>
+        
+        <div class="col-md-4 text-center">
+          <h1  id="discussion" ng-click=" loaddiscussion=true; loadmarket=false; loadgraph=false;" ng-class="{active:loaddiscussion==true , inactive:loaddiscussion==false }" class="display-1 inactive con-white d-inline-flex coinbuttontoggle">discussion
+          <img src="" height="40px" alt="">
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="loader"class="loader"></div>
+  <div ng-hide="!loadgraph"class="py-0">
+    <div class="container">
+      
+      <div class="row w-100 ">
+        
+        <span ng-if="!loader" class="w-100">
+          <ul class="list-unstyled float-right">
+            <li ng-click="getGraphInterval()"class="box curmudgeon display-5">1 year</li>
+            <li ng-click="getGraphInterval('30d')"class="box curmudgeon display-5">30 days</li>
+            <li ng-click="getGraphInterval('7d')"class="box curmudgeon display-5">7 day</li>
+          </ul>
+        </span>
+        <canvas ng-hide="loader"class="animated fadeIn text-center" id="myChart"  width="1600" height="800" ></canvas>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div ng-show="loadmarket"class="py-0">
+    <div class="container">
+      <div class="row">
+        <table class="table table-bordered table-striped homepagelist con-white ">
+          <thead>
+            <tr>
+              <div class="col-md-12 text-center">
+                <td class="display-5">Market</td>
+                <td class="display-5">Pair</td>
+                <td class="display-5 ">Volume</td>
+                <td class="display-5 ">Price</td>
+                <td class="display-5">Volume-%</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="market in coin.market" >
+                <td class="display-5 orange ">{{ market.market }}</td>
+                <td class="display-5">{{market.pair}}</td>
+                <td class="display-5 greens">{{market.volume}}</td>
+                <td class="display-5 greens">{{ market.price}}</td>
+                <td class="display-5">{{market.volumepercent}}</td>
+                
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div ng-show="loaddiscussion" class="py-0">
+      <div class="container">
+        <div class="row">
+          <div ng-show="loaddiscussion" id="disqus_thread" class="w-100"></div>
+          
+          <script>
+          var disqus_config = function () {
+          this.page.url =  $scope.disqusConfig.disqus_identifier;
+          this.page.identifier = $scope.disqusConfig.disqus_identifier; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://coinrightnow-1.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          DISQUS.reset({
+          reload: true,
+          config: function () {
+          this.page.url =  $scope.disqusConfig.disqus_identifier;
+          this.page.identifier = $scope.disqusConfig.disqus_identifier; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          
+          }
+          });
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,30 @@
+<div class="py-5 section text-center" >
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-12" >
+        <h2>Create Article</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" >
+               <form name="ArticlePost" >
+              <div class="form-group"> <label class="articlelabelfont">Article Title</label><br>
+              <input class="textboxglass" type="text" name="title" placeholder="Enter Title..." ng-model="article.title"> </div>
+              <label class="articlelabelfont">Article Content</label><br> 
+              <textarea class="form-control textboxglass"   type="text" name="commentbody" placeholder="Please enter the Article content here..." ngRequired="true" ng-model="article.commentbody "rows="20"></textarea>
+              <div class="container">
+              <button class="btn btn-secondary solid float-right mt-2" ng-click="submitArticle()">Submit Article</button>
+
+              </div>
+              
+            </form>
+
+      </div>
+    </div>
+  </div>
+  </div>

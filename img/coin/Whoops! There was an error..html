@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)http://rafeh.devel/academy.guestdeck.com/bypass/en/draftOrders/85/test-submit-request.do -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Whoops! There was an error.</title>
+
+    <style>.cf:before, .cf:after {content: " ";display: table;} .cf:after {clear: both;} .cf {*zoom: 1;}
+body {
+  font: 12px "Helvetica Neue", helvetica, arial, sans-serif;
+  color: #131313;
+  background: #eeeeee;
+  padding:0;
+  margin: 0;
+  max-height: 100%;
+
+  text-rendering: optimizeLegibility;
+}
+  a {
+    text-decoration: none;
+  }
+
+.container{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+
+.branding {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #777777;
+  font-size: 10px;
+    z-index: 100;
+}
+  .branding a {
+    color: #e95353;
+  }
+
+header {
+  color: white;
+  box-sizing: border-box;
+  background-color: #2a2a2a;
+  padding: 35px 40px;
+  max-height: 180px;
+  overflow: hidden;
+}
+
+  header:hover {
+    max-height: 1000px;
+  }
+
+  .exc-title {
+    margin: 0;
+    color: #bebebe;
+    font-size: 14px;
+  }
+    .exc-title-primary {
+      color: #e95353;
+    }
+
+    .exc-message {
+      font-size: 20px;
+      word-wrap: break-word;
+      margin: 4px 0 0 0;
+      color: white;
+    }
+      .exc-message span {
+        display: block;
+      }
+      .exc-message-empty-notice {
+        color: #a29d9d;
+        font-weight: 300;
+      }
+
+.stack-container {
+  height: 100%;
+  position: relative;
+}
+
+.details-container {
+  height: 100%;
+  overflow: auto;
+  float: right;
+  width: 70%;
+  background: #fafafa;
+}
+  .details {
+    padding: 5px;
+  }
+
+    .details-heading {
+      color: #4288CE;
+      font-weight: 300;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .details pre.sf-dump {
+      white-space: pre;
+      word-wrap: inherit;
+    }
+
+    .details pre.sf-dump,
+    .details pre.sf-dump .sf-dump-num,
+    .details pre.sf-dump .sf-dump-const,
+    .details pre.sf-dump .sf-dump-str,
+    .details pre.sf-dump .sf-dump-note,
+    .details pre.sf-dump .sf-dump-ref,
+    .details pre.sf-dump .sf-dump-public,
+    .details pre.sf-dump .sf-dump-protected,
+    .details pre.sf-dump .sf-dump-private,
+    .details pre.sf-dump .sf-dump-meta,
+    .details pre.sf-dump .sf-dump-key,
+    .details pre.sf-dump .sf-dump-index {
+      color: #463C54;
+    }
+
+.left-panel {
+  height: 100%;
+  overflow: auto;
+  float: left;
+  width: 30%;
+  background: #ded8d8;
+}
+
+  .frames-description {
+    background: rgba(0, 0, 0, .05);
+    padding: 8px 15px;
+    color: #a29d9d;
+    font-size: 11px;
+  }
+
+  .frame {
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    background: #eeeeee;
+  }
+    .frame:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+
+    .frame.active {
+      box-shadow: inset -5px 0 0 0 #4288CE;
+      color: #4288CE;
+    }
+
+    .frame:not(.active):hover {
+      background: #BEE9EA;
+    }
+
+    .frame-method-info {
+      margin-bottom: 10px;
+    }
+
+    .frame-class, .frame-function, .frame-index {
+      font-size: 14px;
+    }
+
+    .frame-index {
+      font-size: 11px;
+      color: #a29d9d;
+      background-color: rgba(0, 0, 0, .05);
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+      border-radius: 5px;
+      padding: 0 1px 0 1px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .frame-file {
+      font-family: "Inconsolata", "Fira Mono", "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace;
+      word-wrap: break-word;
+      color: #a29d9d;
+    }
+
+      .frame-file .editor-link {
+        color: #a29d9d;
+      }
+
+    .frame-line {
+      font-weight: bold;
+    }
+
+    .frame-line:before {
+      content: ":";
+    }
+
+    .frame-code {
+      padding: 5px;
+      background: #303030;
+      display: none;
+    }
+
+    .frame-code.active {
+      display: block;
+    }
+
+    .frame-code .frame-file {
+      color: #a29d9d;
+      padding: 12px 6px;
+
+      border-bottom: none;
+    }
+
+    .code-block {
+      padding: 10px;
+      margin: 0;
+      border-radius: 6px;
+      box-shadow: 0 3px 0 rgba(0, 0, 0, .05),
+                  0 10px 30px rgba(0, 0, 0, .05),
+                  inset 0 0 1px 0 rgba(255, 255, 255, .07);
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+    }
+
+    .linenums {
+      margin: 0;
+      margin-left: 10px;
+    }
+
+    .frame-comments {
+      border-top: none;
+      margin-top: 15px;
+
+      font-size: 12px;
+    }
+
+    .frame-comments.empty {
+    }
+
+    .frame-comments.empty:before {
+      content: "No comments for this stack frame.";
+      font-weight: 300;
+      color: #a29d9d;
+    }
+
+    .frame-comment {
+      padding: 10px;
+      color: #e3e3e3;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, .05);
+    }
+      .frame-comment a {
+        font-weight: bold;
+        text-decoration: none;
+      }
+        .frame-comment a:hover {
+          color: #4bb1b1;
+        }
+
+    .frame-comment:not(:last-child) {
+      border-bottom: 1px dotted rgba(0, 0, 0, .3);
+    }
+
+    .frame-comment-context {
+      font-size: 10px;
+      color: white;
+    }
+
+.data-table-container label {
+  font-size: 16px;
+  color: #303030;
+  font-weight: bold;
+  margin: 10px 0;
+
+  display: block;
+
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+  .data-table {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .data-table tbody {
+    font: 13px "Inconsolata", "Fira Mono", "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace;
+  }
+
+  .data-table thead {
+    display: none;
+  }
+
+  .data-table tr {
+    padding: 5px 0;
+  }
+
+  .data-table td:first-child {
+    width: 20%;
+    min-width: 130px;
+    overflow: hidden;
+    font-weight: bold;
+    color: #463C54;
+    padding-right: 5px;
+
+  }
+
+  .data-table td:last-child {
+    width: 80%;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+
+  .data-table span.empty {
+    color: rgba(0, 0, 0, .3);
+    font-weight: 300;
+  }
+  .data-table label.empty {
+    display: inline;
+  }
+
+.handler {
+  padding: 4px 0;
+  font: 14px "Inconsolata", "Fira Mono", "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace;
+}
+
+/* prettify code style
+Uses the Doxy theme as a base */
+pre .str, code .str { color: #BCD42A; }  /* string  */
+pre .kwd, code .kwd { color: #4bb1b1;  font-weight: bold; }  /* keyword*/
+pre .com, code .com { color: #888; font-weight: bold; } /* comment */
+pre .typ, code .typ { color: #ef7c61; }  /* type  */
+pre .lit, code .lit { color: #BCD42A; }  /* literal */
+pre .pun, code .pun { color: #fff; font-weight: bold;  } /* punctuation  */
+pre .pln, code .pln { color: #e9e4e5; }  /* plaintext  */
+pre .tag, code .tag { color: #4bb1b1; }  /* html/xml tag  */
+pre .htm, code .htm { color: #dda0dd; }  /* html tag */
+pre .xsl, code .xsl { color: #d0a0d0; }  /* xslt tag */
+pre .atn, code .atn { color: #ef7c61; font-weight: normal;} /* html/xml attribute name */
+pre .atv, code .atv { color: #bcd42a; }  /* html/xml attribute value  */
+pre .dec, code .dec { color: #606; }  /* decimal  */
+pre.prettyprint, code.prettyprint, .frame-args.prettyprint, .frame-args.prettyprint samp {
+  font-family: "Inconsolata", "Fira Mono", "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace;
+  background: #333;
+  color: #e9e4e5;
+}
+  pre.prettyprint {
+    white-space: pre-wrap;
+  }
+
+  pre.prettyprint a, code.prettyprint a {
+    text-decoration:none;
+  }
+
+  .linenums li {
+    color: #A5A5A5;
+  }
+
+  .linenums li.current{
+    background: rgba(255, 100, 100, .07);
+    padding-top: 4px;
+    padding-left: 1px;
+  }
+    .linenums li.current.active {
+      background: rgba(255, 100, 100, .17);
+    }
+
+#plain-exception {
+  display: none;
+}
+
+#copy-button {
+  cursor: pointer;
+  border: 0;
+}
+
+.clipboard {
+  opacity: .8;
+  background: none;
+
+  color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+
+  border-radius: 3px;
+
+  outline: none !important;
+}
+
+  .clipboard:hover {
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+/* inspired by githubs kbd styles */
+kbd {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #fcfcfc;
+  border-color: #ccc #ccc #bbb;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px;
+  color: #555;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+
+/* == Media queries */
+
+/* Expand the spacing in the details section */
+@media (min-width: 1000px) {
+  .details, .frame-code {
+    padding: 20px 40px;
+    margin-bottom: 60px;
+  }
+
+  .details-container {
+    width: 68%;
+  }
+
+  .frames-container {
+    margin: 5px;
+  }
+
+  .left-panel {
+    width: 32%;
+  }
+}
+
+.tooltipped {
+  position: relative
+}
+.tooltipped:after {
+  position: absolute;
+  z-index: 1000000;
+  display: none;
+  padding: 5px 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  content: attr(aria-label);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+  -webkit-font-smoothing: subpixel-antialiased
+}
+.tooltipped:before {
+  position: absolute;
+  z-index: 1000001;
+  display: none;
+  width: 0;
+  height: 0;
+  color: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  content: "";
+  border: 5px solid transparent
+}
+.tooltipped:hover:before,
+.tooltipped:hover:after,
+.tooltipped:active:before,
+.tooltipped:active:after,
+.tooltipped:focus:before,
+.tooltipped:focus:after {
+  display: inline-block;
+  text-decoration: none
+}
+.tooltipped-s:after {
+  top: 100%;
+  right: 50%;
+  margin-top: 5px
+}
+.tooltipped-s:before {
+  top: auto;
+  right: 50%;
+  bottom: -5px;
+  margin-right: -5px;
+  border-bottom-color: rgba(0, 0, 0, 0.8)
+}
+
+pre.sf-dump {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.search-for-help {
+  width: 85%;
+  padding: 0;
+  margin: 10px 0;
+  list-style-type: none;
+  display: inline-block;
+}
+  .search-for-help li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .search-for-help li:last-child {
+    margin-right: 0;
+  }
+    .search-for-help li a {
+
+    }
+      .search-for-help li a i {
+        width: 16px;
+        height: 16px;
+        overflow: hidden;
+        display: block;
+      }
+      .search-for-help li a svg {
+        fill: #fff;
+      }
+      .search-for-help li a svg path {
+        background-size: contain;
+      }
+</style>
+  <style></style><script async="" src="./Whoops! There was an error._files/prettify.js.download"></script></head>
+  <body>
+
+    <div class="Whoops container">
+      <div class="stack-container">
+        <div class="left-panel cf ">
+          <header>
+            <div class="exception">
+  <div class="exc-title">
+                  pi \                        collections \                        exceptions \                        <span class="exc-title-primary">CollectionBagValidationException</span>
+                    <span title="Exception Code">(COLLECTION::BAG::VALIDATION)</span>
+      </div>
+
+  <div class="exc-message">
+          <span>COLLECTION::BAG::VALIDATION - Validation Problem: Array
+(
+    [0] =&gt; "draft_order_id" is required field.
+    [1] =&gt; "draft_order_id" field is supposed to be integer, but it's "", from channel "alt"
+)
+</span>
+    
+    <ul class="search-for-help">
+      <li>
+        <a target="_blank" href="https://google.com/search?q=pi%5Ccollections%5Cexceptions%5CCollectionBagValidationException+COLLECTION%3A%3ABAG%3A%3AVALIDATION+-+Validation+Problem%3A+Array%0A%28%0A++++%5B0%5D+%3D%3E+%22draft_order_id%22+is+required+field.%0A++++%5B1%5D+%3D%3E+%22draft_order_id%22+field+is+supposed+to+be+integer%2C+but+it%27s+%22%22%2C+from+channel+%22alt%22%0A%29%0A" title="Search for help on Google.">
+          <!-- Google icon by Alfredo H, from https://www.iconfinder.com/alfredoh -->
+          <!-- Creative Commons (Attribution 3.0 Unported) -->
+          <!-- http://creativecommons.org/licenses/by/3.0/ -->
+          <svg class="google" height="16" viewBox="0 0 512 512" width="16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M457.732 216.625c2.628 14.04 4.063 28.743 4.063 44.098C461.795 380.688 381.48 466 260.205 466c-116.024 0-210-93.977-210-210s93.976-210 210-210c56.703 0 104.076 20.867 140.44 54.73l-59.205 59.197v-.135c-22.046-21.002-50-31.762-81.236-31.762-69.297 0-125.604 58.537-125.604 127.84 0 69.29 56.306 127.97 125.604 127.97 62.87 0 105.653-35.966 114.46-85.313h-114.46v-81.902h197.528z"></path>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" href="https://stackoverflow.com/search?q=pi%5Ccollections%5Cexceptions%5CCollectionBagValidationException+COLLECTION%3A%3ABAG%3A%3AVALIDATION+-+Validation+Problem%3A+Array%0A%28%0A++++%5B0%5D+%3D%3E+%22draft_order_id%22+is+required+field.%0A++++%5B1%5D+%3D%3E+%22draft_order_id%22+field+is+supposed+to+be+integer%2C+but+it%27s+%22%22%2C+from+channel+%22alt%22%0A%29%0A" title="Search for help on Stack Overflow.">
+          <!-- Stack Overflow icon by Picons.me, from https://www.iconfinder.com/Picons -->
+          <!-- Free for commercial use -->
+          <svg class="stackoverflow" height="16" viewBox="-1163 1657.697 56.693 56.693" width="16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-1126.04 1689.533l-16.577-9.778 2.088-3.54 16.578 9.778zM-1127.386 1694.635l-18.586-4.996 1.068-3.97 18.586 4.995zM-1127.824 1700.137l-19.165-1.767.378-4.093 19.165 1.767zM-1147.263 1701.293h19.247v4.11h-19.247z"></path>
+            <path d="M-1121.458 1710.947s0 .96-.032.96v.016h-30.796s-.96 0-.96-.016h-.032v-20.03h3.288v16.805h25.244v-16.804h3.288v19.07zM-1130.667 1667.04l10.844 15.903-3.396 2.316-10.843-15.903zM-1118.313 1663.044l3.29 18.963-4.05.703-3.29-18.963z"></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <span id="plain-exception">pi\collections\exceptions\CollectionBagValidationException thrown with message "COLLECTION::BAG::VALIDATION - Validation Problem: Array
+(
+    [0] =&gt; "draft_order_id" is required field.
+    [1] =&gt; "draft_order_id" field is supposed to be integer, but it's "", from channel "alt"
+)
+"
+
+Stacktrace:
+#15 pi\collections\exceptions\CollectionBagValidationException in /srv/devel/rafeh/websauce.pi/modules/pi-collections-1.0/dataflow/CollectionBag.php:348
+#14 pi\collections\CollectionBag:value in /srv/devel/rafeh/websauce.pi/modules/pi-collections-1.0/dataflow/CollectionBag.php:371
+#13 pi\collections\CollectionBag:values in /srv/devel/rafeh/academy.guestdeck.com/academy.root/dataflow/DraftOrder.php:214
+#12 DraftOrder:submitRequestToSupplier in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/CallableManager.php:159
+#11 call_user_func in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/CallableManager.php:159
+#10 pi\websauce\modules\CallableManager:call in /srv/devel/rafeh/academy.guestdeck.com/academy.root/dataflow/GeneralSite.php:24
+#9 GeneralSite:handleDispatchCall in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/pipeline/steps/Call.php:149
+#8 pi\websauce\pipeline\steps\Call:process in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/DispatcherStepProcessor.php:146
+#7 pi\websauce\dispatch\DispatcherStepProcessor:process in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/DispatcherProcessor.php:103
+#6 pi\websauce\dispatch\DispatcherProcessor:process in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/Dispatcher.php:198
+#5 pi\websauce\dispatch\Dispatcher:processServeWithinSection in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/Dispatcher.php:118
+#4 pi\websauce\dispatch\Dispatcher:serve in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/AbstractWebModule.php:178
+#3 pi\websauce\AbstractWebModule:serve in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/BaseModuleLoader.php:97
+#2 pi\websauce\modules\BaseModuleLoader:serve in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/Engine.php:409
+#1 pi\websauce\Engine:goInternal in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/Engine.php:255
+#0 pi\websauce\Engine:go in /srv/devel/rafeh/academy.guestdeck.com/academy.root/index.php:11
+</span>
+    <button id="copy-button" class="clipboard" data-clipboard-text="pi\collections\exceptions\CollectionBagValidationException thrown with message &quot;COLLECTION::BAG::VALIDATION - Validation Problem: Array
+(
+    [0] =&gt; &quot;draft_order_id&quot; is required field.
+    [1] =&gt; &quot;draft_order_id&quot; field is supposed to be integer, but it&#39;s &quot;&quot;, from channel &quot;alt&quot;
+)
+&quot;
+
+Stacktrace:
+#15 pi\collections\exceptions\CollectionBagValidationException in /srv/devel/rafeh/websauce.pi/modules/pi-collections-1.0/dataflow/CollectionBag.php:348
+#14 pi\collections\CollectionBag:value in /srv/devel/rafeh/websauce.pi/modules/pi-collections-1.0/dataflow/CollectionBag.php:371
+#13 pi\collections\CollectionBag:values in /srv/devel/rafeh/academy.guestdeck.com/academy.root/dataflow/DraftOrder.php:214
+#12 DraftOrder:submitRequestToSupplier in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/CallableManager.php:159
+#11 call_user_func in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/CallableManager.php:159
+#10 pi\websauce\modules\CallableManager:call in /srv/devel/rafeh/academy.guestdeck.com/academy.root/dataflow/GeneralSite.php:24
+#9 GeneralSite:handleDispatchCall in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/pipeline/steps/Call.php:149
+#8 pi\websauce\pipeline\steps\Call:process in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/DispatcherStepProcessor.php:146
+#7 pi\websauce\dispatch\DispatcherStepProcessor:process in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/DispatcherProcessor.php:103
+#6 pi\websauce\dispatch\DispatcherProcessor:process in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/Dispatcher.php:198
+#5 pi\websauce\dispatch\Dispatcher:processServeWithinSection in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/Dispatcher.php:118
+#4 pi\websauce\dispatch\Dispatcher:serve in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/AbstractWebModule.php:178
+#3 pi\websauce\AbstractWebModule:serve in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/BaseModuleLoader.php:97
+#2 pi\websauce\modules\BaseModuleLoader:serve in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/Engine.php:409
+#1 pi\websauce\Engine:goInternal in /srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/Engine.php:255
+#0 pi\websauce\Engine:go in /srv/devel/rafeh/academy.guestdeck.com/academy.root/index.php:11
+" title="Copy exception details to clipboard">
+      COPY
+    </button>
+  </div>
+</div>
+          </header>
+
+          <div class="frames-description">
+            Stack frames (16):
+          </div>
+
+          <div class="frames-container">
+              <div class="frame active" id="frame-line-0">
+      <div class="frame-method-info">
+        <span class="frame-index">15</span>
+        <span class="frame-class">pi\collections\exceptions\CollectionBagValidationException</span>
+        <span class="frame-function"></span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-collections-1.0/­dataflow/­CollectionBag.php<!--
+   --><span class="frame-line">348</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-1">
+      <div class="frame-method-info">
+        <span class="frame-index">14</span>
+        <span class="frame-class">pi\collections\CollectionBag</span>
+        <span class="frame-function">value</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-collections-1.0/­dataflow/­CollectionBag.php<!--
+   --><span class="frame-line">371</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-2">
+      <div class="frame-method-info">
+        <span class="frame-index">13</span>
+        <span class="frame-class">pi\collections\CollectionBag</span>
+        <span class="frame-function">values</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­academy.guestdeck.com/­academy.root/­dataflow/­DraftOrder.php<!--
+   --><span class="frame-line">214</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-3">
+      <div class="frame-method-info">
+        <span class="frame-index">12</span>
+        <span class="frame-class">DraftOrder</span>
+        <span class="frame-function">submitRequestToSupplier</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­modules/­CallableManager.php<!--
+   --><span class="frame-line">159</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-4">
+      <div class="frame-method-info">
+        <span class="frame-index">11</span>
+        <span class="frame-class"></span>
+        <span class="frame-function">call_user_func</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­modules/­CallableManager.php<!--
+   --><span class="frame-line">159</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-5">
+      <div class="frame-method-info">
+        <span class="frame-index">10</span>
+        <span class="frame-class">pi\websauce\modules\CallableManager</span>
+        <span class="frame-function">call</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­academy.guestdeck.com/­academy.root/­dataflow/­GeneralSite.php<!--
+   --><span class="frame-line">24</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-6">
+      <div class="frame-method-info">
+        <span class="frame-index">9</span>
+        <span class="frame-class">GeneralSite</span>
+        <span class="frame-function">handleDispatchCall</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­pipeline/­steps/­Call.php<!--
+   --><span class="frame-line">149</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-7">
+      <div class="frame-method-info">
+        <span class="frame-index">8</span>
+        <span class="frame-class">pi\websauce\pipeline\steps\Call</span>
+        <span class="frame-function">process</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­dispatch/­DispatcherStepProcessor.php<!--
+   --><span class="frame-line">146</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-8">
+      <div class="frame-method-info">
+        <span class="frame-index">7</span>
+        <span class="frame-class">pi\websauce\dispatch\DispatcherStepProcessor</span>
+        <span class="frame-function">process</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­dispatch/­DispatcherProcessor.php<!--
+   --><span class="frame-line">103</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-9">
+      <div class="frame-method-info">
+        <span class="frame-index">6</span>
+        <span class="frame-class">pi\websauce\dispatch\DispatcherProcessor</span>
+        <span class="frame-function">process</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­dispatch/­Dispatcher.php<!--
+   --><span class="frame-line">198</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-10">
+      <div class="frame-method-info">
+        <span class="frame-index">5</span>
+        <span class="frame-class">pi\websauce\dispatch\Dispatcher</span>
+        <span class="frame-function">processServeWithinSection</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­dispatch/­Dispatcher.php<!--
+   --><span class="frame-line">118</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-11">
+      <div class="frame-method-info">
+        <span class="frame-index">4</span>
+        <span class="frame-class">pi\websauce\dispatch\Dispatcher</span>
+        <span class="frame-function">serve</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­AbstractWebModule.php<!--
+   --><span class="frame-line">178</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-12">
+      <div class="frame-method-info">
+        <span class="frame-index">3</span>
+        <span class="frame-class">pi\websauce\AbstractWebModule</span>
+        <span class="frame-function">serve</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­modules/­BaseModuleLoader.php<!--
+   --><span class="frame-line">97</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-13">
+      <div class="frame-method-info">
+        <span class="frame-index">2</span>
+        <span class="frame-class">pi\websauce\modules\BaseModuleLoader</span>
+        <span class="frame-function">serve</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­Engine.php<!--
+   --><span class="frame-line">409</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-14">
+      <div class="frame-method-info">
+        <span class="frame-index">1</span>
+        <span class="frame-class">pi\websauce\Engine</span>
+        <span class="frame-function">goInternal</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­websauce.pi/­modules/­pi-websauce-1.1/­dataflow/­Engine.php<!--
+   --><span class="frame-line">255</span>
+    </span>
+  </div>
+  <div class="frame " id="frame-line-15">
+      <div class="frame-method-info">
+        <span class="frame-index">0</span>
+        <span class="frame-class">pi\websauce\Engine</span>
+        <span class="frame-function">go</span>
+      </div>
+
+    <span class="frame-file">
+      /­srv/­devel/­rafeh/­academy.guestdeck.com/­academy.root/­index.php<!--
+   --><span class="frame-line">11</span>
+    </span>
+  </div>
+          </div>
+        </div>
+        <div class="details-container cf">
+          <div class="frame-code-container ">
+            <div class="frame-code active" id="frame-code-0">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-collections-1.0/dataflow/CollectionBag.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:339 prettyprinted" style=""><ol class="linenums"><li value="339" class="L8"><span class="pln">			</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> \InvalidArgumentException</span><span class="pun">(</span><span class="pln">sprintf</span><span class="pun">(</span><span class="pln">$msg</span><span class="pun">,</span><span class="pln"> $fieldName</span><span class="pun">));</span></li><li class="L9"><span class="pln">		</span><span class="pun">}</span></li><li class="L0"><span class="pln"> </span></li><li class="L1"><span class="pln">		$def    </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">fields</span><span class="pun">[</span><span class="pln">$fieldName</span><span class="pun">];</span></li><li class="L2"><span class="pln">		$method </span><span class="pun">=</span><span class="pln"> $def</span><span class="pun">-&gt;</span><span class="pln">getChannel</span><span class="pun">();</span></li><li class="L3"><span class="pln">		$value  </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getFromSource</span><span class="pun">(</span><span class="pln"> $method</span><span class="pun">,</span><span class="pln"> $fieldName </span><span class="pun">);</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">		</span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln"> $def</span><span class="pun">-&gt;</span><span class="pln">isValidValue</span><span class="pun">(</span><span class="pln">$value</span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L6"><span class="pln">		</span><span class="pun">{</span></li><li class="L7"><span class="pln">			</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">CollectionBagValidationException</span><span class="pun">(</span><span class="pln">print_r</span><span class="pun">(</span><span class="pln">$def</span><span class="pun">-&gt;</span><span class="pln">errors</span><span class="pun">(),</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">));</span></li><li class="L8"><span class="pln">		</span><span class="pun">}</span></li><li class="L9"><span class="pln"> </span></li><li class="L0"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $def</span><span class="pun">-&gt;</span><span class="pln">value</span><span class="pun">();</span></li><li class="L1"><span class="pln">	</span><span class="pun">}</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">	</span><span class="com">/**</span></li><li class="L4"><span class="com">	 * Retrieves all fields from a bag as a assoc array (map).</span></li><li class="L5"><span class="com">	 *</span></li><li class="L6"><span class="com">	 * @return array</span></li><li class="L7"><span class="com">	 */</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><script> Sfdump = window.Sfdump || (function (doc) { var refStyle = doc.createElement('style'), rxEsc = /([.*+?^${}()|\[\]\/\\])/g, idRx = /\bsf-dump-\d+-ref[012]\w+\b/, keyHint = 0 <= navigator.platform.toUpperCase().indexOf('MAC') ? 'Cmd' : 'Ctrl', addEventListener = function (e, n, cb) { e.addEventListener(n, cb, false); }; (doc.documentElement.firstElementChild || doc.documentElement.children[0]).appendChild(refStyle); if (!doc.addEventListener) { addEventListener = function (element, eventName, callback) { element.attachEvent('on' + eventName, function (e) { e.preventDefault = function () {e.returnValue = false;}; e.target = e.srcElement; callback(e); }); }; } function toggle(a, recursive) { var s = a.nextSibling || {}, oldClass = s.className, arrow, newClass; if ('sf-dump-compact' == oldClass) { arrow = '&#9660;'; newClass = 'sf-dump-expanded'; } else if ('sf-dump-expanded' == oldClass) { arrow = '&#9654;'; newClass = 'sf-dump-compact'; } else { return false; } a.lastChild.innerHTML = arrow; s.className = newClass; if (recursive) { try { a = s.querySelectorAll('.'+oldClass); for (s = 0; s < a.length; ++s) { if (a[s].className !== newClass) { a[s].className = newClass; a[s].previousSibling.lastChild.innerHTML = arrow; } } } catch (e) { } } return true; }; return function (root) { root = doc.getElementById(root); function a(e, f) { addEventListener(root, e, function (e) { if ('A' == e.target.tagName) { f(e.target, e); } else if ('A' == e.target.parentNode.tagName) { f(e.target.parentNode, e); } }); }; function isCtrlKey(e) { return e.ctrlKey || e.metaKey; } addEventListener(root, 'mouseover', function (e) { if ('' != refStyle.innerHTML) { refStyle.innerHTML = ''; } }); a('mouseover', function (a) { if (a = idRx.exec(a.className)) { try { refStyle.innerHTML = 'pre.sf-dump .'+a[0]+'{background-color: #B729D9; color: #FFF !important; border-radius: 2px}'; } catch (e) { } } }); a('click', function (a, e) { if (/\bsf-dump-toggle\b/.test(a.className)) { e.preventDefault(); if (!toggle(a, isCtrlKey(e))) { var r = doc.getElementById(a.getAttribute('href').substr(1)), s = r.previousSibling, f = r.parentNode, t = a.parentNode; t.replaceChild(r, a); f.replaceChild(a, s); t.insertBefore(s, r); f = f.firstChild.nodeValue.match(indentRx); t = t.firstChild.nodeValue.match(indentRx); if (f && t && f[0] !== t[0]) { r.innerHTML = r.innerHTML.replace(new RegExp('^'+f[0].replace(rxEsc, '\\$1'), 'mg'), t[0]); } if ('sf-dump-compact' == r.className) { toggle(s, isCtrlKey(e)); } } if (doc.getSelection) { try { doc.getSelection().removeAllRanges(); } catch (e) { doc.getSelection().empty(); } } else { doc.selection.empty(); } } }); var indentRx = new RegExp('^('+(root.getAttribute('data-indent-pad') || ' ').replace(rxEsc, '\\$1')+')+', 'm'), elt = root.getElementsByTagName('A'), len = elt.length, i = 0, t = []; while (i < len) t.push(elt[i++]); elt = root.getElementsByTagName('SAMP'); len = elt.length; i = 0; while (i < len) t.push(elt[i++]); root = t; len = t.length; i = t = 0; while (i < len) { elt = root[i]; if ("SAMP" == elt.tagName) { elt.className = "sf-dump-expanded"; a = elt.previousSibling || {}; if ('A' != a.tagName) { a = doc.createElement('A'); a.className = 'sf-dump-ref'; elt.parentNode.insertBefore(a, elt); } else { a.innerHTML += ' '; } a.title = (a.title ? a.title+'\n[' : '[')+keyHint+'+click] Expand all children'; a.innerHTML += '<span>&#9660;</span>'; a.className += ' sf-dump-toggle'; if ('sf-dump' != elt.parentNode.className) { toggle(a); } } else if ("sf-dump-ref" == elt.className && (a = elt.getAttribute('href'))) { a = a.substr(1); elt.className += ' '+a; if (/[\[{]$/.test(elt.previousSibling.nodeValue)) { a = a != elt.nextSibling.id && doc.getElementById(a); try { t = a.nextSibling; elt.appendChild(a); t.parentNode.insertBefore(a, t); if (/^[@#]/.test(elt.innerHTML)) { elt.innerHTML += ' <span>&#9654;</span>'; } else { elt.innerHTML = '<span>&#9654;</span>'; elt.className = 'sf-dump-ref'; } elt.className += ' sf-dump-toggle'; } catch (e) { if ('&' == elt.innerHTML.charAt(0)) { elt.innerHTML = '&hellip;'; elt.className = 'sf-dump-ref'; } } } } ++i; } }; })(document); </script> <style> pre.sf-dump { display: block; white-space: pre; padding: 5px; } pre.sf-dump span { display: inline; } pre.sf-dump .sf-dump-compact { display: none; } pre.sf-dump abbr { text-decoration: none; border: none; cursor: help; } pre.sf-dump a { text-decoration: none; cursor: pointer; border: 0; outline: none; }pre.sf-dump{color:#FFFFFF; line-height:normal; font:12px "Inconsolata", "Fira Mono", "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace !important; word-wrap: break-word; white-space: pre-wrap; position:relative; z-index:99999; word-break: normal}pre.sf-dump .sf-dump-num{color:#BCD42A}pre.sf-dump .sf-dump-const{color: #4bb1b1;}pre.sf-dump .sf-dump-str{color:#BCD42A}pre.sf-dump .sf-dump-note{color:#ef7c61}pre.sf-dump .sf-dump-ref{color:#A0A0A0}pre.sf-dump .sf-dump-public{color:#FFFFFF}pre.sf-dump .sf-dump-protected{color:#FFFFFF}pre.sf-dump .sf-dump-private{color:#FFFFFF}pre.sf-dump .sf-dump-meta{color:#FFFFFF}pre.sf-dump .sf-dump-key{color:#BCD42A}pre.sf-dump .sf-dump-index{color:#ef7c61}</style><pre class="sf-dump" id="sf-dump-1926562603" data-indent-pad="  ">"""
+<span class="sf-dump-str" title="200 characters">COLLECTION::BAG::VALIDATION - Validation Problem: Array</span>\n
+<span class="sf-dump-str" title="200 characters">(</span>\n
+<span class="sf-dump-str" title="200 characters">    [0] =&gt; "draft_order_id" is required field.</span>\n
+<span class="sf-dump-str" title="200 characters">    [1] =&gt; "draft_order_id" field is supposed to be integer, but it's "", from channel "alt"</span>\n
+<span class="sf-dump-str" title="200 characters">)</span>\n
+"""
+</pre><script>Sfdump("sf-dump-1926562603")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-1">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-collections-1.0/dataflow/CollectionBag.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:362 prettyprinted" style=""><ol class="linenums"><li value="362" class="L1"><span class="pln">		$values </span><span class="pun">=</span><span class="pln"> array</span><span class="pun">();</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">		</span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln"> is_array</span><span class="pun">(</span><span class="pln">$retrieveFieldNames</span><span class="pun">)</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> empty</span><span class="pun">(</span><span class="pln">$retrieveFieldNames</span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L4"><span class="pln">		</span><span class="pun">{</span></li><li class="L5"><span class="pln">			$retrieveFieldNames </span><span class="pun">=</span><span class="pln"> array_keys</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">fields</span><span class="pun">);</span></li><li class="L6"><span class="pln">		</span><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">		</span><span class="kwd">foreach</span><span class="pun">(</span><span class="pln"> $retrieveFieldNames </span><span class="kwd">as</span><span class="pln"> $f </span><span class="pun">)</span></li><li class="L9"><span class="pln">		</span><span class="pun">{</span></li><li class="L0"><span class="pln">			$values</span><span class="pun">[</span><span class="pln">$f</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">value</span><span class="pun">(</span><span class="pln">$f</span><span class="pun">);</span></li><li class="L1"><span class="pln">		</span><span class="pun">}</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $values</span><span class="pun">;</span></li><li class="L4"><span class="pln">	</span><span class="pun">}</span></li><li class="L5"><span class="pln"> </span></li><li class="L6"><span class="pln">	</span><span class="com">/**</span></li><li class="L7"><span class="com">	 * Retrieves all fields (or requested fields) as an array (list).</span></li><li class="L8"><span class="com">	 *</span></li><li class="L9"><span class="com">	 * Example:</span></li><li class="L0"><span class="com">	 * &lt;pre&gt;</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-1717984894" data-indent-pad="  ">"<span class="sf-dump-str" title="14 characters">draft_order_id</span>"
+</pre><script>Sfdump("sf-dump-1717984894")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-2">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/academy.guestdeck.com/academy.root/dataflow/DraftOrder.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:205 prettyprinted" style=""><ol class="linenums"><li value="205" class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln"> </span></li><li class="L6"><span class="pln">	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> submitRequestToSupplier </span><span class="pun">(</span><span class="pln">array $callParams</span><span class="pun">,</span><span class="pln"> </span><span class="typ">PipeCapsule</span><span class="pln"> $capsule</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">		$bag </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">initBagWithSet</span><span class="pun">(</span><span class="str">"orderKeys"</span><span class="pun">,</span></li><li class="L9"><span class="pln">			array</span><span class="pun">(</span><span class="str">"draft_order_id"</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getBroker</span><span class="pun">()-&gt;</span><span class="pln">getSession</span><span class="pun">()-&gt;</span><span class="kwd">get</span><span class="pun">(</span><span class="str">"draft_order_id"</span><span class="pun">))</span></li><li class="L0"><span class="pln">		</span><span class="pun">);</span></li><li class="L1"><span class="pln"> </span></li><li class="L2"><span class="pln">		</span></li><li class="L3"><span class="pln">		$params </span><span class="pun">=</span><span class="pln"> $bag</span><span class="pun">-&gt;</span><span class="pln">values</span><span class="pun">();</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">		$trans </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">startDBTransaction</span><span class="pun">();</span></li><li class="L6"><span class="pln"> </span></li><li class="L7"><span class="pln">		$trans</span><span class="pun">-&gt;</span><span class="pln">writeOne</span><span class="pun">(</span><span class="str">"	</span></li><li class="L8"><span class="str">		UPDATE draft_orders</span></li><li class="L9"><span class="str">		   SET negotiate_state = 'Customer-Accepted-Supplier-Pending'</span></li><li class="L0"><span class="str">		 WHERE (tenant_id, event_id, draft_order_id) = (:tenant_id, :event_id, :draft_order_id)</span></li><li class="L1"><span class="str">		   AND negotiate_state = 'Customer-Creating'</span></li><li class="L2"><span class="str">		"</span><span class="pun">,</span><span class="pln"> $params</span><span class="pun">);</span></li><li class="L3"><span class="pln"> </span></li></ol></pre>
+                  
+                
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-3">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/CallableManager.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:150 prettyprinted" style=""><ol class="linenums"><li value="150" class="L9"><span class="pln">			</span><span class="pun">}</span></li><li class="L0"><span class="pln"> </span></li><li class="L1"><span class="pln">			</span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln"> method_exists</span><span class="pun">(</span><span class="pln">$inst</span><span class="pun">,</span><span class="pln"> $methodName</span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L2"><span class="pln">			</span><span class="pun">{</span></li><li class="L3"><span class="pln">				$msg </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Can\'t locate a method: "%s" on class "%s"'</span><span class="pun">;</span></li><li class="L4"><span class="pln">				$msg </span><span class="pun">=</span><span class="pln"> sprintf</span><span class="pun">(</span><span class="pln">$msg</span><span class="pun">,</span><span class="pln"> $methodName</span><span class="pun">,</span><span class="pln"> get_class</span><span class="pun">(</span><span class="pln">$inst</span><span class="pun">));</span></li><li class="L5"><span class="pln">				</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PiException</span><span class="pun">(</span><span class="pln">$msg</span><span class="pun">);</span></li><li class="L6"><span class="pln">			</span><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">			$res  </span><span class="pun">=</span><span class="pln"> call_user_func</span><span class="pun">(</span><span class="pln">array</span><span class="pun">(</span><span class="pln">$inst</span><span class="pun">,</span><span class="pln"> $methodName</span><span class="pun">),</span><span class="pln"> $params</span><span class="pun">,</span><span class="pln"> $capsule</span><span class="pun">);</span></li><li class="L9"><span class="pln">		</span><span class="pun">}</span></li><li class="L0"><span class="pln">		</span><span class="kwd">else</span></li><li class="L1"><span class="pln">		</span><span class="pun">{</span></li><li class="L2"><span class="pln">			</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PiException</span><span class="pun">(</span><span class="str">'Cant execute non-class for now: with definition "'</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> $definition </span><span class="pun">.</span><span class="pln"> </span><span class="str">'"'</span><span class="pun">);</span></li><li class="L3"><span class="pln">		</span><span class="pun">}</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $res</span><span class="pun">;</span></li><li class="L6"><span class="pln">	</span><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">	</span><span class="com">/**</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-98642670" data-indent-pad="  "><span class="sf-dump-note">array:2</span> [<a class="sf-dump-ref sf-dump-toggle" title="[Ctrl+click] Expand all children"><span>▶</span></a><samp class="sf-dump-compact">
+  "<span class="sf-dump-key">tenant_id</span>" =&gt; <span class="sf-dump-num">312</span>
+  "<span class="sf-dump-key">event_id</span>" =&gt; <span class="sf-dump-num">1</span>
+</samp>]
+</pre><script>Sfdump("sf-dump-98642670")</script>
+</li><li><pre class="sf-dump" id="sf-dump-2063501517" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-2063501517")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-4">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/CallableManager.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:150 prettyprinted" style=""><ol class="linenums"><li value="150" class="L9"><span class="pln">			</span><span class="pun">}</span></li><li class="L0"><span class="pln"> </span></li><li class="L1"><span class="pln">			</span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln"> method_exists</span><span class="pun">(</span><span class="pln">$inst</span><span class="pun">,</span><span class="pln"> $methodName</span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L2"><span class="pln">			</span><span class="pun">{</span></li><li class="L3"><span class="pln">				$msg </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Can\'t locate a method: "%s" on class "%s"'</span><span class="pun">;</span></li><li class="L4"><span class="pln">				$msg </span><span class="pun">=</span><span class="pln"> sprintf</span><span class="pun">(</span><span class="pln">$msg</span><span class="pun">,</span><span class="pln"> $methodName</span><span class="pun">,</span><span class="pln"> get_class</span><span class="pun">(</span><span class="pln">$inst</span><span class="pun">));</span></li><li class="L5"><span class="pln">				</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PiException</span><span class="pun">(</span><span class="pln">$msg</span><span class="pun">);</span></li><li class="L6"><span class="pln">			</span><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">			$res  </span><span class="pun">=</span><span class="pln"> call_user_func</span><span class="pun">(</span><span class="pln">array</span><span class="pun">(</span><span class="pln">$inst</span><span class="pun">,</span><span class="pln"> $methodName</span><span class="pun">),</span><span class="pln"> $params</span><span class="pun">,</span><span class="pln"> $capsule</span><span class="pun">);</span></li><li class="L9"><span class="pln">		</span><span class="pun">}</span></li><li class="L0"><span class="pln">		</span><span class="kwd">else</span></li><li class="L1"><span class="pln">		</span><span class="pun">{</span></li><li class="L2"><span class="pln">			</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PiException</span><span class="pun">(</span><span class="str">'Cant execute non-class for now: with definition "'</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> $definition </span><span class="pun">.</span><span class="pln"> </span><span class="str">'"'</span><span class="pun">);</span></li><li class="L3"><span class="pln">		</span><span class="pun">}</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $res</span><span class="pun">;</span></li><li class="L6"><span class="pln">	</span><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">	</span><span class="com">/**</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-352557372" data-indent-pad="  "><span class="sf-dump-note">array:2</span> [<a class="sf-dump-ref sf-dump-toggle" title="[Ctrl+click] Expand all children"><span>▶</span></a><samp class="sf-dump-compact">
+  <span class="sf-dump-index">0</span> =&gt; <span class="sf-dump-note">DraftOrder</span> {}
+  <span class="sf-dump-index">1</span> =&gt; "<span class="sf-dump-str" title="23 characters">submitRequestToSupplier</span>"
+</samp>]
+</pre><script>Sfdump("sf-dump-352557372")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1795291738" data-indent-pad="  "><span class="sf-dump-note">array:2</span> [<a class="sf-dump-ref sf-dump-toggle" title="[Ctrl+click] Expand all children"><span>▶</span></a><samp class="sf-dump-compact">
+  "<span class="sf-dump-key">tenant_id</span>" =&gt; <span class="sf-dump-num">312</span>
+  "<span class="sf-dump-key">event_id</span>" =&gt; <span class="sf-dump-num">1</span>
+</samp>]
+</pre><script>Sfdump("sf-dump-1795291738")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1269625187" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-1269625187")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-5">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/academy.guestdeck.com/academy.root/dataflow/GeneralSite.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:15 prettyprinted" style=""><ol class="linenums"><li value="15" class="L4"><span class="pun">{</span></li><li class="L5"><span class="pln"> </span></li><li class="L6"><span class="pln">	</span><span class="com">/**</span></li><li class="L7"><span class="com">	 *</span></li><li class="L8"><span class="com">	 */</span></li><li class="L9"><span class="pln">	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> handleDispatchCall</span><span class="pun">(</span><span class="typ">Module</span><span class="pln"> $caller</span><span class="pun">,</span><span class="pln"> $callName</span><span class="pun">,</span><span class="pln"> array $callParams</span><span class="pun">,</span><span class="pln"> </span><span class="typ">PipeCapsule</span><span class="pln"> $capsule</span><span class="pun">)</span></li><li class="L0"><span class="pln">	</span><span class="pun">{</span></li><li class="L1"><span class="pln">	    </span><span class="com">/* ---  --- */</span></li><li class="L2"><span class="pln">	    </span><span class="com">//$callName = '\\app\\' . $callName;</span></li><li class="L3"><span class="pln">	    $res      </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">callableManager</span><span class="pun">-&gt;</span><span class="pln">call</span><span class="pun">(</span><span class="pln"> $callName</span><span class="pun">,</span><span class="pln"> $callParams</span><span class="pun">,</span><span class="pln"> $capsule</span><span class="pun">,</span><span class="pln"> $this </span><span class="pun">);</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">	  	</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> is_array</span><span class="pun">(</span><span class="pln"> $res </span><span class="pun">)</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> isset</span><span class="pun">(</span><span class="pln"> $res</span><span class="pun">[</span><span class="str">'errors'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L6"><span class="pln">	  	</span><span class="pun">{</span></li><li class="L7"><span class="pln">			</span><span class="kwd">return</span><span class="pln"> $capsule</span><span class="pun">-&gt;</span><span class="pln">completed</span><span class="pun">();</span></li><li class="L8"><span class="pln">	  	</span><span class="pun">}</span></li><li class="L9"><span class="pln">	  	</span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> is_null</span><span class="pun">(</span><span class="pln"> $res </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L0"><span class="pln">	  	</span><span class="pun">{</span></li><li class="L1"><span class="pln">			</span><span class="kwd">return</span><span class="pln"> $capsule</span><span class="pun">;</span></li><li class="L2"><span class="pln">	  	</span><span class="pun">}</span></li><li class="L3"><span class="pln">	  	</span><span class="kwd">else</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-1077729519" data-indent-pad="  ">"<span class="sf-dump-str" title="34 characters">DraftOrder.submitRequestToSupplier</span>"
+</pre><script>Sfdump("sf-dump-1077729519")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1554353665" data-indent-pad="  "><span class="sf-dump-note">array:2</span> [<a class="sf-dump-ref sf-dump-toggle" title="[Ctrl+click] Expand all children"><span>▶</span></a><samp class="sf-dump-compact">
+  "<span class="sf-dump-key">tenant_id</span>" =&gt; <span class="sf-dump-num">312</span>
+  "<span class="sf-dump-key">event_id</span>" =&gt; <span class="sf-dump-num">1</span>
+</samp>]
+</pre><script>Sfdump("sf-dump-1554353665")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1364733472" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-1364733472")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1524559139" data-indent-pad="  "><span class="sf-dump-note">GeneralSite</span> {}
+</pre><script>Sfdump("sf-dump-1524559139")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-6">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/pipeline/steps/Call.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:140 prettyprinted" style=""><ol class="linenums"><li value="140" class="L9"><span class="pln">		</span><span class="pun">{</span></li><li class="L0"><span class="pln">			$exec_module </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="kwd">module</span><span class="pun">;</span></li><li class="L1"><span class="pln">		</span><span class="pun">}</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">		</span><span class="com">/* --- --- */</span></li><li class="L4"><span class="pln">		$pipehash </span><span class="pun">=</span><span class="pln"> $capsule</span><span class="pun">-&gt;</span><span class="pln">getPipehash</span><span class="pun">();</span></li><li class="L5"><span class="pln">		$params </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ParamDefinitionResolver</span><span class="pun">::</span><span class="pln">resolve</span><span class="pun">(</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">callParams</span><span class="pun">,</span><span class="pln"> $pipehash</span><span class="pun">,</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getBroker</span><span class="pun">()-&gt;</span><span class="pln">getTopParams</span><span class="pun">()-&gt;</span><span class="pln">asMap</span><span class="pun">()</span><span class="pln"> </span><span class="pun">);</span></li><li class="L6"><span class="pln"> </span></li><li class="L7"><span class="pln">		</span><span class="com">/* --- --- */</span></li><li class="L8"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $exec_module</span><span class="pun">-&gt;</span><span class="pln">handleDispatchCall</span><span class="pun">(</span><span class="pln">$exec_module</span><span class="pun">,</span><span class="pln"> $resource </span><span class="pun">,</span><span class="pln"> $params</span><span class="pun">,</span><span class="pln"> $capsule</span><span class="pun">);</span></li><li class="L9"><span class="pln">	</span><span class="pun">}</span></li><li class="L0"><span class="pln"> </span></li><li class="L1"><span class="pln">	</span><span class="com">/**</span></li><li class="L2"><span class="com">	 * Sets a content.</span></li><li class="L3"><span class="com">	 *</span></li><li class="L4"><span class="com">	 * @param mixed $content Content.</span></li><li class="L5"><span class="com">	 *</span></li><li class="L6"><span class="com">	 * @return void</span></li><li class="L7"><span class="com">	 */</span></li><li class="L8"><span class="pln">	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> setContent</span><span class="pun">(</span><span class="pln">$content</span><span class="pun">)</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-907309403" data-indent-pad="  "><span class="sf-dump-note">GeneralSite</span> {}
+</pre><script>Sfdump("sf-dump-907309403")</script>
+</li><li><pre class="sf-dump" id="sf-dump-42314677" data-indent-pad="  ">"<span class="sf-dump-str" title="34 characters">DraftOrder.submitRequestToSupplier</span>"
+</pre><script>Sfdump("sf-dump-42314677")</script>
+</li><li><pre class="sf-dump" id="sf-dump-371305306" data-indent-pad="  "><span class="sf-dump-note">array:2</span> [<a class="sf-dump-ref sf-dump-toggle" title="[Ctrl+click] Expand all children"><span>▶</span></a><samp class="sf-dump-compact">
+  "<span class="sf-dump-key">tenant_id</span>" =&gt; <span class="sf-dump-num">312</span>
+  "<span class="sf-dump-key">event_id</span>" =&gt; <span class="sf-dump-num">1</span>
+</samp>]
+</pre><script>Sfdump("sf-dump-371305306")</script>
+</li><li><pre class="sf-dump" id="sf-dump-452175542" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-452175542")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-7">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/DispatcherStepProcessor.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:137 prettyprinted" style=""><ol class="linenums"><li value="137" class="L6"><span class="pln">			</span><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">			$stepProcessor </span><span class="pun">=</span><span class="pln"> $exec</span><span class="pun">-&gt;</span><span class="pln">getDispatchStepHandler</span><span class="pun">(</span></li><li class="L9"><span class="pln">				$this</span><span class="pun">-&gt;</span><span class="kwd">caller</span></li><li class="L0"><span class="pln">			</span><span class="pun">,</span><span class="pln">   $resource</span></li><li class="L1"><span class="pln">			</span><span class="pun">,</span><span class="pln">   $this</span><span class="pun">-&gt;</span><span class="pln">stepDefinition</span></li><li class="L2"><span class="pln">			</span><span class="pun">);</span></li><li class="L3"><span class="pln">		</span><span class="pun">}</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">		$content </span><span class="pun">=</span><span class="pln"> $stepProcessor</span><span class="pun">-&gt;</span><span class="pln">process</span><span class="pun">(</span><span class="pln">$capsule</span><span class="pun">);</span></li><li class="L6"><span class="pln">		\ExecTracker</span><span class="pun">::</span><span class="pln">mark</span><span class="pun">(</span><span class="str">'DispatcherStepProcessor::process -&gt; Done step: '</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="kwd">operator</span><span class="pun">);</span></li><li class="L7"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $content</span><span class="pun">;</span></li><li class="L8"><span class="pln">	</span><span class="pun">}</span></li><li class="L9"><span class="pln"> </span></li><li class="L0"><span class="pln">	</span><span class="com">/**</span></li><li class="L1"><span class="com">	 * Set Step Processor Class Name.</span></li><li class="L2"><span class="com">	 *</span></li><li class="L3"><span class="com">	 * @param string $name Class Name.</span></li><li class="L4"><span class="com">	 *</span></li><li class="L5"><span class="com">	 * @return string</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-1759738659" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-1759738659")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-8">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/DispatcherProcessor.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:94 prettyprinted" style=""><ol class="linenums"><li value="94" class="L3"><span class="pln">			</span><span class="pun">}</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">			</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> isset</span><span class="pun">(</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">operatorMap</span><span class="pun">[</span><span class="pln">$step</span><span class="pun">[</span><span class="str">'step'</span><span class="pun">][</span><span class="str">'name'</span><span class="pun">]]</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L6"><span class="pln">			</span><span class="pun">{</span></li><li class="L7"><span class="pln">				$step</span><span class="pun">[</span><span class="str">'step'</span><span class="pun">][</span><span class="str">'name'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">operatorMap</span><span class="pun">[</span><span class="pln">$step</span><span class="pun">[</span><span class="str">'step'</span><span class="pun">][</span><span class="str">'name'</span><span class="pun">]];</span></li><li class="L8"><span class="pln">			</span><span class="pun">}</span></li><li class="L9"><span class="pln"> </span></li><li class="L0"><span class="pln">			</span><span class="com">// Note!!!: overriding capsule is not a typo</span></li><li class="L1"><span class="pln">			$process  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DispatcherStepProcessor</span><span class="pun">(</span><span class="pln"> $caller</span><span class="pun">,</span><span class="pln"> $step </span><span class="pun">);</span></li><li class="L2"><span class="pln">			$capsule  </span><span class="pun">=</span><span class="pln"> $process</span><span class="pun">-&gt;</span><span class="pln">process</span><span class="pun">(</span><span class="pln"> $capsule </span><span class="pun">);</span></li><li class="L3"><span class="pln"> </span></li><li class="L4"><span class="pln">			</span><span class="com">/* ---  --- */</span></li><li class="L5"><span class="pln">			</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> is_object</span><span class="pun">(</span><span class="pln"> $runningContext </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L6"><span class="pln">			</span><span class="pun">{</span></li><li class="L7"><span class="pln">				</span><span class="com">/* ---  --- */</span></li><li class="L8"><span class="pln">				$runningContext</span><span class="pun">-&gt;</span><span class="pln">setCapsule</span><span class="pun">(</span><span class="pln"> $capsule </span><span class="pun">);</span></li><li class="L9"><span class="pln"> </span></li><li class="L0"><span class="pln">				</span><span class="com">/* ---  --- */</span></li><li class="L1"><span class="pln">				$runningContext</span><span class="pun">-&gt;</span><span class="pln">processedStep</span><span class="pun">(</span><span class="pln"> $step </span><span class="pun">);</span></li><li class="L2"><span class="pln"> </span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-611476193" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-611476193")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-9">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/Dispatcher.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:189 prettyprinted" style=""><ol class="linenums"><li value="189" class="L8"><span class="pln">		</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> $sitemap</span><span class="pun">-&gt;</span><span class="pln">hasPath</span><span class="pun">(</span><span class="pln"> $path </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L9"><span class="pln">		</span><span class="pun">{</span></li><li class="L0"><span class="pln">			</span><span class="com">/* --- ADD THIS ONE TO ENGINE SOMEHOW FOR DEBUGGING --- */</span></li><li class="L1"><span class="pln">			$instr </span><span class="pun">=</span><span class="pln"> $sitemap</span><span class="pun">-&gt;</span><span class="pln">retrieveInstructionSet</span><span class="pun">(</span><span class="pln"> $path </span><span class="pun">);</span></li><li class="L2"><span class="pln">			$this</span><span class="pun">-&gt;</span><span class="pln">lastInstructionSet </span><span class="pun">=</span><span class="pln"> $instr</span><span class="pun">;</span></li><li class="L3"><span class="pln"> </span></li><li class="L4"><span class="pln">			</span><span class="com">/* ---  --- */</span></li><li class="L5"><span class="pln">			$operatorMap </span><span class="pun">=</span><span class="pln"> $sitemap</span><span class="pun">-&gt;</span><span class="pln">getOperatorMap</span><span class="pun">();</span></li><li class="L6"><span class="pln">			$process </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">DispatcherProcessor</span><span class="pun">(</span><span class="pln"> $instr</span><span class="pun">,</span><span class="pln"> $operatorMap</span><span class="pun">,</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getBroker</span><span class="pun">()</span><span class="pln"> </span><span class="pun">);</span></li><li class="L7"><span class="pln">			</span><span class="kwd">return</span><span class="pln"> $process</span><span class="pun">-&gt;</span><span class="pln">process</span><span class="pun">(</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getModule</span><span class="pun">(),</span><span class="pln"> $capsule </span><span class="pun">);</span></li><li class="L8"><span class="pln">		</span><span class="pun">}</span></li><li class="L9"><span class="pln">		</span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln"> $optionalMatch </span><span class="pun">)</span><span class="pln"> </span><span class="com">// must've found a match</span></li><li class="L0"><span class="pln">		</span><span class="pun">{</span></li><li class="L1"><span class="pln">			</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PageNotFoundException</span><span class="pun">(</span><span class="pln"> $path </span><span class="pun">.</span><span class="pln"> </span><span class="str">' - in dispatch'</span><span class="pln"> </span><span class="pun">);</span></li><li class="L2"><span class="pln">		</span><span class="pun">}</span></li><li class="L3"><span class="pln">		</span><span class="kwd">else</span></li><li class="L4"><span class="pln">		</span><span class="pun">{</span></li><li class="L5"><span class="pln">			</span><span class="kwd">return</span><span class="pln"> $capsule</span><span class="pun">;</span></li><li class="L6"><span class="pln">		</span><span class="pun">}</span></li><li class="L7"><span class="pln">	</span><span class="pun">}</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-611630306" data-indent-pad="  "><span class="sf-dump-note">GeneralSite</span> {}
+</pre><script>Sfdump("sf-dump-611630306")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1277897797" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-1277897797")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-10">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/dispatch/Dispatcher.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:109 prettyprinted" style=""><ol class="linenums"><li value="109" class="L8"><span class="pln">		</span><span class="kwd">foreach</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> $sections </span><span class="kwd">as</span><span class="pln"> $options </span><span class="pun">)</span></li><li class="L9"><span class="pln">		</span><span class="pun">{</span></li><li class="L0"><span class="pln">			</span><span class="com">/* ---  --- */</span></li><li class="L1"><span class="pln">			$section </span><span class="pun">=</span><span class="pln"> $options</span><span class="pun">[</span><span class="str">'section'</span><span class="pun">];</span></li><li class="L2"><span class="pln">			$optionalMatch </span><span class="pun">=</span><span class="pln"> $options</span><span class="pun">[</span><span class="str">'optionalMatch'</span><span class="pun">];</span></li><li class="L3"><span class="pln"> </span></li><li class="L4"><span class="pln">			</span><span class="com">/* ---  --- */</span></li><li class="L5"><span class="pln">			</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln"> </span><span class="pun">!</span><span class="pln"> empty</span><span class="pun">(</span><span class="pln"> $section </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L6"><span class="pln">			</span><span class="pun">{</span></li><li class="L7"><span class="pln">				$capsule </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">processServeWithinSection</span><span class="pun">(</span><span class="pln"> $section</span><span class="pun">,</span><span class="pln"> $path</span><span class="pun">,</span><span class="pln"> $capsule</span><span class="pun">,</span><span class="pln"> $optionalMatch </span><span class="pun">);</span></li><li class="L8"><span class="pln">			</span><span class="pun">}</span></li><li class="L9"><span class="pln">		</span><span class="pun">}</span></li><li class="L0"><span class="pln"> </span></li><li class="L1"><span class="pln">		</span><span class="com">/* ---  --- */</span></li><li class="L2"><span class="pln">		$this</span><span class="pun">-&gt;</span><span class="pln">endSubProcess</span><span class="pun">();</span></li><li class="L3"><span class="pln"> </span></li><li class="L4"><span class="pln">		</span><span class="com">/* ---  --- */</span></li><li class="L5"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $capsule</span><span class="pun">;</span></li><li class="L6"><span class="pln">	</span><span class="pun">}</span></li><li class="L7"><span class="pln"> </span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-331589611" data-indent-pad="  "><abbr title="pi\websauce\dispatch\DispatcherData" class="sf-dump-note">DispatcherData</abbr> {}
+</pre><script>Sfdump("sf-dump-331589611")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1747601432" data-indent-pad="  ">"<span class="sf-dump-str" title="47 characters">bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-1747601432")</script>
+</li><li><pre class="sf-dump" id="sf-dump-1735788517" data-indent-pad="  "><abbr title="pi\websauce\dispatch\PipeCapsule" class="sf-dump-note">PipeCapsule</abbr> {}
+</pre><script>Sfdump("sf-dump-1735788517")</script>
+</li><li><pre class="sf-dump" id="sf-dump-2127714792" data-indent-pad="  "><span class="sf-dump-const">false</span>
+</pre><script>Sfdump("sf-dump-2127714792")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-11">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/AbstractWebModule.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:169 prettyprinted" style=""><ol class="linenums"><li value="169" class="L8"><span class="pln">				</span><span class="kwd">return</span><span class="pln"> $content</span><span class="pun">;</span></li><li class="L9"><span class="pln">			</span><span class="pun">}</span></li><li class="L0"><span class="pln">		</span><span class="pun">}</span></li><li class="L1"><span class="pln"> </span></li><li class="L2"><span class="pln">		</span><span class="com">// --- init dispatcher</span></li><li class="L3"><span class="pln">		\ExecTracker</span><span class="pun">::</span><span class="pln">mark</span><span class="pun">(</span><span class="str">'AbstractWebModule::serve -&gt; initialize dispatcher.'</span><span class="pun">);</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">		</span><span class="com">/* --- --- */</span></li><li class="L6"><span class="pln">		$dispatcher </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getDispatcher</span><span class="pun">();</span></li><li class="L7"><span class="pln">		$content    </span><span class="pun">=</span><span class="pln"> $dispatcher</span><span class="pun">-&gt;</span><span class="pln">serve</span><span class="pun">(</span><span class="pln">$url</span><span class="pun">);</span></li><li class="L8"><span class="pln">		\ExecTracker</span><span class="pun">::</span><span class="pln">mark</span><span class="pun">(</span><span class="str">'AbstractWebModule::serve -&gt; dispatch generated content.'</span><span class="pun">);</span></li><li class="L9"><span class="pln"> </span></li><li class="L0"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $content</span><span class="pun">;</span></li><li class="L1"><span class="pln">	</span><span class="pun">}</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">	</span><span class="com">/**</span></li><li class="L4"><span class="com">	 *</span></li><li class="L5"><span class="com">	 */</span></li><li class="L6"><span class="pln">	</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> beforeServeInitialization</span><span class="pun">(</span><span class="pln"> $url </span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li><li class="L7"><span class="pln">		</span><span class="com">/* --- --- */</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-856224931" data-indent-pad="  ">"<span class="sf-dump-str" title="47 characters">bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-856224931")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-12">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/modules/BaseModuleLoader.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:88 prettyprinted" style=""><ol class="linenums"><li value="88" class="L7"><span class="pln"> </span></li><li class="L8"><span class="pln">		</span><span class="com">/* --- initialize a class --- */</span></li><li class="L9"><span class="pln">		$className </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">moduleInfo</span><span class="pun">-&gt;</span><span class="pln">getClassName</span><span class="pun">();</span></li><li class="L0"><span class="pln">		$classRef  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> $className</span><span class="pun">();</span></li><li class="L1"><span class="pln">		$classRef</span><span class="pun">-&gt;</span><span class="pln">initModule</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">getBroker</span><span class="pun">(),</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">,</span><span class="pln"> </span><span class="str">''</span><span class="pun">,</span><span class="pln"> $mountPath</span><span class="pun">=</span><span class="str">'/'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[],</span><span class="pln"> </span><span class="pun">[]);</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">		\ExecTracker</span><span class="pun">::</span><span class="pln">mark</span><span class="pun">(</span><span class="str">'BaseModuleLoader::serve -&gt; Module has been initialized: '</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> $className</span><span class="pun">);</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">		</span><span class="com">/* ---  --- */</span></li><li class="L6"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $classRef</span><span class="pun">-&gt;</span><span class="pln">serve</span><span class="pun">(</span><span class="pln">$path</span><span class="pun">);</span></li><li class="L7"><span class="pln">	</span><span class="pun">}</span></li><li class="L8"><span class="pln"> </span></li><li class="L9"><span class="pln">	</span><span class="com">/**</span></li><li class="L0"><span class="com">	 * Load Site Settings.</span></li><li class="L1"><span class="com">	 *</span></li><li class="L2"><span class="com">	 * @return void</span></li><li class="L3"><span class="com">	 */</span></li><li class="L4"><span class="pln">	</span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> loadSiteSettings</span><span class="pun">()</span></li><li class="L5"><span class="pln">	</span><span class="pun">{</span></li><li class="L6"><span class="pln">		$path             </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getModulePath</span><span class="pun">();</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-691835778" data-indent-pad="  ">"<span class="sf-dump-str" title="47 characters">bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-691835778")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-13">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/Engine.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:400 prettyprinted" style=""><ol class="linenums"><li value="400" class="L9"><span class="pln">		</span><span class="kwd">else</span></li><li class="L0"><span class="pln">		</span><span class="pun">{</span></li><li class="L1"><span class="pln">			$broker</span><span class="pun">-&gt;</span><span class="pln">setRequestURL</span><span class="pun">(</span><span class="str">'/'</span><span class="pln"> </span><span class="pun">.</span><span class="pln"> $requestPath</span><span class="pun">);</span></li><li class="L2"><span class="pln">		</span><span class="pun">}</span></li><li class="L3"><span class="pln"> </span></li><li class="L4"><span class="pln">		</span><span class="com">/* --- loader --- */</span></li><li class="L5"><span class="pln">		$modulePath </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">getBaseModulePath</span><span class="pun">();</span></li><li class="L6"><span class="pln">		$loader     </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">BaseModuleLoader</span><span class="pun">(</span><span class="pln">$modulePath</span><span class="pun">);</span></li><li class="L7"><span class="pln">		$loader</span><span class="pun">-&gt;</span><span class="pln">setBroker</span><span class="pun">(</span><span class="pln">$broker</span><span class="pun">);</span></li><li class="L8"><span class="pln">		$capsule    </span><span class="pun">=</span><span class="pln"> $loader</span><span class="pun">-&gt;</span><span class="pln">serve</span><span class="pun">(</span><span class="pln">$this</span><span class="pun">-&gt;</span><span class="pln">getRelativeProcessPath</span><span class="pun">(</span><span class="pln">$requestPath</span><span class="pun">));</span></li><li class="L9"><span class="pln"> </span></li><li class="L0"><span class="pln">		</span><span class="com">/* ---  --- */</span></li><li class="L1"><span class="pln">		$broker</span><span class="pun">-&gt;</span><span class="pln">getFlashMessageHelper</span><span class="pun">()-&gt;</span><span class="pln">cleaupUnusedData</span><span class="pun">();</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">		</span><span class="kwd">return</span><span class="pln"> $capsule</span><span class="pun">;</span></li><li class="L4"><span class="pln">	</span><span class="pun">}</span></li><li class="L5"><span class="pln"> </span></li><li class="L6"><span class="pln">	</span><span class="com">/**</span></li><li class="L7"><span class="com">	 *</span></li><li class="L8"><span class="com">	 */</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-1088249032" data-indent-pad="  ">"<span class="sf-dump-str" title="47 characters">bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-1088249032")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-14">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/websauce.pi/modules/pi-websauce-1.1/dataflow/Engine.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:246 prettyprinted" style=""><ol class="linenums"><li value="246" class="L5"><span class="pln"> </span></li><li class="L6"><span class="pln">		</span><span class="com">/* ---  --- */</span></li><li class="L7"><span class="pln">		$capsule </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">;</span></li><li class="L8"><span class="pln"> </span></li><li class="L9"><span class="pln">		</span><span class="com">/* ---  --- */</span></li><li class="L0"><span class="pln">		$this</span><span class="pun">-&gt;</span><span class="pln">execTrackerMark</span><span class="pun">(</span><span class="str">'Engine::go'</span><span class="pun">);</span></li><li class="L1"><span class="pln"> </span></li><li class="L2"><span class="pln">		</span><span class="kwd">try</span></li><li class="L3"><span class="pln">		</span><span class="pun">{</span></li><li class="L4"><span class="pln">			$capsule </span><span class="pun">=</span><span class="pln"> $this</span><span class="pun">-&gt;</span><span class="pln">goInternal</span><span class="pun">(</span><span class="pln">$requestPath</span><span class="pun">);</span></li><li class="L5"><span class="pln"> </span></li><li class="L6"><span class="pln">			</span><span class="com">/* --- base check --- */</span></li><li class="L7"><span class="pln">			</span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> is_null</span><span class="pun">(</span><span class="pln">$capsule</span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span></li><li class="L8"><span class="pln">			</span><span class="pun">{</span></li><li class="L9"><span class="pln">				$msg </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Pipeline didnt "exit" (ex. redirected...) '</span></li><li class="L0"><span class="pln">				</span><span class="pun">.</span><span class="pln"> </span><span class="str">'nor returns a proper \pi\websause\PipeCapsule.'</span><span class="pun">;</span></li><li class="L1"><span class="pln">				</span><span class="kwd">throw</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">PiException</span><span class="pun">(</span><span class="pln">$msg</span><span class="pun">);</span></li><li class="L2"><span class="pln">			</span><span class="pun">}</span></li><li class="L3"><span class="pln"> </span></li><li class="L4"><span class="pln">			</span><span class="com">/* --- adjust headers --- */</span></li></ol></pre>
+                  
+                          <div class="frame-file">
+              Arguments
+          </div>
+          <div class="code-block frame-args prettyprint">
+              <ol class="linenums"><li><pre class="sf-dump" id="sf-dump-2058624254" data-indent-pad="  "><span class="sf-dump-const">null</span>
+</pre><script>Sfdump("sf-dump-2058624254")</script>
+</li></ol>          </div>
+        
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+            <div class="frame-code " id="frame-code-15">
+        <div class="frame-file">
+                                <strong>/srv/devel/rafeh/academy.guestdeck.com/academy.root/index.php</strong>
+                  </div>
+                    <style>
+             #frame-code-0 .linenums li:nth-child(9) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(10) {
+                 background-color: rgba(255, 100, 100, .17); 
+                 padding: 2px;
+              }
+             #frame-code-0 .linenums li:nth-child(11) {
+                 background-color: rgba(255, 100, 100, .07); 
+                 padding: 2px;
+              }
+            </style>
+            <pre class="code-block prettyprint linenums:2 prettyprinted" style=""><ol class="linenums"><li value="2" class="L1"><span class="pln">session_start</span><span class="pun">();</span></li><li class="L2"><span class="pln"> </span></li><li class="L3"><span class="pln">require_once __DIR__ </span><span class="pun">.</span><span class="pln"> </span><span class="str">'/autoload.php'</span><span class="pun">;</span></li><li class="L4"><span class="pln"> </span></li><li class="L5"><span class="pln">$engine </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> \pi\websauce\Engine</span><span class="pun">(</span><span class="pln"> </span><span class="str">'reg'</span><span class="pun">,</span><span class="pln"> __DIR__ </span><span class="pun">);</span></li><li class="L6"><span class="pln"> </span></li><li class="L7"><span class="pln">$engine</span><span class="pun">-&gt;</span><span class="pln">setDebug</span><span class="pun">(</span><span class="pln"> </span><span class="kwd">true</span><span class="pln"> </span><span class="pun">);</span></li><li class="L8"><span class="pln">$errorHandler </span><span class="pun">=</span><span class="pln"> \pi\websauce\Engine</span><span class="pun">::</span><span class="pln">ERR_HANDLER_WHOOPS</span><span class="pun">;</span></li><li class="L9"><span class="pln">$engine</span><span class="pun">-&gt;</span><span class="pln">setCustomErrorHandler</span><span class="pun">(</span><span class="pln"> $errorHandler </span><span class="pun">);</span></li><li class="L0"><span class="pln">$engine</span><span class="pun">-&gt;</span><span class="pln">go</span><span class="pun">();</span></li><li class="L1"><span class="pln"> </span></li></ol></pre>
+                  
+                
+                <div class="frame-comments empty">
+                  </div>
+
+      </div>
+  </div>
+          <div class="details">
+  <h2 class="details-heading">Environment &amp; details:</h2>
+
+  <div class="data-table-container" id="data-tables">
+          <div class="data-table" id="sg-get-data">
+                    <label class="empty">GET Data</label>
+            <span class="empty">empty</span>
+              </div>
+          <div class="data-table" id="sg-post-data">
+                    <label class="empty">POST Data</label>
+            <span class="empty">empty</span>
+              </div>
+          <div class="data-table" id="sg-files">
+                    <label class="empty">Files</label>
+            <span class="empty">empty</span>
+              </div>
+          <div class="data-table" id="sg-cookies">
+                    <label>Cookies</label>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <td class="data-table-k">Key</td>
+                  <td class="data-table-v">Value</td>
+                </tr>
+              </thead>
+                          <tbody><tr>
+                <td>PHPSESSID</td>
+                <td><pre class="sf-dump" id="sf-dump-1641572087" data-indent-pad="  ">"<span class="sf-dump-str" title="26 characters">r1pjvc8ed1r7qbatv0i2b2eg50</span>"
+</pre><script>Sfdump("sf-dump-1641572087")</script>
+</td>
+              </tr>
+                        </tbody></table>
+              </div>
+          <div class="data-table" id="sg-session">
+                    <label>Session</label>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <td class="data-table-k">Key</td>
+                  <td class="data-table-v">Value</td>
+                </tr>
+              </thead>
+                          <tbody><tr>
+                <td>gdAcademyAdmin_user_id</td>
+                <td><pre class="sf-dump" id="sf-dump-1323161300" data-indent-pad="  "><span class="sf-dump-num">61</span>
+</pre><script>Sfdump("sf-dump-1323161300")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>gdAcademyAdmin_email_addr</td>
+                <td><pre class="sf-dump" id="sf-dump-33484469" data-indent-pad="  ">"<span class="sf-dump-str" title="15 characters">admin@sa.xle.ca</span>"
+</pre><script>Sfdump("sf-dump-33484469")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>admin_pi.flash.message</td>
+                <td><pre class="sf-dump" id="sf-dump-1016338793" data-indent-pad="  ">""
+</pre><script>Sfdump("sf-dump-1016338793")</script>
+</td>
+              </tr>
+                        </tbody></table>
+              </div>
+          <div class="data-table" id="sg-serverrequest-data">
+                    <label>Server/Request Data</label>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <td class="data-table-k">Key</td>
+                  <td class="data-table-v">Value</td>
+                </tr>
+              </thead>
+                          <tbody><tr>
+                <td>REDIRECT_PSS_DEVEL_WHO</td>
+                <td><pre class="sf-dump" id="sf-dump-1180039545" data-indent-pad="  ">"<span class="sf-dump-str" title="5 characters">rafeh</span>"
+</pre><script>Sfdump("sf-dump-1180039545")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_SCRIPT_URL</td>
+                <td><pre class="sf-dump" id="sf-dump-365353686" data-indent-pad="  ">"<span class="sf-dump-str" title="70 characters">/academy.guestdeck.com/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-365353686")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_SCRIPT_URI</td>
+                <td><pre class="sf-dump" id="sf-dump-1822658893" data-indent-pad="  ">"<span class="sf-dump-str" title="88 characters">http://rafeh.devel/academy.guestdeck.com/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-1822658893")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_PSS_DOCUMENT_ROOT</td>
+                <td><pre class="sf-dump" id="sf-dump-1152910655" data-indent-pad="  ">"<span class="sf-dump-str" title="51 characters">/srv/devel/rafeh/academy.guestdeck.com/academy.root</span>"
+</pre><script>Sfdump("sf-dump-1152910655")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_PSS_SITE_CONFIG_ROOT</td>
+                <td><pre class="sf-dump" id="sf-dump-1296962185" data-indent-pad="  ">"<span class="sf-dump-str" title="46 characters">/srv/devel/rafeh/academy.guestdeck.com/config/</span>"
+</pre><script>Sfdump("sf-dump-1296962185")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_PSS_CONTEXT_SUPPLY_PER_SITE_PATH</td>
+                <td><pre class="sf-dump" id="sf-dump-1311589136" data-indent-pad="  ">"<span class="sf-dump-str" title="80 characters">/srv/devel/Context-Supplied-Config/rafeh.per-site/academy.guestdeck.com--academy</span>"
+</pre><script>Sfdump("sf-dump-1311589136")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_ROOTPATH</td>
+                <td><pre class="sf-dump" id="sf-dump-118191688" data-indent-pad="  ">"<span class="sf-dump-str" title="23 characters">/academy.guestdeck.com/</span>"
+</pre><script>Sfdump("sf-dump-118191688")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_PSS_DEPLOYMENT_CONTEXT</td>
+                <td><pre class="sf-dump" id="sf-dump-818436231" data-indent-pad="  ">"<span class="sf-dump-str" title="11 characters">devel/rafeh</span>"
+</pre><script>Sfdump("sf-dump-818436231")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_PSS_CONTEXT_SUPPLY_COMMON_PATH</td>
+                <td><pre class="sf-dump" id="sf-dump-1758109089" data-indent-pad="  ">"<span class="sf-dump-str" title="48 characters">/srv/devel/Context-Supplied-Config/rafeh.general</span>"
+</pre><script>Sfdump("sf-dump-1758109089")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_PSS_URI_STEPS_FOR_SITE</td>
+                <td><pre class="sf-dump" id="sf-dump-117411788" data-indent-pad="  ">"<span class="sf-dump-str">1</span>"
+</pre><script>Sfdump("sf-dump-117411788")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_STATUS</td>
+                <td><pre class="sf-dump" id="sf-dump-1761975505" data-indent-pad="  ">"<span class="sf-dump-str" title="3 characters">200</span>"
+</pre><script>Sfdump("sf-dump-1761975505")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PSS_DEVEL_WHO</td>
+                <td><pre class="sf-dump" id="sf-dump-562110379" data-indent-pad="  ">"<span class="sf-dump-str" title="5 characters">rafeh</span>"
+</pre><script>Sfdump("sf-dump-562110379")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SCRIPT_URL</td>
+                <td><pre class="sf-dump" id="sf-dump-1458994760" data-indent-pad="  ">"<span class="sf-dump-str" title="70 characters">/academy.guestdeck.com/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-1458994760")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SCRIPT_URI</td>
+                <td><pre class="sf-dump" id="sf-dump-950327483" data-indent-pad="  ">"<span class="sf-dump-str" title="88 characters">http://rafeh.devel/academy.guestdeck.com/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-950327483")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PSS_DOCUMENT_ROOT</td>
+                <td><pre class="sf-dump" id="sf-dump-1156626736" data-indent-pad="  ">"<span class="sf-dump-str" title="51 characters">/srv/devel/rafeh/academy.guestdeck.com/academy.root</span>"
+</pre><script>Sfdump("sf-dump-1156626736")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PSS_SITE_CONFIG_ROOT</td>
+                <td><pre class="sf-dump" id="sf-dump-1008572190" data-indent-pad="  ">"<span class="sf-dump-str" title="46 characters">/srv/devel/rafeh/academy.guestdeck.com/config/</span>"
+</pre><script>Sfdump("sf-dump-1008572190")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PSS_CONTEXT_SUPPLY_PER_SITE_PATH</td>
+                <td><pre class="sf-dump" id="sf-dump-1645801754" data-indent-pad="  ">"<span class="sf-dump-str" title="80 characters">/srv/devel/Context-Supplied-Config/rafeh.per-site/academy.guestdeck.com--academy</span>"
+</pre><script>Sfdump("sf-dump-1645801754")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>ROOTPATH</td>
+                <td><pre class="sf-dump" id="sf-dump-136407908" data-indent-pad="  ">"<span class="sf-dump-str" title="23 characters">/academy.guestdeck.com/</span>"
+</pre><script>Sfdump("sf-dump-136407908")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PSS_DEPLOYMENT_CONTEXT</td>
+                <td><pre class="sf-dump" id="sf-dump-2016210584" data-indent-pad="  ">"<span class="sf-dump-str" title="11 characters">devel/rafeh</span>"
+</pre><script>Sfdump("sf-dump-2016210584")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PSS_CONTEXT_SUPPLY_COMMON_PATH</td>
+                <td><pre class="sf-dump" id="sf-dump-2063541662" data-indent-pad="  ">"<span class="sf-dump-str" title="48 characters">/srv/devel/Context-Supplied-Config/rafeh.general</span>"
+</pre><script>Sfdump("sf-dump-2063541662")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PSS_URI_STEPS_FOR_SITE</td>
+                <td><pre class="sf-dump" id="sf-dump-1115743119" data-indent-pad="  ">"<span class="sf-dump-str">1</span>"
+</pre><script>Sfdump("sf-dump-1115743119")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_HOST</td>
+                <td><pre class="sf-dump" id="sf-dump-1486068155" data-indent-pad="  ">"<span class="sf-dump-str" title="11 characters">rafeh.devel</span>"
+</pre><script>Sfdump("sf-dump-1486068155")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_CONNECTION</td>
+                <td><pre class="sf-dump" id="sf-dump-868122488" data-indent-pad="  ">"<span class="sf-dump-str" title="10 characters">keep-alive</span>"
+</pre><script>Sfdump("sf-dump-868122488")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_CACHE_CONTROL</td>
+                <td><pre class="sf-dump" id="sf-dump-281253790" data-indent-pad="  ">"<span class="sf-dump-str" title="9 characters">max-age=0</span>"
+</pre><script>Sfdump("sf-dump-281253790")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_USER_AGENT</td>
+                <td><pre class="sf-dump" id="sf-dump-1671031454" data-indent-pad="  ">"<span class="sf-dump-str" title="114 characters">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36</span>"
+</pre><script>Sfdump("sf-dump-1671031454")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_UPGRADE_INSECURE_REQUESTS</td>
+                <td><pre class="sf-dump" id="sf-dump-1442622547" data-indent-pad="  ">"<span class="sf-dump-str">1</span>"
+</pre><script>Sfdump("sf-dump-1442622547")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_ACCEPT</td>
+                <td><pre class="sf-dump" id="sf-dump-1396973095" data-indent-pad="  ">"<span class="sf-dump-str" title="85 characters">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</span>"
+</pre><script>Sfdump("sf-dump-1396973095")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_ACCEPT_ENCODING</td>
+                <td><pre class="sf-dump" id="sf-dump-1398775150" data-indent-pad="  ">"<span class="sf-dump-str" title="13 characters">gzip, deflate</span>"
+</pre><script>Sfdump("sf-dump-1398775150")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_ACCEPT_LANGUAGE</td>
+                <td><pre class="sf-dump" id="sf-dump-707834079" data-indent-pad="  ">"<span class="sf-dump-str" title="14 characters">en-US,en;q=0.9</span>"
+</pre><script>Sfdump("sf-dump-707834079")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>HTTP_COOKIE</td>
+                <td><pre class="sf-dump" id="sf-dump-1045289871" data-indent-pad="  ">"<span class="sf-dump-str" title="36 characters">PHPSESSID=r1pjvc8ed1r7qbatv0i2b2eg50</span>"
+</pre><script>Sfdump("sf-dump-1045289871")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PATH</td>
+                <td><pre class="sf-dump" id="sf-dump-1488016163" data-indent-pad="  ">"<span class="sf-dump-str" title="60 characters">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span>"
+</pre><script>Sfdump("sf-dump-1488016163")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SERVER_SIGNATURE</td>
+                <td><pre class="sf-dump" id="sf-dump-842476064" data-indent-pad="  ">"<span class="sf-dump-str" title="72 characters">&lt;address&gt;Apache/2.4.10 (Debian) Server at rafeh.devel Port 80&lt;/address&gt;</span>\n"
+</pre><script>Sfdump("sf-dump-842476064")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SERVER_SOFTWARE</td>
+                <td><pre class="sf-dump" id="sf-dump-871294226" data-indent-pad="  ">"<span class="sf-dump-str" title="22 characters">Apache/2.4.10 (Debian)</span>"
+</pre><script>Sfdump("sf-dump-871294226")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SERVER_NAME</td>
+                <td><pre class="sf-dump" id="sf-dump-413478388" data-indent-pad="  ">"<span class="sf-dump-str" title="11 characters">rafeh.devel</span>"
+</pre><script>Sfdump("sf-dump-413478388")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SERVER_ADDR</td>
+                <td><pre class="sf-dump" id="sf-dump-31897035" data-indent-pad="  ">"<span class="sf-dump-str" title="11 characters">10.97.97.89</span>"
+</pre><script>Sfdump("sf-dump-31897035")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SERVER_PORT</td>
+                <td><pre class="sf-dump" id="sf-dump-1962199198" data-indent-pad="  ">"<span class="sf-dump-str" title="2 characters">80</span>"
+</pre><script>Sfdump("sf-dump-1962199198")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REMOTE_ADDR</td>
+                <td><pre class="sf-dump" id="sf-dump-1923405305" data-indent-pad="  ">"<span class="sf-dump-str" title="12 characters">10.97.97.143</span>"
+</pre><script>Sfdump("sf-dump-1923405305")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>DOCUMENT_ROOT</td>
+                <td><pre class="sf-dump" id="sf-dump-115291952" data-indent-pad="  ">"<span class="sf-dump-str" title="16 characters">/srv/devel/rafeh</span>"
+</pre><script>Sfdump("sf-dump-115291952")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REQUEST_SCHEME</td>
+                <td><pre class="sf-dump" id="sf-dump-1631028578" data-indent-pad="  ">"<span class="sf-dump-str" title="4 characters">http</span>"
+</pre><script>Sfdump("sf-dump-1631028578")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>CONTEXT_PREFIX</td>
+                <td><pre class="sf-dump" id="sf-dump-2069636512" data-indent-pad="  ">""
+</pre><script>Sfdump("sf-dump-2069636512")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>CONTEXT_DOCUMENT_ROOT</td>
+                <td><pre class="sf-dump" id="sf-dump-1544800949" data-indent-pad="  ">"<span class="sf-dump-str" title="16 characters">/srv/devel/rafeh</span>"
+</pre><script>Sfdump("sf-dump-1544800949")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SERVER_ADMIN</td>
+                <td><pre class="sf-dump" id="sf-dump-1401825223" data-indent-pad="  ">"<span class="sf-dump-str" title="22 characters">aghajani@principle.com</span>"
+</pre><script>Sfdump("sf-dump-1401825223")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SCRIPT_FILENAME</td>
+                <td><pre class="sf-dump" id="sf-dump-504144269" data-indent-pad="  ">"<span class="sf-dump-str" title="61 characters">/srv/devel/rafeh/academy.guestdeck.com/academy.root/index.php</span>"
+</pre><script>Sfdump("sf-dump-504144269")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REMOTE_PORT</td>
+                <td><pre class="sf-dump" id="sf-dump-667832210" data-indent-pad="  ">"<span class="sf-dump-str" title="5 characters">63869</span>"
+</pre><script>Sfdump("sf-dump-667832210")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REDIRECT_URL</td>
+                <td><pre class="sf-dump" id="sf-dump-77723803" data-indent-pad="  ">"<span class="sf-dump-str" title="70 characters">/academy.guestdeck.com/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-77723803")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>GATEWAY_INTERFACE</td>
+                <td><pre class="sf-dump" id="sf-dump-1726033830" data-indent-pad="  ">"<span class="sf-dump-str" title="7 characters">CGI/1.1</span>"
+</pre><script>Sfdump("sf-dump-1726033830")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SERVER_PROTOCOL</td>
+                <td><pre class="sf-dump" id="sf-dump-845879274" data-indent-pad="  ">"<span class="sf-dump-str" title="8 characters">HTTP/1.1</span>"
+</pre><script>Sfdump("sf-dump-845879274")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REQUEST_METHOD</td>
+                <td><pre class="sf-dump" id="sf-dump-1287839062" data-indent-pad="  ">"<span class="sf-dump-str" title="3 characters">GET</span>"
+</pre><script>Sfdump("sf-dump-1287839062")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>QUERY_STRING</td>
+                <td><pre class="sf-dump" id="sf-dump-1349697113" data-indent-pad="  ">""
+</pre><script>Sfdump("sf-dump-1349697113")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REQUEST_URI</td>
+                <td><pre class="sf-dump" id="sf-dump-1348020993" data-indent-pad="  ">"<span class="sf-dump-str" title="70 characters">/academy.guestdeck.com/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-1348020993")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>SCRIPT_NAME</td>
+                <td><pre class="sf-dump" id="sf-dump-1791136851" data-indent-pad="  ">"<span class="sf-dump-str" title="32 characters">/academy.guestdeck.com/index.php</span>"
+</pre><script>Sfdump("sf-dump-1791136851")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PATH_INFO</td>
+                <td><pre class="sf-dump" id="sf-dump-1783018712" data-indent-pad="  ">"<span class="sf-dump-str" title="48 characters">/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-1783018712")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PATH_TRANSLATED</td>
+                <td><pre class="sf-dump" id="sf-dump-273367648" data-indent-pad="  ">"<span class="sf-dump-str" title="64 characters">/srv/devel/rafeh/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-273367648")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>PHP_SELF</td>
+                <td><pre class="sf-dump" id="sf-dump-2035741919" data-indent-pad="  ">"<span class="sf-dump-str" title="80 characters">/academy.guestdeck.com/index.php/bypass/en/draftOrders/85/test-submit-request.do</span>"
+</pre><script>Sfdump("sf-dump-2035741919")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REQUEST_TIME_FLOAT</td>
+                <td><pre class="sf-dump" id="sf-dump-1176235863" data-indent-pad="  "><span class="sf-dump-num">1513871892.917</span>
+</pre><script>Sfdump("sf-dump-1176235863")</script>
+</td>
+              </tr>
+                          <tr>
+                <td>REQUEST_TIME</td>
+                <td><pre class="sf-dump" id="sf-dump-1077040887" data-indent-pad="  "><span class="sf-dump-num">1513871892</span>
+</pre><script>Sfdump("sf-dump-1077040887")</script>
+</td>
+              </tr>
+                        </tbody></table>
+              </div>
+          <div class="data-table" id="sg-environment-variables">
+                    <label class="empty">Environment Variables</label>
+            <span class="empty">empty</span>
+              </div>
+      </div>
+
+    <div class="data-table-container" id="handlers">
+    <label>Registered Handlers</label>
+          <div class="handler active">
+        0. Whoops\Handler\PlainTextHandler      </div>
+          <div class="handler active">
+        1. Whoops\Handler\JsonResponseHandler      </div>
+          <div class="handler active">
+        2. Whoops\Handler\PrettyPageHandler      </div>
+          <div class="handler active">
+        3. Whoops\Handler\PrettyPageHandler      </div>
+      </div>
+
+</div>
+        </div>
+      </div>
+    </div>
+
+    <script>/* Zepto v1.1.3 - zepto event ajax form ie - zeptojs.com/license */
+var Zepto=function(){function L(t){return null==t?String(t):j[T.call(t)]||"object"}function Z(t){return"function"==L(t)}function $(t){return null!=t&&t==t.window}function _(t){return null!=t&&t.nodeType==t.DOCUMENT_NODE}function D(t){return"object"==L(t)}function R(t){return D(t)&&!$(t)&&Object.getPrototypeOf(t)==Object.prototype}function M(t){return"number"==typeof t.length}function k(t){return s.call(t,function(t){return null!=t})}function z(t){return t.length>0?n.fn.concat.apply([],t):t}function F(t){return t.replace(/::/g,"/").replace(/([A-Z]+)([A-Z][a-z])/g,"$1_$2").replace(/([a-z\d])([A-Z])/g,"$1_$2").replace(/_/g,"-").toLowerCase()}function q(t){return t in f?f[t]:f[t]=new RegExp("(^|\\s)"+t+"(\\s|$)")}function H(t,e){return"number"!=typeof e||c[F(t)]?e:e+"px"}function I(t){var e,n;return u[t]||(e=a.createElement(t),a.body.appendChild(e),n=getComputedStyle(e,"").getPropertyValue("display"),e.parentNode.removeChild(e),"none"==n&&(n="block"),u[t]=n),u[t]}function V(t){return"children"in t?o.call(t.children):n.map(t.childNodes,function(t){return 1==t.nodeType?t:void 0})}function U(n,i,r){for(e in i)r&&(R(i[e])||A(i[e]))?(R(i[e])&&!R(n[e])&&(n[e]={}),A(i[e])&&!A(n[e])&&(n[e]=[]),U(n[e],i[e],r)):i[e]!==t&&(n[e]=i[e])}function B(t,e){return null==e?n(t):n(t).filter(e)}function J(t,e,n,i){return Z(e)?e.call(t,n,i):e}function X(t,e,n){null==n?t.removeAttribute(e):t.setAttribute(e,n)}function W(e,n){var i=e.className,r=i&&i.baseVal!==t;return n===t?r?i.baseVal:i:void(r?i.baseVal=n:e.className=n)}function Y(t){var e;try{return t?"true"==t||("false"==t?!1:"null"==t?null:/^0/.test(t)||isNaN(e=Number(t))?/^[\[\{]/.test(t)?n.parseJSON(t):t:e):t}catch(i){return t}}function G(t,e){e(t);for(var n in t.childNodes)G(t.childNodes[n],e)}var t,e,n,i,C,N,r=[],o=r.slice,s=r.filter,a=window.document,u={},f={},c={"column-count":1,columns:1,"font-weight":1,"line-height":1,opacity:1,"z-index":1,zoom:1},l=/^\s*<(\w+|!)[^>]*>/,h=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,p=/<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi,d=/^(?:body|html)$/i,m=/([A-Z])/g,g=["val","css","html","text","data","width","height","offset"],v=["after","prepend","before","append"],y=a.createElement("table"),x=a.createElement("tr"),b={tr:a.createElement("tbody"),tbody:y,thead:y,tfoot:y,td:x,th:x,"*":a.createElement("div")},w=/complete|loaded|interactive/,E=/^[\w-]*$/,j={},T=j.toString,S={},O=a.createElement("div"),P={tabindex:"tabIndex",readonly:"readOnly","for":"htmlFor","class":"className",maxlength:"maxLength",cellspacing:"cellSpacing",cellpadding:"cellPadding",rowspan:"rowSpan",colspan:"colSpan",usemap:"useMap",frameborder:"frameBorder",contenteditable:"contentEditable"},A=Array.isArray||function(t){return t instanceof Array};return S.matches=function(t,e){if(!e||!t||1!==t.nodeType)return!1;var n=t.webkitMatchesSelector||t.mozMatchesSelector||t.oMatchesSelector||t.matchesSelector;if(n)return n.call(t,e);var i,r=t.parentNode,o=!r;return o&&(r=O).appendChild(t),i=~S.qsa(r,e).indexOf(t),o&&O.removeChild(t),i},C=function(t){return t.replace(/-+(.)?/g,function(t,e){return e?e.toUpperCase():""})},N=function(t){return s.call(t,function(e,n){return t.indexOf(e)==n})},S.fragment=function(e,i,r){var s,u,f;return h.test(e)&&(s=n(a.createElement(RegExp.$1))),s||(e.replace&&(e=e.replace(p,"<$1></$2>")),i===t&&(i=l.test(e)&&RegExp.$1),i in b||(i="*"),f=b[i],f.innerHTML=""+e,s=n.each(o.call(f.childNodes),function(){f.removeChild(this)})),R(r)&&(u=n(s),n.each(r,function(t,e){g.indexOf(t)>-1?u[t](e):u.attr(t,e)})),s},S.Z=function(t,e){return t=t||[],t.__proto__=n.fn,t.selector=e||"",t},S.isZ=function(t){return t instanceof S.Z},S.init=function(e,i){var r;if(!e)return S.Z();if("string"==typeof e)if(e=e.trim(),"<"==e[0]&&l.test(e))r=S.fragment(e,RegExp.$1,i),e=null;else{if(i!==t)return n(i).find(e);r=S.qsa(a,e)}else{if(Z(e))return n(a).ready(e);if(S.isZ(e))return e;if(A(e))r=k(e);else if(D(e))r=[e],e=null;else if(l.test(e))r=S.fragment(e.trim(),RegExp.$1,i),e=null;else{if(i!==t)return n(i).find(e);r=S.qsa(a,e)}}return S.Z(r,e)},n=function(t,e){return S.init(t,e)},n.extend=function(t){var e,n=o.call(arguments,1);return"boolean"==typeof t&&(e=t,t=n.shift()),n.forEach(function(n){U(t,n,e)}),t},S.qsa=function(t,e){var n,i="#"==e[0],r=!i&&"."==e[0],s=i||r?e.slice(1):e,a=E.test(s);return _(t)&&a&&i?(n=t.getElementById(s))?[n]:[]:1!==t.nodeType&&9!==t.nodeType?[]:o.call(a&&!i?r?t.getElementsByClassName(s):t.getElementsByTagName(e):t.querySelectorAll(e))},n.contains=function(t,e){return t!==e&&t.contains(e)},n.type=L,n.isFunction=Z,n.isWindow=$,n.isArray=A,n.isPlainObject=R,n.isEmptyObject=function(t){var e;for(e in t)return!1;return!0},n.inArray=function(t,e,n){return r.indexOf.call(e,t,n)},n.camelCase=C,n.trim=function(t){return null==t?"":String.prototype.trim.call(t)},n.uuid=0,n.support={},n.expr={},n.map=function(t,e){var n,r,o,i=[];if(M(t))for(r=0;r<t.length;r++)n=e(t[r],r),null!=n&&i.push(n);else for(o in t)n=e(t[o],o),null!=n&&i.push(n);return z(i)},n.each=function(t,e){var n,i;if(M(t)){for(n=0;n<t.length;n++)if(e.call(t[n],n,t[n])===!1)return t}else for(i in t)if(e.call(t[i],i,t[i])===!1)return t;return t},n.grep=function(t,e){return s.call(t,e)},window.JSON&&(n.parseJSON=JSON.parse),n.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(t,e){j["[object "+e+"]"]=e.toLowerCase()}),n.fn={forEach:r.forEach,reduce:r.reduce,push:r.push,sort:r.sort,indexOf:r.indexOf,concat:r.concat,map:function(t){return n(n.map(this,function(e,n){return t.call(e,n,e)}))},slice:function(){return n(o.apply(this,arguments))},ready:function(t){return w.test(a.readyState)&&a.body?t(n):a.addEventListener("DOMContentLoaded",function(){t(n)},!1),this},get:function(e){return e===t?o.call(this):this[e>=0?e:e+this.length]},toArray:function(){return this.get()},size:function(){return this.length},remove:function(){return this.each(function(){null!=this.parentNode&&this.parentNode.removeChild(this)})},each:function(t){return r.every.call(this,function(e,n){return t.call(e,n,e)!==!1}),this},filter:function(t){return Z(t)?this.not(this.not(t)):n(s.call(this,function(e){return S.matches(e,t)}))},add:function(t,e){return n(N(this.concat(n(t,e))))},is:function(t){return this.length>0&&S.matches(this[0],t)},not:function(e){var i=[];if(Z(e)&&e.call!==t)this.each(function(t){e.call(this,t)||i.push(this)});else{var r="string"==typeof e?this.filter(e):M(e)&&Z(e.item)?o.call(e):n(e);this.forEach(function(t){r.indexOf(t)<0&&i.push(t)})}return n(i)},has:function(t){return this.filter(function(){return D(t)?n.contains(this,t):n(this).find(t).size()})},eq:function(t){return-1===t?this.slice(t):this.slice(t,+t+1)},first:function(){var t=this[0];return t&&!D(t)?t:n(t)},last:function(){var t=this[this.length-1];return t&&!D(t)?t:n(t)},find:function(t){var e,i=this;return e="object"==typeof t?n(t).filter(function(){var t=this;return r.some.call(i,function(e){return n.contains(e,t)})}):1==this.length?n(S.qsa(this[0],t)):this.map(function(){return S.qsa(this,t)})},closest:function(t,e){var i=this[0],r=!1;for("object"==typeof t&&(r=n(t));i&&!(r?r.indexOf(i)>=0:S.matches(i,t));)i=i!==e&&!_(i)&&i.parentNode;return n(i)},parents:function(t){for(var e=[],i=this;i.length>0;)i=n.map(i,function(t){return(t=t.parentNode)&&!_(t)&&e.indexOf(t)<0?(e.push(t),t):void 0});return B(e,t)},parent:function(t){return B(N(this.pluck("parentNode")),t)},children:function(t){return B(this.map(function(){return V(this)}),t)},contents:function(){return this.map(function(){return o.call(this.childNodes)})},siblings:function(t){return B(this.map(function(t,e){return s.call(V(e.parentNode),function(t){return t!==e})}),t)},empty:function(){return this.each(function(){this.innerHTML=""})},pluck:function(t){return n.map(this,function(e){return e[t]})},show:function(){return this.each(function(){"none"==this.style.display&&(this.style.display=""),"none"==getComputedStyle(this,"").getPropertyValue("display")&&(this.style.display=I(this.nodeName))})},replaceWith:function(t){return this.before(t).remove()},wrap:function(t){var e=Z(t);if(this[0]&&!e)var i=n(t).get(0),r=i.parentNode||this.length>1;return this.each(function(o){n(this).wrapAll(e?t.call(this,o):r?i.cloneNode(!0):i)})},wrapAll:function(t){if(this[0]){n(this[0]).before(t=n(t));for(var e;(e=t.children()).length;)t=e.first();n(t).append(this)}return this},wrapInner:function(t){var e=Z(t);return this.each(function(i){var r=n(this),o=r.contents(),s=e?t.call(this,i):t;o.length?o.wrapAll(s):r.append(s)})},unwrap:function(){return this.parent().each(function(){n(this).replaceWith(n(this).children())}),this},clone:function(){return this.map(function(){return this.cloneNode(!0)})},hide:function(){return this.css("display","none")},toggle:function(e){return this.each(function(){var i=n(this);(e===t?"none"==i.css("display"):e)?i.show():i.hide()})},prev:function(t){return n(this.pluck("previousElementSibling")).filter(t||"*")},next:function(t){return n(this.pluck("nextElementSibling")).filter(t||"*")},html:function(t){return 0===arguments.length?this.length>0?this[0].innerHTML:null:this.each(function(e){var i=this.innerHTML;n(this).empty().append(J(this,t,e,i))})},text:function(e){return 0===arguments.length?this.length>0?this[0].textContent:null:this.each(function(){this.textContent=e===t?"":""+e})},attr:function(n,i){var r;return"string"==typeof n&&i===t?0==this.length||1!==this[0].nodeType?t:"value"==n&&"INPUT"==this[0].nodeName?this.val():!(r=this[0].getAttribute(n))&&n in this[0]?this[0][n]:r:this.each(function(t){if(1===this.nodeType)if(D(n))for(e in n)X(this,e,n[e]);else X(this,n,J(this,i,t,this.getAttribute(n)))})},removeAttr:function(t){return this.each(function(){1===this.nodeType&&X(this,t)})},prop:function(e,n){return e=P[e]||e,n===t?this[0]&&this[0][e]:this.each(function(t){this[e]=J(this,n,t,this[e])})},data:function(e,n){var i=this.attr("data-"+e.replace(m,"-$1").toLowerCase(),n);return null!==i?Y(i):t},val:function(t){return 0===arguments.length?this[0]&&(this[0].multiple?n(this[0]).find("option").filter(function(){return this.selected}).pluck("value"):this[0].value):this.each(function(e){this.value=J(this,t,e,this.value)})},offset:function(t){if(t)return this.each(function(e){var i=n(this),r=J(this,t,e,i.offset()),o=i.offsetParent().offset(),s={top:r.top-o.top,left:r.left-o.left};"static"==i.css("position")&&(s.position="relative"),i.css(s)});if(0==this.length)return null;var e=this[0].getBoundingClientRect();return{left:e.left+window.pageXOffset,top:e.top+window.pageYOffset,width:Math.round(e.width),height:Math.round(e.height)}},css:function(t,i){if(arguments.length<2){var r=this[0],o=getComputedStyle(r,"");if(!r)return;if("string"==typeof t)return r.style[C(t)]||o.getPropertyValue(t);if(A(t)){var s={};return n.each(A(t)?t:[t],function(t,e){s[e]=r.style[C(e)]||o.getPropertyValue(e)}),s}}var a="";if("string"==L(t))i||0===i?a=F(t)+":"+H(t,i):this.each(function(){this.style.removeProperty(F(t))});else for(e in t)t[e]||0===t[e]?a+=F(e)+":"+H(e,t[e])+";":this.each(function(){this.style.removeProperty(F(e))});return this.each(function(){this.style.cssText+=";"+a})},index:function(t){return t?this.indexOf(n(t)[0]):this.parent().children().indexOf(this[0])},hasClass:function(t){return t?r.some.call(this,function(t){return this.test(W(t))},q(t)):!1},addClass:function(t){return t?this.each(function(e){i=[];var r=W(this),o=J(this,t,e,r);o.split(/\s+/g).forEach(function(t){n(this).hasClass(t)||i.push(t)},this),i.length&&W(this,r+(r?" ":"")+i.join(" "))}):this},removeClass:function(e){return this.each(function(n){return e===t?W(this,""):(i=W(this),J(this,e,n,i).split(/\s+/g).forEach(function(t){i=i.replace(q(t)," ")}),void W(this,i.trim()))})},toggleClass:function(e,i){return e?this.each(function(r){var o=n(this),s=J(this,e,r,W(this));s.split(/\s+/g).forEach(function(e){(i===t?!o.hasClass(e):i)?o.addClass(e):o.removeClass(e)})}):this},scrollTop:function(e){if(this.length){var n="scrollTop"in this[0];return e===t?n?this[0].scrollTop:this[0].pageYOffset:this.each(n?function(){this.scrollTop=e}:function(){this.scrollTo(this.scrollX,e)})}},scrollLeft:function(e){if(this.length){var n="scrollLeft"in this[0];return e===t?n?this[0].scrollLeft:this[0].pageXOffset:this.each(n?function(){this.scrollLeft=e}:function(){this.scrollTo(e,this.scrollY)})}},position:function(){if(this.length){var t=this[0],e=this.offsetParent(),i=this.offset(),r=d.test(e[0].nodeName)?{top:0,left:0}:e.offset();return i.top-=parseFloat(n(t).css("margin-top"))||0,i.left-=parseFloat(n(t).css("margin-left"))||0,r.top+=parseFloat(n(e[0]).css("border-top-width"))||0,r.left+=parseFloat(n(e[0]).css("border-left-width"))||0,{top:i.top-r.top,left:i.left-r.left}}},offsetParent:function(){return this.map(function(){for(var t=this.offsetParent||a.body;t&&!d.test(t.nodeName)&&"static"==n(t).css("position");)t=t.offsetParent;return t})}},n.fn.detach=n.fn.remove,["width","height"].forEach(function(e){var i=e.replace(/./,function(t){return t[0].toUpperCase()});n.fn[e]=function(r){var o,s=this[0];return r===t?$(s)?s["inner"+i]:_(s)?s.documentElement["scroll"+i]:(o=this.offset())&&o[e]:this.each(function(t){s=n(this),s.css(e,J(this,r,t,s[e]()))})}}),v.forEach(function(t,e){var i=e%2;n.fn[t]=function(){var t,o,r=n.map(arguments,function(e){return t=L(e),"object"==t||"array"==t||null==e?e:S.fragment(e)}),s=this.length>1;return r.length<1?this:this.each(function(t,a){o=i?a:a.parentNode,a=0==e?a.nextSibling:1==e?a.firstChild:2==e?a:null,r.forEach(function(t){if(s)t=t.cloneNode(!0);else if(!o)return n(t).remove();G(o.insertBefore(t,a),function(t){null==t.nodeName||"SCRIPT"!==t.nodeName.toUpperCase()||t.type&&"text/javascript"!==t.type||t.src||window.eval.call(window,t.innerHTML)})})})},n.fn[i?t+"To":"insert"+(e?"Before":"After")]=function(e){return n(e)[t](this),this}}),S.Z.prototype=n.fn,S.uniq=N,S.deserializeValue=Y,n.zepto=S,n}();window.Zepto=Zepto,void 0===window.$&&(window.$=Zepto),function(t){function l(t){return t._zid||(t._zid=e++)}function h(t,e,n,i){if(e=p(e),e.ns)var r=d(e.ns);return(s[l(t)]||[]).filter(function(t){return!(!t||e.e&&t.e!=e.e||e.ns&&!r.test(t.ns)||n&&l(t.fn)!==l(n)||i&&t.sel!=i)})}function p(t){var e=(""+t).split(".");return{e:e[0],ns:e.slice(1).sort().join(" ")}}function d(t){return new RegExp("(?:^| )"+t.replace(" "," .* ?")+"(?: |$)")}function m(t,e){return t.del&&!u&&t.e in f||!!e}function g(t){return c[t]||u&&f[t]||t}function v(e,i,r,o,a,u,f){var h=l(e),d=s[h]||(s[h]=[]);i.split(/\s/).forEach(function(i){if("ready"==i)return t(document).ready(r);var s=p(i);s.fn=r,s.sel=a,s.e in c&&(r=function(e){var n=e.relatedTarget;return!n||n!==this&&!t.contains(this,n)?s.fn.apply(this,arguments):void 0}),s.del=u;var l=u||r;s.proxy=function(t){if(t=j(t),!t.isImmediatePropagationStopped()){t.data=o;var i=l.apply(e,t._args==n?[t]:[t].concat(t._args));return i===!1&&(t.preventDefault(),t.stopPropagation()),i}},s.i=d.length,d.push(s),"addEventListener"in e&&e.addEventListener(g(s.e),s.proxy,m(s,f))})}function y(t,e,n,i,r){var o=l(t);(e||"").split(/\s/).forEach(function(e){h(t,e,n,i).forEach(function(e){delete s[o][e.i],"removeEventListener"in t&&t.removeEventListener(g(e.e),e.proxy,m(e,r))})})}function j(e,i){return(i||!e.isDefaultPrevented)&&(i||(i=e),t.each(E,function(t,n){var r=i[t];e[t]=function(){return this[n]=x,r&&r.apply(i,arguments)},e[n]=b}),(i.defaultPrevented!==n?i.defaultPrevented:"returnValue"in i?i.returnValue===!1:i.getPreventDefault&&i.getPreventDefault())&&(e.isDefaultPrevented=x)),e}function T(t){var e,i={originalEvent:t};for(e in t)w.test(e)||t[e]===n||(i[e]=t[e]);return j(i,t)}var n,e=1,i=Array.prototype.slice,r=t.isFunction,o=function(t){return"string"==typeof t},s={},a={},u="onfocusin"in window,f={focus:"focusin",blur:"focusout"},c={mouseenter:"mouseover",mouseleave:"mouseout"};a.click=a.mousedown=a.mouseup=a.mousemove="MouseEvents",t.event={add:v,remove:y},t.proxy=function(e,n){if(r(e)){var i=function(){return e.apply(n,arguments)};return i._zid=l(e),i}if(o(n))return t.proxy(e[n],e);throw new TypeError("expected function")},t.fn.bind=function(t,e,n){return this.on(t,e,n)},t.fn.unbind=function(t,e){return this.off(t,e)},t.fn.one=function(t,e,n,i){return this.on(t,e,n,i,1)};var x=function(){return!0},b=function(){return!1},w=/^([A-Z]|returnValue$|layer[XY]$)/,E={preventDefault:"isDefaultPrevented",stopImmediatePropagation:"isImmediatePropagationStopped",stopPropagation:"isPropagationStopped"};t.fn.delegate=function(t,e,n){return this.on(e,t,n)},t.fn.undelegate=function(t,e,n){return this.off(e,t,n)},t.fn.live=function(e,n){return t(document.body).delegate(this.selector,e,n),this},t.fn.die=function(e,n){return t(document.body).undelegate(this.selector,e,n),this},t.fn.on=function(e,s,a,u,f){var c,l,h=this;return e&&!o(e)?(t.each(e,function(t,e){h.on(t,s,a,e,f)}),h):(o(s)||r(u)||u===!1||(u=a,a=s,s=n),(r(a)||a===!1)&&(u=a,a=n),u===!1&&(u=b),h.each(function(n,r){f&&(c=function(t){return y(r,t.type,u),u.apply(this,arguments)}),s&&(l=function(e){var n,o=t(e.target).closest(s,r).get(0);return o&&o!==r?(n=t.extend(T(e),{currentTarget:o,liveFired:r}),(c||u).apply(o,[n].concat(i.call(arguments,1)))):void 0}),v(r,e,u,a,s,l||c)}))},t.fn.off=function(e,i,s){var a=this;return e&&!o(e)?(t.each(e,function(t,e){a.off(t,i,e)}),a):(o(i)||r(s)||s===!1||(s=i,i=n),s===!1&&(s=b),a.each(function(){y(this,e,s,i)}))},t.fn.trigger=function(e,n){return e=o(e)||t.isPlainObject(e)?t.Event(e):j(e),e._args=n,this.each(function(){"dispatchEvent"in this?this.dispatchEvent(e):t(this).triggerHandler(e,n)})},t.fn.triggerHandler=function(e,n){var i,r;return this.each(function(s,a){i=T(o(e)?t.Event(e):e),i._args=n,i.target=a,t.each(h(a,e.type||e),function(t,e){return r=e.proxy(i),i.isImmediatePropagationStopped()?!1:void 0})}),r},"focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select keydown keypress keyup error".split(" ").forEach(function(e){t.fn[e]=function(t){return t?this.bind(e,t):this.trigger(e)}}),["focus","blur"].forEach(function(e){t.fn[e]=function(t){return t?this.bind(e,t):this.each(function(){try{this[e]()}catch(t){}}),this}}),t.Event=function(t,e){o(t)||(e=t,t=e.type);var n=document.createEvent(a[t]||"Events"),i=!0;if(e)for(var r in e)"bubbles"==r?i=!!e[r]:n[r]=e[r];return n.initEvent(t,i,!0),j(n)}}(Zepto),function(t){function l(e,n,i){var r=t.Event(n);return t(e).trigger(r,i),!r.isDefaultPrevented()}function h(t,e,i,r){return t.global?l(e||n,i,r):void 0}function p(e){e.global&&0===t.active++&&h(e,null,"ajaxStart")}function d(e){e.global&&!--t.active&&h(e,null,"ajaxStop")}function m(t,e){var n=e.context;return e.beforeSend.call(n,t,e)===!1||h(e,n,"ajaxBeforeSend",[t,e])===!1?!1:void h(e,n,"ajaxSend",[t,e])}function g(t,e,n,i){var r=n.context,o="success";n.success.call(r,t,o,e),i&&i.resolveWith(r,[t,o,e]),h(n,r,"ajaxSuccess",[e,n,t]),y(o,e,n)}function v(t,e,n,i,r){var o=i.context;i.error.call(o,n,e,t),r&&r.rejectWith(o,[n,e,t]),h(i,o,"ajaxError",[n,i,t||e]),y(e,n,i)}function y(t,e,n){var i=n.context;n.complete.call(i,e,t),h(n,i,"ajaxComplete",[e,n]),d(n)}function x(){}function b(t){return t&&(t=t.split(";",2)[0]),t&&(t==f?"html":t==u?"json":s.test(t)?"script":a.test(t)&&"xml")||"text"}function w(t,e){return""==e?t:(t+"&"+e).replace(/[&?]{1,2}/,"?")}function E(e){e.processData&&e.data&&"string"!=t.type(e.data)&&(e.data=t.param(e.data,e.traditional)),!e.data||e.type&&"GET"!=e.type.toUpperCase()||(e.url=w(e.url,e.data),e.data=void 0)}function j(e,n,i,r){return t.isFunction(n)&&(r=i,i=n,n=void 0),t.isFunction(i)||(r=i,i=void 0),{url:e,data:n,success:i,dataType:r}}function S(e,n,i,r){var o,s=t.isArray(n),a=t.isPlainObject(n);t.each(n,function(n,u){o=t.type(u),r&&(n=i?r:r+"["+(a||"object"==o||"array"==o?n:"")+"]"),!r&&s?e.add(u.name,u.value):"array"==o||!i&&"object"==o?S(e,u,i,n):e.add(n,u)})}var i,r,e=0,n=window.document,o=/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,s=/^(?:text|application)\/javascript/i,a=/^(?:text|application)\/xml/i,u="application/json",f="text/html",c=/^\s*$/;t.active=0,t.ajaxJSONP=function(i,r){if(!("type"in i))return t.ajax(i);var f,h,o=i.jsonpCallback,s=(t.isFunction(o)?o():o)||"jsonp"+ ++e,a=n.createElement("script"),u=window[s],c=function(e){t(a).triggerHandler("error",e||"abort")},l={abort:c};return r&&r.promise(l),t(a).on("load error",function(e,n){clearTimeout(h),t(a).off().remove(),"error"!=e.type&&f?g(f[0],l,i,r):v(null,n||"error",l,i,r),window[s]=u,f&&t.isFunction(u)&&u(f[0]),u=f=void 0}),m(l,i)===!1?(c("abort"),l):(window[s]=function(){f=arguments},a.src=i.url.replace(/\?(.+)=\?/,"?$1="+s),n.head.appendChild(a),i.timeout>0&&(h=setTimeout(function(){c("timeout")},i.timeout)),l)},t.ajaxSettings={type:"GET",beforeSend:x,success:x,error:x,complete:x,context:null,global:!0,xhr:function(){return new window.XMLHttpRequest},accepts:{script:"text/javascript, application/javascript, application/x-javascript",json:u,xml:"application/xml, text/xml",html:f,text:"text/plain"},crossDomain:!1,timeout:0,processData:!0,cache:!0},t.ajax=function(e){var n=t.extend({},e||{}),o=t.Deferred&&t.Deferred();for(i in t.ajaxSettings)void 0===n[i]&&(n[i]=t.ajaxSettings[i]);p(n),n.crossDomain||(n.crossDomain=/^([\w-]+:)?\/\/([^\/]+)/.test(n.url)&&RegExp.$2!=window.location.host),n.url||(n.url=window.location.toString()),E(n),n.cache===!1&&(n.url=w(n.url,"_="+Date.now()));var s=n.dataType,a=/\?.+=\?/.test(n.url);if("jsonp"==s||a)return a||(n.url=w(n.url,n.jsonp?n.jsonp+"=?":n.jsonp===!1?"":"callback=?")),t.ajaxJSONP(n,o);var j,u=n.accepts[s],f={},l=function(t,e){f[t.toLowerCase()]=[t,e]},h=/^([\w-]+:)\/\//.test(n.url)?RegExp.$1:window.location.protocol,d=n.xhr(),y=d.setRequestHeader;if(o&&o.promise(d),n.crossDomain||l("X-Requested-With","XMLHttpRequest"),l("Accept",u||"*/*"),(u=n.mimeType||u)&&(u.indexOf(",")>-1&&(u=u.split(",",2)[0]),d.overrideMimeType&&d.overrideMimeType(u)),(n.contentType||n.contentType!==!1&&n.data&&"GET"!=n.type.toUpperCase())&&l("Content-Type",n.contentType||"application/x-www-form-urlencoded"),n.headers)for(r in n.headers)l(r,n.headers[r]);if(d.setRequestHeader=l,d.onreadystatechange=function(){if(4==d.readyState){d.onreadystatechange=x,clearTimeout(j);var e,i=!1;if(d.status>=200&&d.status<300||304==d.status||0==d.status&&"file:"==h){s=s||b(n.mimeType||d.getResponseHeader("content-type")),e=d.responseText;try{"script"==s?(1,eval)(e):"xml"==s?e=d.responseXML:"json"==s&&(e=c.test(e)?null:t.parseJSON(e))}catch(r){i=r}i?v(i,"parsererror",d,n,o):g(e,d,n,o)}else v(d.statusText||null,d.status?"error":"abort",d,n,o)}},m(d,n)===!1)return d.abort(),v(null,"abort",d,n,o),d;if(n.xhrFields)for(r in n.xhrFields)d[r]=n.xhrFields[r];var T="async"in n?n.async:!0;d.open(n.type,n.url,T,n.username,n.password);for(r in f)y.apply(d,f[r]);return n.timeout>0&&(j=setTimeout(function(){d.onreadystatechange=x,d.abort(),v(null,"timeout",d,n,o)},n.timeout)),d.send(n.data?n.data:null),d},t.get=function(){return t.ajax(j.apply(null,arguments))},t.post=function(){var e=j.apply(null,arguments);return e.type="POST",t.ajax(e)},t.getJSON=function(){var e=j.apply(null,arguments);return e.dataType="json",t.ajax(e)},t.fn.load=function(e,n,i){if(!this.length)return this;var a,r=this,s=e.split(/\s/),u=j(e,n,i),f=u.success;return s.length>1&&(u.url=s[0],a=s[1]),u.success=function(e){r.html(a?t("<div>").html(e.replace(o,"")).find(a):e),f&&f.apply(r,arguments)},t.ajax(u),this};var T=encodeURIComponent;t.param=function(t,e){var n=[];return n.add=function(t,e){this.push(T(t)+"="+T(e))},S(n,t,e),n.join("&").replace(/%20/g,"+")}}(Zepto),function(t){t.fn.serializeArray=function(){var n,e=[];return t([].slice.call(this.get(0).elements)).each(function(){n=t(this);var i=n.attr("type");"fieldset"!=this.nodeName.toLowerCase()&&!this.disabled&&"submit"!=i&&"reset"!=i&&"button"!=i&&("radio"!=i&&"checkbox"!=i||this.checked)&&e.push({name:n.attr("name"),value:n.val()})}),e},t.fn.serialize=function(){var t=[];return this.serializeArray().forEach(function(e){t.push(encodeURIComponent(e.name)+"="+encodeURIComponent(e.value))}),t.join("&")},t.fn.submit=function(e){if(e)this.bind("submit",e);else if(this.length){var n=t.Event("submit");this.eq(0).trigger(n),n.isDefaultPrevented()||this.get(0).submit()}return this}}(Zepto),function(t){"__proto__"in{}||t.extend(t.zepto,{Z:function(e,n){return e=e||[],t.extend(e,t.fn),e.selector=n||"",e.__Z=!0,e},isZ:function(e){return"array"===t.type(e)&&"__Z"in e}});try{getComputedStyle(void 0)}catch(e){var n=getComputedStyle;window.getComputedStyle=function(t){try{return n(t)}catch(e){return null}}}}(Zepto);
+</script>
+    <script>/*!
+ * clipboard.js v1.5.3
+ * https://zenorocha.github.io/clipboard.js
+ *
+ * Licensed MIT © Zeno Rocha
+ */
+!function(t){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var e;e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,e.Clipboard=t()}}(function(){var t,e,n;return function t(e,n,r){function o(a,c){if(!n[a]){if(!e[a]){var s="function"==typeof require&&require;if(!c&&s)return s(a,!0);if(i)return i(a,!0);var u=new Error("Cannot find module '"+a+"'");throw u.code="MODULE_NOT_FOUND",u}var l=n[a]={exports:{}};e[a][0].call(l.exports,function(t){var n=e[a][1][t];return o(n?n:t)},l,l.exports,t,e,n,r)}return n[a].exports}for(var i="function"==typeof require&&require,a=0;a<r.length;a++)o(r[a]);return o}({1:[function(t,e,n){var r=t("matches-selector");e.exports=function(t,e,n){for(var o=n?t:t.parentNode;o&&o!==document;){if(r(o,e))return o;o=o.parentNode}}},{"matches-selector":2}],2:[function(t,e,n){function r(t,e){if(i)return i.call(t,e);for(var n=t.parentNode.querySelectorAll(e),r=0;r<n.length;++r)if(n[r]==t)return!0;return!1}var o=Element.prototype,i=o.matchesSelector||o.webkitMatchesSelector||o.mozMatchesSelector||o.msMatchesSelector||o.oMatchesSelector;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n,r){var i=o.apply(this,arguments);return t.addEventListener(n,i),{destroy:function(){t.removeEventListener(n,i)}}}function o(t,e,n,r){return function(n){var o=i(n.target,e,!0);o&&(Object.defineProperty(n,"target",{value:o}),r.call(t,n))}}var i=t("closest");e.exports=r},{closest:1}],4:[function(t,e,n){n.node=function(t){return void 0!==t&&t instanceof HTMLElement&&1===t.nodeType},n.nodeList=function(t){var e=Object.prototype.toString.call(t);return void 0!==t&&("[object NodeList]"===e||"[object HTMLCollection]"===e)&&"length"in t&&(0===t.length||n.node(t[0]))},n.string=function(t){return"string"==typeof t||t instanceof String},n.function=function(t){var e=Object.prototype.toString.call(t);return"[object Function]"===e}},{}],5:[function(t,e,n){function r(t,e,n){if(!t&&!e&&!n)throw new Error("Missing required arguments");if(!c.string(e))throw new TypeError("Second argument must be a String");if(!c.function(n))throw new TypeError("Third argument must be a Function");if(c.node(t))return o(t,e,n);if(c.nodeList(t))return i(t,e,n);if(c.string(t))return a(t,e,n);throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")}function o(t,e,n){return t.addEventListener(e,n),{destroy:function(){t.removeEventListener(e,n)}}}function i(t,e,n){return Array.prototype.forEach.call(t,function(t){t.addEventListener(e,n)}),{destroy:function(){Array.prototype.forEach.call(t,function(t){t.removeEventListener(e,n)})}}}function a(t,e,n){return s(document.body,t,e,n)}var c=t("./is"),s=t("delegate");e.exports=r},{"./is":4,delegate:3}],6:[function(t,e,n){function r(t){var e;if("INPUT"===t.nodeName||"TEXTAREA"===t.nodeName)t.select(),e=t.value;else{var n=window.getSelection(),r=document.createRange();r.selectNodeContents(t),n.removeAllRanges(),n.addRange(r),e=n.toString()}return e}e.exports=r},{}],7:[function(t,e,n){function r(){}r.prototype={on:function(t,e,n){var r=this.e||(this.e={});return(r[t]||(r[t]=[])).push({fn:e,ctx:n}),this},once:function(t,e,n){function r(){o.off(t,r),e.apply(n,arguments)}var o=this;return r._=e,this.on(t,r,n)},emit:function(t){var e=[].slice.call(arguments,1),n=((this.e||(this.e={}))[t]||[]).slice(),r=0,o=n.length;for(r;o>r;r++)n[r].fn.apply(n[r].ctx,e);return this},off:function(t,e){var n=this.e||(this.e={}),r=n[t],o=[];if(r&&e)for(var i=0,a=r.length;a>i;i++)r[i].fn!==e&&r[i].fn._!==e&&o.push(r[i]);return o.length?n[t]=o:delete n[t],this}},e.exports=r},{}],8:[function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{"default":t}}function o(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}n.__esModule=!0;var i=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),a=t("select"),c=r(a),s=function(){function t(e){o(this,t),this.resolveOptions(e),this.initSelection()}return t.prototype.resolveOptions=function t(){var e=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];this.action=e.action,this.emitter=e.emitter,this.target=e.target,this.text=e.text,this.trigger=e.trigger,this.selectedText=""},t.prototype.initSelection=function t(){if(this.text&&this.target)throw new Error('Multiple attributes declared, use either "target" or "text"');if(this.text)this.selectFake();else{if(!this.target)throw new Error('Missing required attributes, use either "target" or "text"');this.selectTarget()}},t.prototype.selectFake=function t(){var e=this;this.removeFake(),this.fakeHandler=document.body.addEventListener("click",function(){return e.removeFake()}),this.fakeElem=document.createElement("textarea"),this.fakeElem.style.position="absolute",this.fakeElem.style.left="-9999px",this.fakeElem.style.top=(window.pageYOffset||document.documentElement.scrollTop)+"px",this.fakeElem.setAttribute("readonly",""),this.fakeElem.value=this.text,document.body.appendChild(this.fakeElem),this.selectedText=c.default(this.fakeElem),this.copyText()},t.prototype.removeFake=function t(){this.fakeHandler&&(document.body.removeEventListener("click"),this.fakeHandler=null),this.fakeElem&&(document.body.removeChild(this.fakeElem),this.fakeElem=null)},t.prototype.selectTarget=function t(){this.selectedText=c.default(this.target),this.copyText()},t.prototype.copyText=function t(){var e=void 0;try{e=document.execCommand(this.action)}catch(n){e=!1}this.handleResult(e)},t.prototype.handleResult=function t(e){e?this.emitter.emit("success",{action:this.action,text:this.selectedText,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)}):this.emitter.emit("error",{action:this.action,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)})},t.prototype.clearSelection=function t(){this.target&&this.target.blur(),window.getSelection().removeAllRanges()},t.prototype.destroy=function t(){this.removeFake()},i(t,[{key:"action",set:function t(){var e=arguments.length<=0||void 0===arguments[0]?"copy":arguments[0];if(this._action=e,"copy"!==this._action&&"cut"!==this._action)throw new Error('Invalid "action" value, use either "copy" or "cut"')},get:function t(){return this._action}},{key:"target",set:function t(e){if(void 0!==e){if(!e||"object"!=typeof e||1!==e.nodeType)throw new Error('Invalid "target" value, use a valid Element');this._target=e}},get:function t(){return this._target}}]),t}();n.default=s,e.exports=n.default},{select:6}],9:[function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{"default":t}}function o(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}function a(t,e){var n="data-clipboard-"+t;if(e.hasAttribute(n))return e.getAttribute(n)}n.__esModule=!0;var c=t("./clipboard-action"),s=r(c),u=t("tiny-emitter"),l=r(u),f=t("good-listener"),d=r(f),h=function(t){function e(n,r){o(this,e),t.call(this),this.resolveOptions(r),this.listenClick(n)}return i(e,t),e.prototype.resolveOptions=function t(){var e=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];this.action="function"==typeof e.action?e.action:this.defaultAction,this.target="function"==typeof e.target?e.target:this.defaultTarget,this.text="function"==typeof e.text?e.text:this.defaultText},e.prototype.listenClick=function t(e){var n=this;this.listener=d.default(e,"click",function(t){return n.onClick(t)})},e.prototype.onClick=function t(e){this.clipboardAction&&(this.clipboardAction=null),this.clipboardAction=new s.default({action:this.action(e.target),target:this.target(e.target),text:this.text(e.target),trigger:e.target,emitter:this})},e.prototype.defaultAction=function t(e){return a("action",e)},e.prototype.defaultTarget=function t(e){var n=a("target",e);return n?document.querySelector(n):void 0},e.prototype.defaultText=function t(e){return a("text",e)},e.prototype.destroy=function t(){this.listener.destroy(),this.clipboardAction&&(this.clipboardAction.destroy(),this.clipboardAction=null)},e}(l.default);n.default=h,e.exports=n.default},{"./clipboard-action":8,"good-listener":5,"tiny-emitter":7}]},{},[9])(9)});</script>
+    <script>Zepto(function($) {
+  // a jQuery.getScript() equivalent to asyncronously load javascript files
+  // credits to http://stackoverflow.com/a/8812950/1597388
+  var getScript = function(src, func) {
+    var script = document.createElement('script');
+    script.async = 'async';
+    script.src = src;
+    if (func) {
+      script.onload = func;
+    }
+    document.getElementsByTagName('head')[0].appendChild( script );
+  };
+
+  // load prettify asyncronously to speedup page rendering
+  getScript('//cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js', function() {
+    prettyPrint();
+  });
+
+  var $frameContainer = $('.frames-container');
+  var $container      = $('.details-container');
+  var $activeLine     = $frameContainer.find('.frame.active');
+  var $activeFrame    = $container.find('.frame-code.active');
+  var $ajaxEditors    = $('.editor-link[data-ajax]');
+  var headerHeight    = $('header').height();
+
+  var highlightCurrentLine = function() {
+    // Highlight the active and neighboring lines for this frame:
+    var activeLineNumber = +($activeLine.find('.frame-line').text());
+    var $lines           = $activeFrame.find('.linenums li');
+    var firstLine        = +($lines.first().val());
+
+    $($lines[activeLineNumber - firstLine - 1]).addClass('current');
+    $($lines[activeLineNumber - firstLine]).addClass('current active');
+    $($lines[activeLineNumber - firstLine + 1]).addClass('current');
+  }
+
+  // Highlight the active for the first frame:
+  highlightCurrentLine();
+
+  $frameContainer.on('click', '.frame', function() {
+    var $this  = $(this);
+    var id     = /frame\-line\-([\d]*)/.exec($this.attr('id'))[1];
+    var $codeFrame = $('#frame-code-' + id);
+
+    if ($codeFrame) {
+      $activeLine.removeClass('active');
+      $activeFrame.removeClass('active');
+
+      $this.addClass('active');
+      $codeFrame.addClass('active');
+
+      $activeLine  = $this;
+      $activeFrame = $codeFrame;
+
+      highlightCurrentLine();
+
+      $container.scrollTop(0);
+    }
+  });
+
+  var clipboard = new Clipboard('.clipboard');
+  var showTooltip = function(elem, msg) {
+    elem.setAttribute('class', 'clipboard tooltipped tooltipped-s');
+    elem.setAttribute('aria-label', msg);
+  };
+
+  clipboard.on('success', function(e) {
+      e.clearSelection();
+
+      showTooltip(e.trigger, 'Copied!');
+  });
+
+  clipboard.on('error', function(e) {
+      showTooltip(e.trigger, fallbackMessage(e.action));
+  });
+
+  var btn = document.querySelector('.clipboard');
+
+  btn.addEventListener('mouseleave', function(e) {
+    e.currentTarget.setAttribute('class', 'clipboard');
+    e.currentTarget.removeAttribute('aria-label');
+  });
+
+  function fallbackMessage(action) {
+    var actionMsg = '';
+    var actionKey = (action === 'cut' ? 'X' : 'C');
+
+    if (/Mac/i.test(navigator.userAgent)) {
+        actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+    } else {
+        actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+    }
+
+    return actionMsg;
+  }
+
+  $(document).on('keydown', function(e) {
+	  if(e.ctrlKey) {
+		  // CTRL+Arrow-UP/Arrow-Down support:
+		  // 1) select the next/prev element
+		  // 2) make sure the newly selected element is within the view-scope
+		  // 3) focus the (right) container, so arrow-up/down (without ctrl) scroll the details
+		  if (e.which === 38 /* arrow up */) {
+			  $activeLine.prev('.frame').click();
+			  $activeLine[0].scrollIntoView();
+			  $container.focus();
+			  e.preventDefault();
+		  } else if (e.which === 40 /* arrow down */) {
+			  $activeLine.next('.frame').click();
+			  $activeLine[0].scrollIntoView();
+			  $container.focus();
+			  e.preventDefault();
+		  }
+	  }
+  });
+
+  // Avoid to quit the page with some protocol (e.g. IntelliJ Platform REST API)
+  $ajaxEditors.on('click', function(e){
+    e.preventDefault();
+    $.get(this.href);
+  });
+
+  // Symfony VarDumper: Close the by default expanded objects
+  $('.sf-dump-expanded')
+    .removeClass('sf-dump-expanded')
+    .addClass('sf-dump-compact');
+  $('.sf-dump-toggle span').html('&#9654;');
+});
+</script>
+  
+
+</body></html>

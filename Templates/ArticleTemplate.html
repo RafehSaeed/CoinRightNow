@@ -1,0 +1,38 @@
+<div class="py-5 section text-center" >
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-12" >
+      <!-- Insert Article Tile In Header 2 -->
+        <h2>{{article.title}}</h2> 
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="py-5">
+    <div class="container">
+      <div class="row text-tray" ng-bind-html="getHtml(article.commentbody)"> >
+
+
+      <!-- Just Grab Valid HTML From The Database And Place It Here -->
+      <!-- Can Include Links <a> <img> as well <img> should be obtained from article images -->
+     
+     
+      
+      </div>
+    </div>
+  </div>
+
+   <div class="py-5">
+    <div class="container">
+      <div class="row float-right">
+
+
+      <!-- Just Grab Valid HTML From The Database And Place It Here -->
+      <!--Article Date of Publish should go here -->
+      <B>Date Published: 2017-04-01</B>
+      
+
+      </div>
+    </div>
+  </div>
