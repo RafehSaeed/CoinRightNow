@@ -2408,10 +2408,13 @@ button.list-group-item-dark {
   overflow-y: auto; }
 
 .modal-dialog {
+  opacity:  0.96;
   position: relative;
   width: auto;
   margin: 10px;
-  animation: pulse 2s linear infinite;;
+  animation: pulse 2s linear infinite;
+  border: solid;
+  border-color: #ffa50082;
 
 }
 
