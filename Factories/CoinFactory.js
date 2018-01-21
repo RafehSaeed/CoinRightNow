@@ -15,16 +15,12 @@ var coin= function($http,$rootScope){
 
   
 	function getCoinList() {
-		console.log('here');
-		return $http.get('https://api.coinmarketcap.com/v1/ticker/?limit=0',{timeout: 1000})
+		return $http.get('https://api.coinmarketcap.com/v1/ticker/?limit=0')
 			.then(function(response) {
-			
+				console.log(response);
+		
 			 return response.data;
-		}, function errorCallback(response) {
-	  		console.log("error reseting request");
-	  		return 'undefined';
-  });
-
+		});
 	}
 
 
@@ -50,7 +46,7 @@ var coin= function($http,$rootScope){
 			.then(function(response) {
 				response.data.rates.USD= 1.00;
 			 	$rootScope.exchangerates=response.data.rates;
-				// console.log($rootScope.exchangerates);
+				console.log($rootScope.exchangerates);
 		});
 	}
 

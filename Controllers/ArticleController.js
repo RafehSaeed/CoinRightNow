@@ -7,17 +7,16 @@ var app = angular.module('coinrightnow');
 	function ArticleController ($scope,$routeParams,article,$sce ,$uibModal) {
 
 		getArticle($routeParams.id);
-
 		    $scope.article = {
 			     title : "",
 				 commentbody : ""
    			 };
-	
 	//Get a Specific Article
 	function getArticle(id){
 
 		article.getArticle(id).then(function (data) {
 			$scope.article= data;
+            console.log($scope.article);
 			console.log($scope.article.commentbody);
 
 		});
@@ -66,10 +65,6 @@ var app = angular.module('coinrightnow');
 
 		
 		}
-
-
-
-
 
 }
 

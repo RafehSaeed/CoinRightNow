@@ -22,14 +22,10 @@ function getCoinList () {
 
 	$interval(getCoinList, 60000);
 	coin.getCoins().then(function(data) {
-
 		$rootScope.coins= data;
-		if (data == "undefined") 
-		{getCoinList();
-		}	
 		$rootScope.basecurrency = 'USD';
-	
-    
+		console.log($rootScope.coins);
+
 	if (typeof $scope.selectedcurrency != "undefined") 
 		{$scope.convertPrice($scope.selectedcurrency);
 		}
@@ -44,7 +40,6 @@ $scope.convertPrice = function(currency) {
 
 //define rootscope variables with checks
 function defineScopeVariables(){
-
 
 	if (typeof $rootScope.coins == "undefined") {
 		getCoinList();
@@ -63,7 +58,7 @@ function defineScopeVariables(){
 		article.getArticleList().then(function(data) {
 			
 		$scope.articles = data;
-		// console.log($scope.articles);
+		console.log($scope.articles);
 		});
 
 
