@@ -15,7 +15,7 @@ var coin= function($http,$rootScope){
 
   
 	function getCoinList() {
-		return $http.get('https://api.coinmarketcap.com/v1/ticker/?limit=0')
+		return $http.get('http://localhost:5000/coinlist')
 			.then(function(response) {
 				console.log(response);
 		
