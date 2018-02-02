@@ -20,8 +20,6 @@ var app = angular.module('coinrightnow');
 		authentication.logout();
 		$rootScope.user3="";
 		$rootScope.loggedin = false;
-
-
 		}
 
 }

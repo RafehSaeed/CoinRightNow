@@ -24,6 +24,17 @@ var coin= function($http,$rootScope){
 	}
 
 
+
+	function getTopPerformer() {
+		return $http.get('http://localhost:5000/gettopperformers')
+			.then(function(response) {
+				console.log(response);
+		
+			 return response.data;
+		});
+	}
+
+
 	function getCoinGraph(coinid){
 
 			return $http.get('http://localhost:5000/coingraph/'+ coinid)
@@ -84,7 +95,8 @@ var coin= function($http,$rootScope){
 		getCoinGraph: getCoinGraph,
 		getExchangeRates: getExchangeRates,
 		getCoinMarkets: getCoinMarkets,
-		convertPrice: convertPrice
+		convertPrice: convertPrice,
+		getTopPerformer: getTopPerformer
 	};
 
 };

@@ -1,75 +1,79 @@
 <div class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1  class="display-1 con-white">News Feed</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1  class="display-1 con-white">News Feed</h1>
+				<form id="custom-search-form-2" class="display-5 mt-14px ">
+					<div class="input-group">
+						<input type="text" class=" w-95 mt-3" ng-model="article"  placeholder="Search Article...">
+						
+					</div>
+					
+				</form>
+				<table class="table tohomepagelist animated fadeIn con-white mt-37px">
+					<thead>
+						<tr>
+							<td class="display-5">Articles</td>
+						</tr>
+					</thead>
+					<tr ng-repeat="article in articles | filter:article | limitTo:10">
+						<td class="display-5"><img src="img/article.png" height="22">      <a href="article/{{article.id}}">{{article.title}}</a></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<span>
+					<h1 class="display-1 con-white">Chart
+					</h1>
+					<form id="custom-search-form" class="display-5 ">
+						<div class="input-group">
+							<input ng-mousedown= "limitnum=0" type="text" class=" w-95 mt-3" ng-model="coin"  placeholder="Search Coin...">
+							<div class="input-group-btn">
+								<button type="button" class=" btn btn-secondary solid dropdown-toggle mt-3 smallbutton " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								{{selectedcurrency}}
+								</button>
+								<div class="dropdown-menu dropdown-menu-right text-right">
+									<a href="" data-toggle="dropdown" ng-repeat="(currencyid,currency) in exchangerates" class="dropdown-item" ng-click="convertPrice(currencyid)">{{currencyid}} </a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</span>
+				<table class="table table-bordered table-striped homepagelist animated fadeIn con-white ">
+					<thead>
+						<tr>
+							<td class="display-5">Rank</td>
+							<td class="display-5">Coin</td>
+							<td class="display-5 ">Price&nbsp;({{selectedcurrency}})</td>
+							<td class="display-5 "><span class="float-right">24h</span></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="coin in coins | filter:coin| limitTo:10:limitnum ">
+							<td class="display-5">{{ coin.rank }}</td>
+							<td class="display-5 "><img src="img/coin/{{coin.id}}.png" height="22" alt="{{coin.name}}">&nbsp;&nbsp;
+								<a ng-href="coin/{{coin.rank}}">{{coin.name.trunc(15)}}</a></td>
+								<td class="display-5">{{selectedcurrency| getCurrencySymbol}}{{ coin.price_usd | currency:""}}</td>
+								<td ng-class="{red: coin.percent_change_24h < 0, green: coin.percent_change_24h > 0, zero: coin.percent_change_24h == 0}">{{ coin.percent_change_24h }}%</td>
+							</tr>
+						</tbody>
+					</table>
+					<a href ng-click="incrementLimit()"><img src="arrowright.png" float:"right" height="35px" alt="arrow" class="box coinlistarrow "></a>
+				</div>
+			</div>
+				<div class="row">
+					<div class="col-md-12">	
+						<h1 class="display-4 con-white">Top Performer</h1>
+				        <table class="table tohomepagelist animated fadeIn con-white mt-37px">
+				            <tr>
+				              <td class="display-5 font-weight-bold">{{topPerformer.name}}</td>
+				              <td class=" animated bounce"><span ng-class="{redleft: topPerformer.percent_change_24h < 0, greenleft: topPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ topPerformer.percent_change_24h }}%</span></td>
+				              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png" height="32"></span></td>
+				            </tr>
+				     
+				          </table>
 
-
-          <form id="custom-search-form-2" class="display-5 mt-14px ">
-            <div class="input-group">
-              <input type="text" class=" w-95 mt-3" ng-model="article"  placeholder="Search Article...">
-          
-            </div>
-            
-          </form>
-           <table class="table tohomepagelist animated fadeIn con-white mt-37px">
-                <thead>
-            <tr>
-              <td class="display-5">Articles</td>
-            </tr>
-          </thead>
-            <tr ng-repeat="article in articles | filter:article | limitTo:10">
-              <td class="display-5"><img src="img/article.png" height="22">      <a href="article/{{article.id}}">{{article.title}}</a></td></td>
-        
-            </tr>
-     
-          </table>
-
-      </div>
-      <div class="col-md-6">
-        <span>
-          <h1 class="display-1 con-white">Chart
-          </h1>
-          
-          <form id="custom-search-form" class="display-5 ">
-            <div class="input-group">
-              <input ng-mousedown= "limitnum=0" type="text" class=" w-95 mt-3" ng-model="coin"  placeholder="Search Coin...">
-              <div class="input-group-btn">
-                <button type="button" class=" btn btn-secondary solid dropdown-toggle mt-3 smallbutton " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{selectedcurrency}}
-                </button>
-                <div class="dropdown-menu dropdown-menu-right text-right">
-                  <a href="" data-toggle="dropdown" ng-repeat="(currencyid,currency) in exchangerates" class="dropdown-item" ng-click="convertPrice(currencyid)">{{currencyid}} </a>
-                  
-                </div>
-              </div>
-            </div>
-            
-          </form>
-          
-        </span>
-        
-        <table class="table table-bordered table-striped homepagelist animated fadeIn con-white ">
-          <thead>
-            <tr>
-              <td class="display-5">Rank</td>
-              <td class="display-5">Coin</td>
-              <td class="display-5 ">Price&nbsp;({{selectedcurrency}})</td>
-              <td class="display-5 float-right">24h</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="coin in coins | filter:coin| limitTo:10:limitnum ">
-              <td class="display-5">{{ coin.rank }}</td>
-              <td class="display-5 "><img src="img/coin/{{coin.id}}.png" height="22" alt="{{coin.name}}">&nbsp;&nbsp;
-                <a ng-href="coin/{{coin.rank}}">{{coin.name.trunc(15)}}</a></td>
-                <td class="display-5">{{selectedcurrency| getCurrencySymbol}}{{ coin.price_usd | currency:""}}</td>
-                <td ng-class="{red: coin.percent_change_24h < 0, green: coin.percent_change_24h > 0, zero: coin.percent_change_24h == 0}">{{ coin.percent_change_24h }}%</td>
-              </tr>
-            </tbody>
-          </table>
-          <a href ng-click="incrementLimit()"><img src="arrowright.png" float:"right" height="35px" alt="arrow" class="box coinlistarrow "></a>
-        </div>
-      </div>
-    </div>
-  </div>
+					</div>
+				</div>
+		</div>
+	</div>

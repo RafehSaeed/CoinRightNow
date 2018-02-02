@@ -8,6 +8,7 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article) 
 	getArticleList();
 	$scope.limitnum= 0;
 	$scope.coinID= $routeParams.id;
+	$rootScope.topPerformer;
 
 
 //Looping through the first 100 elements
@@ -22,6 +23,7 @@ function getCoinList () {
 
 	$interval(getCoinList, 60000);
 	coin.getCoins().then(function(data) {
+		getTopPerformer();
 		$rootScope.coins= data;
 		$rootScope.basecurrency = 'USD';
 		console.log($rootScope.coins);
@@ -29,6 +31,14 @@ function getCoinList () {
 	if (typeof $scope.selectedcurrency != "undefined") 
 		{$scope.convertPrice($scope.selectedcurrency);
 		}
+	});
+}
+
+function getTopPerformer() {
+
+	coin.getTopPerformer().then(function(data){
+		$rootScope.topPerformer = data;
+
 	});
 }
 
@@ -63,10 +73,6 @@ function defineScopeVariables(){
 
 
 	}
-
-
-
-
 }
 
 app.controller('MainController',['$rootScope','$scope','$timeout','coin','$routeParams', 'article', MainController]);

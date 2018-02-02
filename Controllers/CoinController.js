@@ -74,16 +74,16 @@ if(type=='converted' && $scope.convertedamount!= ""){
 
 $scope.getGraphInterval = function(interval){
 
-			switch(interval) {
-				case "7d":
-					 renderGraph(8);
-						break;
-				case "30d":
-						renderGraph(31);
-						break;
-				default:
-					renderGraph();
-			}
+switch(interval) {
+	case "7d":
+		 renderGraph(8);
+			break;
+	case "30d":
+			renderGraph(31);
+			break;
+	default:
+		renderGraph();
+}
 };
 
 function getCoinGraph(coinid){
