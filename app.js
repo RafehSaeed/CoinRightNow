@@ -2,7 +2,7 @@
 
 
 var app = angular.module('coinrightnow', ['ngRoute','ui.bootstrap']);
-
+app.value('lang', 'en');
 app.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
 $routeProvider.
     when('/home',{
@@ -48,14 +48,13 @@ $routeProvider.
     otherwise({
         redirectTo: '/home'
     });
-
-
-
 }]);
        
        app.config(['$locationProvider', function($locationProvider) {
       $locationProvider.html5Mode(true);
 }]);
+
+
 
        angular.module('coinrightnow').run(['$rootScope', '$location', 'authentication', function ($rootScope, $location, authentication) {
         $rootScope.$on('$routeChangeStart', function (event) {

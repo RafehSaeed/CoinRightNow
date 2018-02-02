@@ -55,6 +55,10 @@ function defineScopeVariables(){
 		getCoinList();
 	}
 
+	if (typeof $rootScope.topPerformer == "undefined") {
+		getTopPerformer();
+	}
+
 	if (typeof $rootScope.rates == "undefined") {
 		coin.getExchangeRates();
 	}

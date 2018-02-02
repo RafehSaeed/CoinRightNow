@@ -30,15 +30,15 @@
         <thead>
           <tr>
             <div class="col-md-12 text-center">
-              <td class="display-5">Rank</td>
-              <td class="display-5">Market Cap</td>
-              <td class="display-5 ">Price&nbsp;({{selectedcurrency}})</td>
-              <td class="display-5 ">Price&nbsp;BTC</td>
-              <td class="display-5">Volume-24h</td>
-              <td class="display-5">Supply</td>
-              <td class="display-5 ">1h</td>
-              <td class="display-5 ">24h</td>
-              <td class="display-5 ">7d</td>
+              <td class="display-5">{{'Rank'|translate}}</td>
+              <td class="display-5">{{'Market Cap'|translate}}</td>
+              <td class="display-5 ">{{'Price'|translate}}&nbsp;({{selectedcurrency}})</td>
+              <td class="display-5 ">{{'Price'|translate}}&nbsp;BTC</td>
+              <td class="display-5">{{'Volume-24h'|translate}}</td>
+              <td class="display-5">{{'Supply'|translate}}</td>
+              <td class="display-5 ">{{'1h'|translate}}</td>
+              <td class="display-5 ">{{'24h'|translate}}</td>
+              <td class="display-5 ">{{'7d'|translate}}</td>
             </tr>
           </thead>
           <tbody>
@@ -63,18 +63,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 text-center">
-          <h1 id="market" ng-click="renderMarket(coin.id); loaddiscussion=false; loadgraph=false" ng-class="{active:loadmarket==true}" class="display-1 inactive con-white d-inline-flex coinbuttontoggle">market
+          <h1 id="market" ng-click="renderMarket(coin.id); loaddiscussion=false; loadgraph=false" ng-class="{active:loadmarket==true}" class="display-1 inactive con-white d-inline-flex coinbuttontoggle">{{'market'|translate}}
           <img src="" height="40px" alt="">
           </h1>
         </div>
         <div class="col-md-4 text-center">
-          <h1  id="graph" ng-click="loadgraph=true; loadmarket= false; loaddiscussion=false" ng-class="{inactive: loadmarket==true ||  loaddiscussion==true}" class="display-1  con-white d-inline-flex coinbuttontoggle">graph
+          <h1  id="graph" ng-click="loadgraph=true; loadmarket= false; loaddiscussion=false" ng-class="{inactive: loadmarket==true ||  loaddiscussion==true}" class="display-1  con-white d-inline-flex coinbuttontoggle">{{'graph'|translate}}
           <img src="" height="40px" alt="">
           </h1>
         </div>
         
         <div class="col-md-4 text-center">
-          <h1  id="discussion" ng-click=" loaddiscussion=true; loadmarket=false; loadgraph=false;" ng-class="{active:loaddiscussion==true , inactive:loaddiscussion==false }" class="display-1 inactive con-white d-inline-flex coinbuttontoggle">discussion
+          <h1  id="discussion" ng-click=" loaddiscussion=true; loadmarket=false; loadgraph=false;" ng-class="{active:loaddiscussion==true , inactive:loaddiscussion==false }" class="display-1 inactive con-white d-inline-flex coinbuttontoggle">{{'discussion'|translate}}
           <img src="" height="40px" alt="">
           </h1>
         </div>
@@ -89,9 +89,9 @@
         
         <span ng-if="!loader" class="w-100">
           <ul class="list-unstyled float-right">
-            <li ng-click="getGraphInterval()"class="box curmudgeon display-5">1 year</li>
-            <li ng-click="getGraphInterval('30d')"class="box curmudgeon display-5">30 days</li>
-            <li ng-click="getGraphInterval('7d')"class="box curmudgeon display-5">7 day</li>
+            <li ng-click="getGraphInterval()"class="box curmudgeon display-5">{{'1 year'|translate}}</li>
+            <li ng-click="getGraphInterval('30d')"class="box curmudgeon display-5">{{'30 days'|translate}}</li>
+            <li ng-click="getGraphInterval('7d')"class="box curmudgeon display-5">{{'7 day'| translate}}</li>
           </ul>
         </span>
         <canvas ng-hide="loader"class="animated fadeIn text-center" id="myChart"  width="1600" height="800" ></canvas>

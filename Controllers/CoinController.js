@@ -4,6 +4,7 @@ var app = angular.module('coinrightnow');
 
 function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter) {
 
+
 	$scope.loadmarket = false;
 	$scope.loaddiscussion = false;
 	$scope.loadgraph = true;
