@@ -17,6 +17,8 @@ function translate(lang){
 					return "Chart";
 				case "Top Performer":
 					return "Top Performer";
+				case "Worst Performer":
+					return "Worst Performer";
 				case "Rank":
 					return "Rank";
 				case "Coin":

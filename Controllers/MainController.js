@@ -8,7 +8,12 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article) 
 	getArticleList();
 	$scope.limitnum= 0;
 	$scope.coinID= $routeParams.id;
+	$scope.showTopPerformer = true;
+	$scope.showWorstPerformer = false ;
 	$rootScope.topPerformer;
+	$rootScope.worstPerformer;
+
+
 
 
 //Looping through the first 100 elements
@@ -37,8 +42,8 @@ function getCoinList () {
 function getTopPerformer() {
 
 	coin.getTopPerformer().then(function(data){
-		$rootScope.topPerformer = data;
-
+		$rootScope.topPerformer = JSON.parse(data[0].topcoin);
+		$rootScope.worstPerformer = JSON.parse(data[0].worstcoin);
 	});
 }
 

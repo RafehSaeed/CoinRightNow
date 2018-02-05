@@ -61,14 +61,28 @@
 					<a href ng-click="incrementLimit()"><img src="arrowright.png" float:"right" height="35px" alt="arrow" class="box coinlistarrow "></a>
 				</div>
 			</div>
-				<div class="row">
+				<div class="row" ng-show="showTopPerformer">
 					<div class="col-md-12">	
-						<h1 class="display-4 con-white">{{'Top Performer'| translate}}</h1>
+						<h1 class="display-4 con-white d-inline-flex coinbuttontoggle " ng-click=" showTopPerformer=false; showWorstPerformer= true" >{{'Top Performer'| translate}}</h1>
 				        <table class="table tohomepagelist animated fadeIn con-white mt-37px">
 				            <tr>
 				              <td class="display-5 font-weight-bold">{{topPerformer.name}}</td>
 				              <td class=""><span ng-class="{redleft: topPerformer.percent_change_24h < 0, greenleft: topPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ topPerformer.percent_change_24h }}%</span></td>
 				              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png" height="32"></span></td>
+				            </tr>
+				          </table>
+
+					</div>
+				</div>
+
+				<div class="row" ng-show="showWorstPerformer">
+					<div class="col-md-12">	
+						<h1 ng-click=" showTopPerformer=true; showWorstPerformer= false" class="display-4 con-white d-inline-flex coinbuttontoggle">{{'Worst Performer'| translate}}</h1>
+				        <table class="table tohomepagelist animated fadeIn con-white mt-37px">
+				            <tr>
+				              <td class="display-5 font-weight-bold">{{worstPerformer.name}}</td>
+				              <td class=""><span ng-class="{redleft: worstPerformer.percent_change_24h < 0, greenleft: worstPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ worstPerformer.percent_change_24h }}%</span></td>
+				              <td class="display-5"><span class="float-right"><img src="img/coin/{{worstPerformer.id}}.png" height="32"></span></td>
 				            </tr>
 				          </table>
 

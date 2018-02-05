@@ -28,7 +28,7 @@ var coin= function($http,$rootScope){
 	function getTopPerformer() {
 		return $http.get('http://localhost:5000/gettopperformers')
 			.then(function(response) {
-				console.log(response);
+		
 		
 			 return response.data;
 		});
