@@ -3,11 +3,11 @@
 var app = angular.module('coinrightnow');
 
 //
-function translate(lang){
+function translate($rootScope){
 
 	return function(word){
 // ENGLISH DICTIONARY
-		if(lang == 'en'){
+		if($rootScope.selectedLanguage == 'EN'){
 			switch(word){
 				case "News Feed":
 					return "News Feed";
@@ -58,7 +58,7 @@ function translate(lang){
 			}
 		}
 // FRENCH DICTIONARY
-		if(lang == 'fr'){
+		if($rootScope.selectedLanguage == 'FR'){
 			switch(word){
 				case "News Feed":
 					return "Fil de presse";
@@ -69,7 +69,7 @@ function translate(lang){
 			}
 		}
 // URDU DICTIONARY
-		if(lang == 'ur'){
+		if($rootScope.selectedLanguage == 'UR'){
 		switch(word){
 			case "News Feed":
 				return "خبریں";
@@ -120,6 +120,8 @@ function translate(lang){
 	};
 }
 
-app.filter('translate',['lang',translate]);
+app.filter('translate',['$rootScope',translate]);
+ translate.$stateful = true;
+ return translate;
 })();
 

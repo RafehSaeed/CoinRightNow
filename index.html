@@ -32,7 +32,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
   </head>
   
-  <body   ng-app="coinrightnow" >
+  <body ng-app="coinrightnow" >
     <div id="particles-js">
     </div>
     <div>
@@ -48,6 +48,19 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-envelope-o"></i> Advertise</a>
+              </li>
+              <li>
+                    <div class="input-group">
+             
+              <div class="input-group-btn">
+                <button type="button" class="  dropdown-toggle  btn translate-button " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{selectedLanguage | uppercase}}
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-right">
+                  	<a href=""  ng-repeat="language in languages" class="dropdown-item" ng-click="changeLanguage(language)">{{language}} </a>
+                </div>
+              </div>
+            </div>
               </li>
             </ul>
             <!--<a href="" class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>-->

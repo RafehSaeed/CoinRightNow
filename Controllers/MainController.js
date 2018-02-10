@@ -2,7 +2,7 @@
 
 var app = angular.module('coinrightnow');
 
-function MainController ($rootScope,$scope,$interval,coin,$routeParams,article) {
+function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,lang,$route) {
 
 	defineScopeVariables();
 	getArticleList();
@@ -12,6 +12,8 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article) 
 	$scope.showWorstPerformer = false ;
 	$rootScope.topPerformer;
 	$rootScope.worstPerformer;
+	$rootScope.selectedLanguage;
+
 
 
 
@@ -53,11 +55,30 @@ $scope.convertPrice = function(currency) {
  	coin.convertPrice(currency);
 };
 
+//Get Languages
+function getLanguages () {
+	coin.getLanguages().then(function(data){
+   		$rootScope.languages = data;
+   		console.log(data);
+	});
+}
+
+//Changes the language to something else
+$rootScope.changeLanguage = function(symbol) {
+	$rootScope.selectedLanguage = symbol;
+	$route.reload();
+
+};
+
 //define rootscope variables with checks
 function defineScopeVariables(){
 
 	if (typeof $rootScope.coins == "undefined") {
 		getCoinList();
+	}
+
+	if (typeof $rootScope.languages == "undefined") {
+		getLanguages();
 	}
 
 	if (typeof $rootScope.topPerformer == "undefined") {
@@ -67,8 +88,12 @@ function defineScopeVariables(){
 	if (typeof $rootScope.rates == "undefined") {
 		coin.getExchangeRates();
 	}
-	
 
+	if (typeof $rootScope.selectedLanguage == "undefined") {
+		$rootScope.selectedLanguage = lang;
+	}
+	
+	
 }
 
 	// returns all articles as Json
@@ -84,7 +109,7 @@ function defineScopeVariables(){
 	}
 }
 
-app.controller('MainController',['$rootScope','$scope','$timeout','coin','$routeParams', 'article', MainController]);
+app.controller('MainController',['$rootScope','$scope','$timeout','coin','$routeParams', 'article', 'lang','$route', MainController]);
 
 })();
 

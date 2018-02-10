@@ -2,7 +2,7 @@
 
 
 var app = angular.module('coinrightnow', ['ngRoute','ui.bootstrap']);
-app.value('lang', 'en');
+app.value('lang', 'EN');
 app.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
 $routeProvider.
     when('/home',{

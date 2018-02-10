@@ -62,6 +62,16 @@ var coin= function($http,$rootScope){
 	}
 
 
+	function getLanguages() {
+		return $http.get('http://localhost:5000/languages')
+			.then(function(response) {
+				console.log(response);
+		
+			 return response.data;
+		});
+	}
+
+
 
 
 	//converts price of all coins into the specified currency
@@ -96,7 +106,8 @@ var coin= function($http,$rootScope){
 		getExchangeRates: getExchangeRates,
 		getCoinMarkets: getCoinMarkets,
 		convertPrice: convertPrice,
-		getTopPerformer: getTopPerformer
+		getTopPerformer: getTopPerformer,
+		getLanguages: getLanguages
 	};
 
 };
