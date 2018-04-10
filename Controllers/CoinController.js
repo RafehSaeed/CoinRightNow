@@ -103,7 +103,7 @@ else{
 
 //Used to configure Disqus according to coins
 function setDisqus(){
-
+	console.log($scope.coin.name);
 			$scope.disqusConfig = { 
 			disqus_identifier: $scope.coin.name,
 			disqus_url: $scope.currentURL
@@ -181,7 +181,7 @@ if(interval!= 'undefined'){
 					 ctx.beginPath();
 					 ctx.moveTo(x, topY);
 					 ctx.lineTo(x, bottomY);
-					 ctx.lineWidth = 2;
+					 ctx.lineWidth = 1;
 					 ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
 					 ctx.stroke();
 					 ctx.restore();

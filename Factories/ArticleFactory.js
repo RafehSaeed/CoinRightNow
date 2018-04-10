@@ -5,9 +5,6 @@ var app = angular.module('coinrightnow');
 
 var article= function($http){
 
-
-
-  
 	function getArticleList() {
 		return $http.get('http://localhost:5000/article')
 			.then(function(response) {
@@ -27,10 +24,6 @@ var article= function($http){
 
 	function postArticle(article) {
 
-
-  // return $http.post('http://localhost:5000/login', user).then(function(response) {
-  //       saveToken(response.data.token);
-  //     });
 		return $http.post('http://localhost:5000/article/', article)
 			.then(function(response) {
 				console.log('article posted');
@@ -42,13 +35,9 @@ var article= function($http){
 		getArticleList : getArticleList,
 		getArticle : getArticle,
 		postArticle : postArticle
-		
-		
-		
 	};
 
 };
-
 
 app.factory("article",article);
 

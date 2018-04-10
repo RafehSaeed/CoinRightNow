@@ -51,7 +51,7 @@
 					<tbody>
 						<tr ng-repeat="coin in coins | filter:coin| limitTo:10:limitnum ">
 							<td class="display-5">{{ coin.rank }}</td>
-							<td class="display-5 "><img src="img/coin/{{coin.id}}.png" height="22" alt="{{coin.name}}">&nbsp;&nbsp;
+							<td class="display-5 "><img src="img/coin/{{coin.id}}.png" height="22"  alt="{{coin.name}}">&nbsp;&nbsp;
 								<a ng-href="coin/{{coin.rank}}">{{coin.name.trunc(15)}}</a></td>
 								<td class="display-5">{{selectedcurrency| getCurrencySymbol}}{{ coin.price_usd | currency:""}}</td>
 								<td ng-class="{red: coin.percent_change_24h < 0, green: coin.percent_change_24h > 0, zero: coin.percent_change_24h == 0}">{{ coin.percent_change_24h }}%</td>
@@ -68,7 +68,7 @@
 				            <tr>
 				              <td class="display-5 font-weight-bold">{{topPerformer.name}}</td>
 				              <td class=""><span ng-class="{redleft: topPerformer.percent_change_24h < 0, greenleft: topPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ topPerformer.percent_change_24h }}%</span></td>
-				              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png" height="32"></span></td>
+				              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png " height="32"></span></td>
 				            </tr>
 				          </table>
 

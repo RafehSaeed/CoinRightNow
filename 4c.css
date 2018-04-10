@@ -355,10 +355,11 @@
   user-select: none;
   border: 1px solid transparent;
   padding: 0.5rem 0.75rem;
-  font-size: 1rem;
+  font-size: 14px;
   line-height: 1.25;
   border-radius: 0.25rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
   .btn:focus, .btn:hover {
     text-decoration: none; }
   .btn:focus, .btn.focus {
@@ -2577,9 +2578,10 @@ button.list-group-item-dark {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.0rem;
+  font-size: 14px;
   line-height: inherit;
-  white-space: nowrap; }
+  white-space: nowrap;
+  }
   .navbar-brand:focus, .navbar-brand:hover {
     text-decoration: none; }
 
@@ -3117,7 +3119,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 body {
   margin: 0;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: normal;
   line-height: 1.5;
   color: #000000;
@@ -3278,8 +3280,9 @@ optgroup,
 textarea {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
-  line-height: inherit; }
+  font-size: 14px;
+  line-height: inherit;
+  }
 
 button,
 input {
@@ -3669,9 +3672,10 @@ h6, .h6 {
   font-weight: 300; }
 
 .display-1 {
-  font-size: 4.0rem;
+  font-size: 2.5em;
   font-weight: 300;
-  line-height: 1.1; }
+  line-height: 1.1;
+  }
 
 .display-2 {
   font-size: 5.5rem;
@@ -3683,40 +3687,44 @@ h6, .h6 {
   list-style: square;
  }
 
- .green { color:green;
+ .green {
+  color:green;
   float: right;
-  font-size: 1.0rem;
+  font-size: 1em;
   font-weight: 400;
-  line-height: 1.1; }
+  line-height: 1.1;
+  }
 
   .greenleft { color:green;
   float: left;
-  font-size: 1.0rem;
+  font-size: 1.0em;
   font-weight: 400;
   line-height: 1.1; }
 
 
  .zero { color:green;
   float: right;
-  font-size: 1.0rem;
+  font-size: 1.0em;
   font-weight: 400;
   line-height: 1.1; }
 
   .zeroleft { color:green;
   float: left;
-  font-size: 1.0rem;
+  font-size: 1.0em;
   font-weight: 400;
   line-height: 1.1; }
 
-.red { color:red;
+.red {
+  color:red;
   float: right;
-  font-size: 1.0rem;
+  font-size: 1.0em;
   font-weight: 400;
-  line-height: 1.1; }
+  line-height: 1.1;
+  }
 
 .redleft { color:red;
   float: left;
-  font-size: 1.0rem;
+  font-size: 1.0em;
   font-weight: 400;
   line-height: 1.1; }
 
@@ -3759,32 +3767,33 @@ h6, .h6 {
 
  .greens { color:green;
  
-  font-size: 1.0rem;
+  font-size: 1.0em;
   font-weight: 400;
   line-height: 1.1; }
  .zeros { color:green;
 
-  font-size: 1.0rem;
+  font-size: 1.0em;
   font-weight: 400;
   line-height: 1.1; }
-.reds { color:red;
-  
-  font-size: 1.0rem;
-  font-weight: 400;
-  line-height: 1.1; }
+.reds {
+  color:red;
+  font-size: 1.0em;
+  font-weight: 400;
+  line-height: 1.1;
+  }
 
 .display-3 {
-  font-size: 4.5rem;
+  font-size: 2em;
   font-weight: 300;
   line-height: 1.1; }
 
 .display-4 {
-  font-size: 3.5rem;
+  font-size: 2.5em;
   font-weight: 300;
   line-height: 1.1; }
 
 .display-5 {
-  font-size: 1rem;
+  font-size: 13px;
   line-height: 1.1;
   font-weight: 400;
 }

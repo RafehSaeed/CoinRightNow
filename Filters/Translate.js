@@ -65,7 +65,7 @@ function translate($rootScope){
 				case "Articles":
 					return "Des articles";
 				default:
-					return "Des articles";
+					return "Not in Dictionary";
 			}
 		}
 // URDU DICTIONARY

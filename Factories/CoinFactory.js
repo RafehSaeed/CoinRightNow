@@ -13,7 +13,6 @@ var coin= function($http,$rootScope){
 	    $rootScope.selectedcurrency = 'USD';
 	  }
 
-  
 	function getCoinList() {
 		return $http.get('http://localhost:5000/coinlist')
 			.then(function(response) {
@@ -23,8 +22,6 @@ var coin= function($http,$rootScope){
 		});
 	}
 
-
-
 	function getTopPerformer() {
 		return $http.get('http://localhost:5000/gettopperformers')
 			.then(function(response) {
@@ -33,7 +30,6 @@ var coin= function($http,$rootScope){
 			 return response.data;
 		});
 	}
-
 
 	function getCoinGraph(coinid){
 
