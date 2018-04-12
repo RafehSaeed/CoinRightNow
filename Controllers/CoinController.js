@@ -2,15 +2,19 @@
 
 var app = angular.module('coinrightnow');
 
-function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter) {
+function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,lang, $route) {
 
+
+	if (typeof $rootScope.selectedLanguage == "undefined") {
+		$rootScope.selectedLanguage = lang;
+	}
 
 	$scope.loadmarket = false;
 	$scope.loaddiscussion = false;
 	$scope.loadgraph = true;
 	$scope.amounttoconvert="";
 	$scope.convertedamount= "";
-
+	coin.getLangList();
 
 	var myChart;
 	$scope.loader= true;
@@ -39,6 +43,14 @@ function getCoin(){
 
 	}
 }
+
+
+//Changes the language to something else
+$rootScope.changeLanguage = function(symbol) {
+	$rootScope.selectedLanguage = symbol;
+	$route.reload();
+
+};
 
 $scope.convertPrice = function(currency) {
 
@@ -103,7 +115,7 @@ else{
 
 //Used to configure Disqus according to coins
 function setDisqus(){
-	console.log($scope.coin.name);
+	
 			$scope.disqusConfig = { 
 			disqus_identifier: $scope.coin.name,
 			disqus_url: $scope.currentURL
@@ -276,6 +288,6 @@ var ctx = document.getElementById("myChart");
 }
 
 }
-app.controller('CoinController',['$rootScope','$scope','$timeout','coin','$routeParams','$filter', CoinController]);
+app.controller('CoinController',['$rootScope','$scope','$timeout','coin','$routeParams','$filter', 'lang', '$route', CoinController]);
 
 })();

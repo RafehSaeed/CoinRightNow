@@ -55,7 +55,7 @@ $scope.convertPrice = function(currency) {
 function getLanguages () {
 	coin.getLanguages().then(function(data){
    		$rootScope.languages = data;
-   		console.log(data);
+   		
 	});
 }
 

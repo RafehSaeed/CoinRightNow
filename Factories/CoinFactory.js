@@ -3,7 +3,14 @@
 //Factory for fetching cryptocurrency information from the API
 var app = angular.module('coinrightnow');
 
+
 var coin= function($http,$rootScope){
+
+	// Stores language information 
+	var lang;
+
+
+	
 
 	  if (typeof $rootScope.basecurrency == "undefined") {
 	  $rootScope.basecurrency = 'USD';
@@ -60,15 +67,27 @@ var coin= function($http,$rootScope){
 
 	function getLanguages() {
 		return $http.get('http://localhost:5000/languages')
-			.then(function(response) {
-				console.log(response);
-		
+			.then(function(response) {		
 			 return response.data;
 		});
 	}
 
+	function setLanguages(func) {
+			 $http.get('http://localhost:5000/languages')
+			.then(function(response) {
+				lang  = response.data
+				func(lang);
+		});
+	}
 
-
+	// Call back function
+	function getLangList(){
+		if(typeof lang == 'undefined'){
+			setLanguages(function(){
+				$rootScope.languages = lang;
+			});
+		}
+	}
 
 	//converts price of all coins into the specified currency
 	function convertPrice(currency) {
@@ -97,6 +116,7 @@ var coin= function($http,$rootScope){
 	}
 
 	return{
+		getLangList : getLangList,
 		getCoins : getCoinList,
 		getCoinGraph: getCoinGraph,
 		getExchangeRates: getExchangeRates,
