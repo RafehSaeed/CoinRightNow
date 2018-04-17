@@ -1,7 +1,7 @@
 (function() {
 
 
-var app = angular.module('coinrightnow', ['ngRoute','ui.bootstrap']);
+var app = angular.module('coinrightnow', ['ngRoute','ui.bootstrap','angularUtils.directives.dirDisqus']);
 app.value('lang', 'EN');
 app.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
 $routeProvider.

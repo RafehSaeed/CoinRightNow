@@ -9,6 +9,8 @@ function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,l
 		$rootScope.selectedLanguage = lang;
 	}
 
+	
+
 	$scope.loadmarket = false;
 	$scope.loaddiscussion = false;
 	$scope.loadgraph = true;
@@ -115,11 +117,13 @@ else{
 
 //Used to configure Disqus according to coins
 function setDisqus(){
+
+	$scope.disqusConfig = {
+	disqus_identifier: $scope.coin.name,
+	disqus_url: ""+ window.location.href
+	};
+
 	
-			$scope.disqusConfig = { 
-			disqus_identifier: $scope.coin.name,
-			disqus_url: $scope.currentURL
-		};
 }
 
 
