@@ -129,11 +129,10 @@
         </div>
       </div>
     </div>
-    <div ng-show="loaddiscussion" class="py-0">
+    <div ng-if="loaddiscussion" class="py-0">
       <div class="container">
         <div class="row">
-          <div ng-show="loaddiscussion"  class="w-100"><dir-disqus config="disqusConfig"></dir-disqus></div>
-                    
+          <div class="w-100"><dir-disqus config="disqusConfig"></dir-disqus></div>          
         </div>
       </div>
     </div>
