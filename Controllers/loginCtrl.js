@@ -5,8 +5,7 @@
   function loginCtrl($rootScope,$location, authentication) {
     console.log('loaded');
     var vm = this;
-
-
+    
     vm.credentials = {
       email : "",
       password : ""
@@ -21,9 +20,7 @@
 
           $location.path('/admin');
         });
-    };
-
-     
+    };  
   }
 
   app.controller('loginCtrl',['$rootScope','$location','authentication', loginCtrl]);

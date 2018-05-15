@@ -2,8 +2,6 @@
 
 var app = angular.module('coinrightnow');
 
-
-
 	function ArticleController ($scope,$routeParams,article,$sce ,$uibModal) {
 
 		getArticle($routeParams.id);
@@ -21,9 +19,6 @@ var app = angular.module('coinrightnow');
 
 		});
 
-
-
-      
     function showConfirmation() {
 
         $uibModal.open({
@@ -49,8 +44,7 @@ var app = angular.module('coinrightnow');
             }
         });//end of modal.open
     }// end of scope.open function
-
-
+    
 	$scope.getHtml = function(html){
         return $sce.trustAsHtml(html);
     };
@@ -61,13 +55,9 @@ var app = angular.module('coinrightnow');
         article.postArticle($scope.article).then(function (data) {
         	showConfirmation();
         });
-    };
-
-		
+    };	
 		}
-
 }
-
 
 app.controller('ArticleController',['$scope','$routeParams','article','$sce', '$uibModal' ,ArticleController]);
 })();

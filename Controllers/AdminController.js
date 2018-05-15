@@ -21,7 +21,6 @@ var app = angular.module('coinrightnow');
 		$rootScope.user3="";
 		$rootScope.loggedin = false;
 		}
-
 }
 
 

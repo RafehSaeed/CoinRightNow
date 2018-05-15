@@ -17,8 +17,9 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,l
 //Looping through the first 100 elements
 $scope.incrementLimit = function() {
 
-    $scope.limitnum += 10; 
-    $scope.limitnum = $scope.limitnum % $scope.coins.length;
+	$scope.limitnum += 10; 
+	$scope.limitnum = $scope.limitnum % $scope.coins.length;
+	coin.setMissingImage();
 };
 
 //Getting first 100 coins
@@ -48,14 +49,13 @@ function getTopPerformer() {
 //converts price of all coins into the specified currency
 $scope.convertPrice = function(currency) {
 
- 	coin.convertPrice(currency);
+	coin.convertPrice(currency);
 };
 
 //Get Languages
 function getLanguages () {
 	coin.getLanguages().then(function(data){
-   		$rootScope.languages = data;
-   		
+		$rootScope.languages = data;	
 	});
 }
 
@@ -73,8 +73,6 @@ function getArticleList(){
 	$scope.articles = data;
 	console.log($scope.articles);
 	});
-
-
 }
 
 //define rootscope variables with checks
@@ -99,8 +97,6 @@ function defineScopeVariables(){
 	if (typeof $rootScope.selectedLanguage == "undefined") {
 		$rootScope.selectedLanguage = lang;
 	}
-	
-	
 }
 
 }

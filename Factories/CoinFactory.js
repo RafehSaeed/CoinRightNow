@@ -65,6 +65,12 @@ var coin= function($http,$rootScope){
 	}
 
 
+	function setMissingImage(){
+		console.log('loaded')
+		$("#coin_img").hide()
+		
+	}
+
 	function getLanguages() {
 		return $http.get('http://localhost:5000/languages')
 			.then(function(response) {		
@@ -123,7 +129,8 @@ var coin= function($http,$rootScope){
 		getCoinMarkets: getCoinMarkets,
 		convertPrice: convertPrice,
 		getTopPerformer: getTopPerformer,
-		getLanguages: getLanguages
+		getLanguages: getLanguages,
+		setMissingImage: setMissingImage
 	};
 
 };
