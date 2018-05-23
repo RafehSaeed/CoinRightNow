@@ -14,15 +14,20 @@ var app = angular.module('coinrightnow');
 
 		article.getArticle(id).then(function (data) {
 			$scope.article= data;
-            console.log($scope.article);
-			console.log($scope.article.commentbody);
-
 		});
+        };  
 
-    function showConfirmation() {
+    function showConfirmation(bool) {
+
+        var template_url; 
+        if(bool==true){
+            template_url =   'Templates/Dialog/confirmation.html';
+        }else{
+            template_url =   'Templates/Dialog/article-rejection.html';
+        }
 
         $uibModal.open({
-            templateUrl: 'Templates/Dialog/confirmation.html', // loads the template
+            templateUrl: template_url, // loads the template
             backdrop: true, // setting backdrop allows us to close the modal window on clicking outside the modal window
             // windowClass: 'modal', // windowClass - additional CSS class(es) to be added to a modal window template
             windowClass : 'show',
@@ -51,13 +56,15 @@ var app = angular.module('coinrightnow');
 
 //Posts the article using the values attached to the scope.article model
 	$scope.submitArticle = function(){
-        console.log( $scope.article.content);
-        article.postArticle($scope.article).then(function (data) {
-        	showConfirmation();
-        });
-    };	
-		}
-}
+            console.log( $scope.article.content);
+            article.postArticle($scope.article).then(function (status) {
+                if(status== 200)
+                    {showConfirmation(true);}
+                else
+                    {showConfirmation(false);}
+            });
+        }
+    }
 
 app.controller('ArticleController',['$scope','$routeParams','article','$sce', '$uibModal' ,ArticleController]);
 })();

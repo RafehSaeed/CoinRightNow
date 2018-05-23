@@ -27,8 +27,8 @@ function getCoin(){
 	if (typeof $rootScope.coins == "undefined") {
 
 		coin.getCoins().then(function(data) {
-		$rootScope.coins= data;
-		coin.getExchangeRates();
+			$rootScope.coins= data;
+			coin.getExchangeRates();
 			console.log($rootScope.coins);
 			$scope.coin= $rootScope.coins[$routeParams.id-1];
 			getCoinGraph($scope.coin.id);

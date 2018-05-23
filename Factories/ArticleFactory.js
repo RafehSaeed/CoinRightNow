@@ -26,8 +26,7 @@ var article= function($http){
 
 		return $http.post('http://localhost:5000/article/', article)
 			.then(function(response) {
-				console.log('article posted');
-			 return response.data;
+			 return response.status;
 		});
 	}
 
