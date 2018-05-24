@@ -51,7 +51,6 @@ function getCoin(){
 $rootScope.changeLanguage = function(symbol) {
 	$rootScope.selectedLanguage = symbol;
 	$route.reload();
-
 };
 
 $scope.convertPrice = function(currency) {
@@ -62,8 +61,7 @@ $scope.convertPrice = function(currency) {
 };
 
 $scope.update = function(type) {
-
-
+	
 if(type =="toconvert" && $scope.amounttoconvert!= ""){
 		$scope.convertedamount= $scope.amounttoconvert* $rootScope.coins[$routeParams.id-1].price_usd;
 

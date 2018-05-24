@@ -8,7 +8,6 @@ var article= function($http){
 	function getArticleList() {
 		return $http.get('http://localhost:5000/article')
 			.then(function(response) {
-		
 			 return response.data.reverse();
 		});
 	}
@@ -17,7 +16,6 @@ var article= function($http){
 
 		return $http.get('http://localhost:5000/article/'+ id)
 			.then(function(response) {
-				console.log('article controller loaded');
 			 return response.data;
 		});
 	}

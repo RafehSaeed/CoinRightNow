@@ -68,7 +68,7 @@
 				            <tr>
 				              <td class="display-5 font-weight-bold">{{topPerformer.name}}</td>
 				              <td class=""><span ng-class="{redleft: topPerformer.percent_change_24h < 0, greenleft: topPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ topPerformer.percent_change_24h }}%</span></td>
-				              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png " height="32"></span></td>
+				              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png " err-SRC="img/missingcoin.png" height="32"></span></td>
 				            </tr>
 				          </table>
 
@@ -82,7 +82,7 @@
 				            <tr>
 				              <td class="display-5 font-weight-bold">{{worstPerformer.name}}</td>
 				              <td class=""><span ng-class="{redleft: worstPerformer.percent_change_24h < 0, greenleft: worstPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ worstPerformer.percent_change_24h }}%</span></td>
-				              <td class="display-5"><span class="float-right"><img src="img/coin/{{worstPerformer.id}}.png" height="32"></span></td>
+				              <td class="display-5"><span class="float-right"><img src="img/coin/{{worstPerformer.id}}.png" err-SRC="img/missingcoin.png" height="32"></span></td>
 				            </tr>
 				          </table>
 

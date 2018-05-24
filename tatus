@@ -1,0 +1,89 @@
+[1mdiff --git a/Controllers/ArticleController.js b/Controllers/ArticleController.js[m
+[1mindex e82105a..29f4d3e 100644[m
+[1m--- a/Controllers/ArticleController.js[m
+[1m+++ b/Controllers/ArticleController.js[m
+[36m@@ -20,6 +20,7 @@[m [mvar app = angular.module('coinrightnow');[m
+     function showConfirmation(bool) {[m
+ [m
+         var template_url; [m
+[32m+[m[41m        [m
+         if(bool==true){[m
+             template_url =   'Templates/Dialog/confirmation.html';[m
+         }else{[m
+[1mdiff --git a/Controllers/CoinController.js b/Controllers/CoinController.js[m
+[1mindex a86e702..95fdd93 100644[m
+[1m--- a/Controllers/CoinController.js[m
+[1m+++ b/Controllers/CoinController.js[m
+[36m@@ -51,7 +51,6 @@[m [mfunction getCoin(){[m
+ $rootScope.changeLanguage = function(symbol) {[m
+ 	$rootScope.selectedLanguage = symbol;[m
+ 	$route.reload();[m
+[31m-[m
+ };[m
+ [m
+ $scope.convertPrice = function(currency) {[m
+[36m@@ -62,8 +61,7 @@[m [m$scope.convertPrice = function(currency) {[m
+ };[m
+ [m
+ $scope.update = function(type) {[m
+[31m-[m
+[31m-[m
+[32m+[m[41m	[m
+ if(type =="toconvert" && $scope.amounttoconvert!= ""){[m
+ 		$scope.convertedamount= $scope.amounttoconvert* $rootScope.coins[$routeParams.id-1].price_usd;[m
+ [m
+[1mdiff --git a/Factories/ArticleFactory.js b/Factories/ArticleFactory.js[m
+[1mindex be8e86d..7adab6d 100644[m
+[1m--- a/Factories/ArticleFactory.js[m
+[1m+++ b/Factories/ArticleFactory.js[m
+[36m@@ -8,7 +8,6 @@[m [mvar article= function($http){[m
+ 	function getArticleList() {[m
+ 		return $http.get('http://localhost:5000/article')[m
+ 			.then(function(response) {[m
+[31m-		[m
+ 			 return response.data.reverse();[m
+ 		});[m
+ 	}[m
+[36m@@ -17,7 +16,6 @@[m [mvar article= function($http){[m
+ [m
+ 		return $http.get('http://localhost:5000/article/'+ id)[m
+ 			.then(function(response) {[m
+[31m-				console.log('article controller loaded');[m
+ 			 return response.data;[m
+ 		});[m
+ 	}[m
+[1mdiff --git a/Templates/Dialog/article-rejection.html b/Templates/Dialog/article-rejection.html[m
+[1mindex d99f20d..051c7ef 100644[m
+[1m--- a/Templates/Dialog/article-rejection.html[m
+[1m+++ b/Templates/Dialog/article-rejection.html[m
+[36m@@ -11,6 +11,5 @@[m
+     </div>[m
+   </div>[m
+   </div>[m
+[31m-[m
+[31m-[m
+[32m+[m[41m  [m
+ </div>[m
+\ No newline at end of file[m
+[1mdiff --git a/Templates/HomeTemplate.html b/Templates/HomeTemplate.html[m
+[1mindex 327f11c..a6df237 100644[m
+[1m--- a/Templates/HomeTemplate.html[m
+[1m+++ b/Templates/HomeTemplate.html[m
+[36m@@ -68,7 +68,7 @@[m
+ 				            <tr>[m
+ 				              <td class="display-5 font-weight-bold">{{topPerformer.name}}</td>[m
+ 				              <td class=""><span ng-class="{redleft: topPerformer.percent_change_24h < 0, greenleft: topPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ topPerformer.percent_change_24h }}%</span></td>[m
+[31m-				              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png " height="32"></span></td>[m
+[32m+[m				[32m              <td class="display-5"><span class="float-right"><img src="img/coin/{{topPerformer.id}}.png " err-SRC="img/missingcoin.png" height="32"></span></td>[m
+ 				            </tr>[m
+ 				          </table>[m
+ [m
+[36m@@ -82,7 +82,7 @@[m
+ 				            <tr>[m
+ 				              <td class="display-5 font-weight-bold">{{worstPerformer.name}}</td>[m
+ 				              <td class=""><span ng-class="{redleft: worstPerformer.percent_change_24h < 0, greenleft: worstPerformer.percent_change_24h > 0, zeroleft: coin.percent_change_24h == 0}">{{ worstPerformer.percent_change_24h }}%</span></td>[m
+[31m-				              <td class="display-5"><span class="float-right"><img src="img/coin/{{worstPerformer.id}}.png" height="32"></span></td>[m
+[32m+[m				[32m              <td class="display-5"><span class="float-right"><img src="img/coin/{{worstPerformer.id}}.png" err-SRC="img/missingcoin.png" height="32"></span></td>[m
+ 				            </tr>[m
+ 				          </table>[m
+ [m

@@ -20,6 +20,7 @@ var app = angular.module('coinrightnow');
     function showConfirmation(bool) {
 
         var template_url; 
+        
         if(bool==true){
             template_url =   'Templates/Dialog/confirmation.html';
         }else{
