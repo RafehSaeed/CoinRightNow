@@ -6,10 +6,13 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,l
 
 	defineScopeVariables();
 	getArticleList();
+	$scope.missingImages = [];
 	$scope.limitnum= 0;
 	$scope.coinID= $routeParams.id;
 	$scope.showTopPerformer = true;
 	$scope.showWorstPerformer = false ;
+	// Store link to missing images here
+	$rootScope.missingImages  = [];
 	$rootScope.topPerformer;
 	$rootScope.worstPerformer;
 	$rootScope.selectedLanguage;
@@ -19,7 +22,6 @@ $scope.incrementLimit = function() {
 
 	$scope.limitnum += 10; 
 	$scope.limitnum = $scope.limitnum % $scope.coins.length;
-	coin.setMissingImage();
 };
 
 //Getting first 100 coins

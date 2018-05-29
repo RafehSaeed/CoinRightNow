@@ -6,7 +6,7 @@ var app = angular.module('coinrightnow');
 var article= function($http){
 
 	function getArticleList() {
-		return $http.get('http://localhost:5000/article')
+		return $http.get('http://api.coinrightnow.com/article')
 			.then(function(response) {
 			 return response.data.reverse();
 		});
@@ -14,7 +14,7 @@ var article= function($http){
 
 	function getArticle(id) {
 
-		return $http.get('http://localhost:5000/article/'+ id)
+		return $http.get('http://api.coinrightnow.com/article/'+ id)
 			.then(function(response) {
 			 return response.data;
 		});
@@ -22,7 +22,7 @@ var article= function($http){
 
 	function postArticle(article) {
 
-		return $http.post('http://localhost:5000/article/', article)
+		return $http.post('http://api.coinrightnow.com/article/', article)
 			.then(function(response) {
 			 return response.status;
 		});

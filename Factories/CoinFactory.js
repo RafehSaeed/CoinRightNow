@@ -21,7 +21,7 @@ var coin= function($http,$rootScope){
 	  }
 
 	function getCoinList() {
-		return $http.get('http://localhost:5000/coinlist')
+		return $http.get('http://api.coinrightnow.com/coinlist')
 			.then(function(response) {
 				console.log(response);
 		
@@ -30,7 +30,7 @@ var coin= function($http,$rootScope){
 	}
 
 	function getTopPerformer() {
-		return $http.get('http://localhost:5000/gettopperformers')
+		return $http.get('http://api.coinrightnow.com/gettopperformers')
 			.then(function(response) {
 		
 		
@@ -40,7 +40,7 @@ var coin= function($http,$rootScope){
 
 	function getCoinGraph(coinid){
 
-			return $http.get('http://localhost:5000/coingraph/'+ coinid)
+			return $http.get('http://api.coinrightnow.com/coingraph/'+ coinid)
 			.then(function(response) {
 			 return response.data;
 		});
@@ -48,7 +48,7 @@ var coin= function($http,$rootScope){
 
 	function getCoinMarkets(coinid){
 
-			return $http.get('http://localhost:5000/market/'+ coinid)
+			return $http.get('http://api.coinrightnow.com/market/'+ coinid)
 			.then(function(response) {
 			 return response.data;
 		});
@@ -65,21 +65,20 @@ var coin= function($http,$rootScope){
 	}
 
 
-	function setMissingImage(){
-		console.log('loaded')
-		$("#coin_img").hide()
-		
-	}
 
 	function getLanguages() {
-		return $http.get('http://localhost:5000/languages')
+		return $http.get('http://api.coinrightnow.com/languages')
 			.then(function(response) {		
 			 return response.data;
 		});
 	}
 
+	function addMissingImage(image){
+		$rootScope.missingImages.push(image)
+	}
+
 	function setLanguages(func) {
-			 $http.get('http://localhost:5000/languages')
+			 $http.get('http://api.coinrightnow.com/languages')
 			.then(function(response) {
 				lang  = response.data
 				func(lang);
@@ -130,7 +129,7 @@ var coin= function($http,$rootScope){
 		convertPrice: convertPrice,
 		getTopPerformer: getTopPerformer,
 		getLanguages: getLanguages,
-		setMissingImage: setMissingImage
+		addMissingImage: addMissingImage
 	};
 
 };
