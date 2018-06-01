@@ -4,6 +4,11 @@ var app = angular.module('coinrightnow');
 
 	function ArticleController ($scope,$routeParams,article,$sce ,$uibModal) {
 
+// Set up tiny mce for this
+        $scope.tinymceOptions = {
+            plugins: 'link image code',
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+        };
 		getArticle($routeParams.id);
 		    $scope.article = {
 			     title : "",
