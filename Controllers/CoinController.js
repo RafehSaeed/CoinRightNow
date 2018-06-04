@@ -4,12 +4,9 @@ var app = angular.module('coinrightnow');
 
 function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,lang, $route) {
 
-
 	if (typeof $rootScope.selectedLanguage == "undefined") {
 		$rootScope.selectedLanguage = lang;
 	}
-
-	
 
 	$scope.loadmarket = false;
 	$scope.loaddiscussion = false;

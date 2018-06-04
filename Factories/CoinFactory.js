@@ -56,7 +56,7 @@ var coin= function($http,$rootScope){
 
 
 	function getExchangeRates() {
-		 $http.get('https://api.fixer.io/latest?base=USD')
+		 $http.get('http://data.fixer.io/api/latest?access_key=7570ce4d97b1166c5fb5e423d9e3dd1c')
 			.then(function(response) {
 				response.data.rates.USD= 1.00;
 			 	$rootScope.exchangerates=response.data.rates;
