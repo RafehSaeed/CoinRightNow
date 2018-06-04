@@ -56,7 +56,7 @@ var coin= function($http,$rootScope){
 
 
 	function getExchangeRates() {
-		 $http.get('http://data.fixer.io/api/latest?access_key=7570ce4d97b1166c5fb5e423d9e3dd1c')
+		 $http.get('http://api.coinrightnow.com/currencylist')
 			.then(function(response) {
 				response.data.rates.USD= 1.00;
 			 	$rootScope.exchangerates=response.data.rates;
