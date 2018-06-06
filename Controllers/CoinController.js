@@ -154,6 +154,11 @@ function renderGraph(interval)
 		myChart.destroy();
 	}
 
+// Initialize currency if missing a bit ugly but will do for now
+	if($rootScope.selectedcurrency == 'undefined'){
+		$rootScope.selectedcurrency = 'USD'
+	}
+
 	$scope.loader=false;
  
 	var datesarray = [];
