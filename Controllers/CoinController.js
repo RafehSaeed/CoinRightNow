@@ -4,6 +4,8 @@ var app = angular.module('coinrightnow');
 
 function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,lang, $route) {
 
+
+
 	if (typeof $rootScope.selectedLanguage == "undefined") {
 		$rootScope.selectedLanguage = lang;
 	}
@@ -28,8 +30,10 @@ function getCoin(){
 			coin.getExchangeRates();
 			console.log($rootScope.coins);
 			$scope.coin= $rootScope.coins[$routeParams.id-1];
+
 			getCoinGraph($scope.coin.id);
 			setDisqus();
+			defineMetas();
 				
 		});
 	}
@@ -39,10 +43,24 @@ function getCoin(){
 		coin.getExchangeRates();
 		getCoinGraph($scope.coin.id);
 		setDisqus();
+		defineMetas();
 
 	}
 }
 
+function defineMetas(){
+
+	var description = "Information for the cryptocurrency | " + $scope.coin.name + " | " + "Historical Data | Markets | Graph..." 
+	console.log( description);
+	document.title =  $scope.coin.name;
+	$(function () { // dom ready
+	    $('meta[name=description]').remove();
+	    $('head').append( '<meta name="description" content=" '+ description+' ">' );
+	});
+
+
+
+}
 
 //Changes the language to something else
 $rootScope.changeLanguage = function(symbol) {
@@ -80,7 +98,11 @@ if(type=='converted' && $scope.convertedamount!= ""){
 }
 };
 
+function setMetas(){
 
+// Set the meta for the coin page over here
+
+}
 
 $scope.getGraphInterval = function(interval){
 
@@ -155,6 +177,7 @@ function renderGraph(interval)
 	}
 
 // Initialize currency if missing a bit ugly but will do for now
+
 	if($rootScope.selectedcurrency == 'undefined'){
 		$rootScope.selectedcurrency = 'USD'
 	}

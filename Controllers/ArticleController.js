@@ -27,9 +27,9 @@ var app = angular.module('coinrightnow');
         var template_url; 
         
         if(bool==true){
-            template_url =   'Templates/Dialog/confirmation.html';
+            template_url = 'Templates/Dialog/confirmation.html';
         }else{
-            template_url =   'Templates/Dialog/article-rejection.html';
+            template_url = 'Templates/Dialog/article-rejection.html';
         }
 
         $uibModal.open({

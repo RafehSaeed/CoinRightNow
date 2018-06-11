@@ -4,6 +4,7 @@ var app = angular.module('coinrightnow');
 
 function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,lang,$route) {
 
+
 	defineScopeVariables();
 	getArticleList();
 	$scope.missingImages = [];
@@ -39,6 +40,18 @@ function getCoinList () {
 		}
 	});
 }
+
+
+function defineMetas(){
+
+	document.title =  "CoinRightNow | Cryto-Informatics";
+	$(function () { // dom ready
+	    $('meta[name=description]').remove();
+	    $('head').append( '<meta name="description" content="Best source for cryptocurrency informatics | Graphs | Historical Data | Markets | News">' );
+	});
+
+}
+
 
 function getTopPerformer() {
 
@@ -79,6 +92,8 @@ function getArticleList(){
 
 //define rootscope variables with checks
 function defineScopeVariables(){
+
+	defineMetas();
 
 	if (typeof $rootScope.coins == "undefined") {
 		getCoinList();
