@@ -29,6 +29,8 @@ function getCoin(){
 			$rootScope.coins= data;
 			console.log($rootScope.coins);
 			$scope.coin= $rootScope.coins[$routeParams.id-1];
+
+			// change this later to render graph and display it to speed up
 			coin.getExchangeRates().then(function(status){
 				if(status == 200){
 					getCoinGraph($scope.coin.id);
