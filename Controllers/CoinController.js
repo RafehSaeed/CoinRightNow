@@ -10,6 +10,9 @@ function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,l
 		$rootScope.selectedLanguage = lang;
 	}
 
+	var coinindex = $routeParams.id.split("|")[0];
+		console.log(coinindex);
+
 	$scope.loadmarket = false;
 	$scope.loaddiscussion = false;
 	$scope.loadgraph = true;
@@ -25,10 +28,16 @@ function getCoin(){
 
 	if (typeof $rootScope.coins == "undefined") {
 
+		// console.log($routeParams.id);
+
+		
+
+		// Attach website slug with the id then explode to get the id here 
+
 		coin.getCoins().then(function(data) {
 			$rootScope.coins= data;
 			console.log($rootScope.coins);
-			$scope.coin= $rootScope.coins[$routeParams.id-1];
+			$scope.coin= $rootScope.coins[coinindex-1];
 
 			// change this later to render graph and display it to speed up
 			coin.getExchangeRates().then(function(status){
@@ -43,7 +52,7 @@ function getCoin(){
 	}
 	
 	if (typeof $rootScope.coins != "undefined") {
-		$scope.coin= $rootScope.coins[$routeParams.id-1];
+		$scope.coin= $rootScope.coins[coinindex-1];
 		coin.getExchangeRates();
 		getCoinGraph($scope.coin.id);
 		setDisqus();
@@ -82,12 +91,12 @@ $scope.convertPrice = function(currency) {
 $scope.update = function(type) {
 	
 if(type =="toconvert" && $scope.amounttoconvert!= ""){
-		$scope.convertedamount= $scope.amounttoconvert* $rootScope.coins[$routeParams.id-1].price_usd;
+		$scope.convertedamount= $scope.amounttoconvert* $rootScope.coins[coinindex-1].price_usd;
 
 }else{
  
 if(type=='converted' && $scope.convertedamount!= ""){
-	 $scope.amounttoconvert= $scope.convertedamount/ $rootScope.coins[$routeParams.id-1].price_usd;
+	 $scope.amounttoconvert= $scope.convertedamount/ $rootScope.coins[coinindex-1].price_usd;
 
  }
 
