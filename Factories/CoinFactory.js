@@ -56,11 +56,11 @@ var coin= function($http,$rootScope){
 
 
 	function getExchangeRates() {
-		 $http.get('http://api.coinrightnow.com/currencylist')
+			return  $http.get('http://api.coinrightnow.com/currencylist')
 			.then(function(response) {
 				response.data.rates.USD= 1.00;
 			 	$rootScope.exchangerates=response.data.rates;
-				console.log($rootScope.exchangerates);
+				return response.status;
 		});
 	}
 

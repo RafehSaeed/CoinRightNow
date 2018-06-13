@@ -27,11 +27,13 @@ function getCoin(){
 
 		coin.getCoins().then(function(data) {
 			$rootScope.coins= data;
-			coin.getExchangeRates();
 			console.log($rootScope.coins);
 			$scope.coin= $rootScope.coins[$routeParams.id-1];
-
-			getCoinGraph($scope.coin.id);
+			coin.getExchangeRates().then(function(status){
+				if(status == 200){
+					getCoinGraph($scope.coin.id);
+				}
+			});
 			setDisqus();
 			defineMetas();
 				
