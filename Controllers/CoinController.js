@@ -4,14 +4,12 @@ var app = angular.module('coinrightnow');
 
 function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,lang, $route) {
 
-
-
 	if (typeof $rootScope.selectedLanguage == "undefined") {
 		$rootScope.selectedLanguage = lang;
 	}
 
+	// Set the webslug and coinindex
 	var coinindex = $routeParams.id.split("|")[0];
-		console.log(coinindex);
 
 	$scope.loadmarket = false;
 	$scope.loaddiscussion = false;
@@ -28,12 +26,6 @@ function getCoin(){
 
 	if (typeof $rootScope.coins == "undefined") {
 
-		// console.log($routeParams.id);
-
-		
-
-		// Attach website slug with the id then explode to get the id here 
-
 		coin.getCoins().then(function(data) {
 			$rootScope.coins= data;
 			console.log($rootScope.coins);
@@ -46,8 +38,7 @@ function getCoin(){
 				}
 			});
 			setDisqus();
-			defineMetas();
-				
+			defineMetas();	
 		});
 	}
 	
@@ -70,9 +61,6 @@ function defineMetas(){
 	    $('meta[name=description]').remove();
 	    $('head').append( '<meta name="description" content=" '+ description+' ">' );
 	});
-
-
-
 }
 
 //Changes the language to something else

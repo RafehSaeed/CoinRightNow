@@ -54,7 +54,6 @@ var coin= function($http,$rootScope){
 		});
 	}
 
-
 	function getExchangeRates() {
 			return  $http.get('http://api.coinrightnow.com/currencylist')
 			.then(function(response) {
@@ -63,8 +62,6 @@ var coin= function($http,$rootScope){
 				return response.status;
 		});
 	}
-
-
 
 	function getLanguages() {
 		return $http.get('http://api.coinrightnow.com/languages')
