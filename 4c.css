@@ -5859,6 +5859,13 @@ canvas {
 .box:hover {
   
 }
+.currency_button{
+
+    position: absolute!important;
+    left: -34px;
+    top: -26px;
+  
+}
 
 .box::before, .box::after {
   width: 100%;
