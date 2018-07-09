@@ -1,16 +1,52 @@
 <div class="py-5">
 	<div class="container">
+
+	
+		<div class="row">
+			<div class="col-md-12"> 
+				<table class="table table-bordered table-striped homepagelist animated fadeIn con-white global_data ">
+					<thead>
+						<tr>
+							<td class="display-5">Cryptocurrencies: 1324 </td>
+							<td class="display-5">Markets: 150</td>
+							<td class="display-5">Market Cap: $9,000</td>
+							<td class="display-5">BTC Dominance: $6,000</td>
+							<td class="display-5"><span class="float-right">24h Vol: $15,000</span></td>
+						</tr>
+					</thead>
+	<!-- 				<tbody>
+						<tr ng-repeat="coin in coins | filter:coin| limitTo:10:limitnum ">
+							<td class="display-5">{{ coin.rank }}</td>
+							<td class="display-5 "><img id="coin_img" err-SRC="img/missingcoin.png" ng-src="img/coin/{{coin.id}}.png" height="22"  alt="{{coin.name}}">&nbsp;&nbsp;
+								<a ng-href="coin/{{coin.rank}}|{{coin.id}}">{{coin.name.trunc(15)}}</a></td>
+								<td class="display-5">{{selectedcurrency| getCurrencySymbol}}{{ coin.price_usd | currency:""}}</td>
+								<td ng-class="{red: coin.percent_change_24h < 0, green: coin.percent_change_24h > 0, zero: coin.percent_change_24h == 0}">{{ coin.percent_change_24h }}%</td>
+							</tr>
+						</tbody> -->
+					</table>
+			<!-- 		<ul class="global-stats-list list-inline js-global-stats text-bold">
+						<li>Cryptocurrencies: 1619</li>
+						<li>Markets: 11633</li>
+						<li>Market Cap: $275,903,532,665</li>
+						<li>24h Vol: $11,591,294,075 </li>
+						<li>BTC Dominance: 42.1 %<li>
+					</ul> -->
+				
+			</div>
+		</div>
+				
+		
 		<div class="row">
 			<div class="col-md-6">
 				<h1  class="display-1 con-white">{{'News Feed'| translate}}</h1>
 				<form id="custom-search-form-2" class="display-5  ">
 					<div class="input-group">
-						<input type="text" class=" w-95 mt-3" ng-model="article"  placeholder="{{'Search Article...'|translate}}">
+						<input type="text" class=" w-100 mt-3" ng-model="article"  placeholder="{{'Search Article...'|translate}}">
 						
 					</div>
 					
 				</form>
-				<table class="table homepagelist animated fadeIn con-white ">
+				<table class="table homepagelist animated fadeIn con-white mt-4">
 					<thead>
 						<tr>
 							<td class="display-5">{{'Articles'| translate}}</td>
@@ -39,7 +75,7 @@
 						</div>
 					</form>
 			
-				<table class="table table-bordered table-striped homepagelist animated fadeIn con-white ">
+				<table class="table table-bordered table-striped homepagelist animated fadeIn con-white mt-4">
 					<thead>
 						<tr>
 							<td class="display-5">{{'Rank'|translate}}</td>

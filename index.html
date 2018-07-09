@@ -19,7 +19,7 @@
 		<script src="bower_components/angular-route/angular-route.min.js"></script>
 		<script src="node_modules/chart.js/dist/Chart.min.js"></script>
 		<script src="node_modules/angular-utils-disqus/dirDisqus.js"></script>
-		<script type="text/javascript" src="bower_components/tinymce/tinymce.js"></script>
+		<script type="text/javascript" src="bower_components/tinymce/tinymce.min.js"></script>
 		<script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
 		<script src="bower_components/constellation/particles.js"></script>
 		<script src="app.js"></script>	  
@@ -49,7 +49,7 @@
 		<div>
 			<nav class="navbar navbar-expand-md w-100 navbar-light con-white">
 				<div  class="container" >
-					<a class="box curmudgeon navbar-brand " href="/"><i class="fa d-inline fa-lg fa-cloud"></i><b>CoinRightNow</b></a>
+					<a class="box curmudgeon navbar-brand p-0" href="/"><i class="fa d-inline fa-lg fa-cloud"></i><b>CoinRightNow</b></a>
 					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 					<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
@@ -75,8 +75,11 @@
 						</ul>
 						<!--<a href="" class="btn navbar-btn ml-2 text-white btn-secondary"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Sign in</a>-->
 					</div>
+
 				</div>
 			</nav>
+
+			
 			<div class="is-loading animated fadein" ng-view> <!--Rendering of Templates is performed here-->
 			
 			</div>
