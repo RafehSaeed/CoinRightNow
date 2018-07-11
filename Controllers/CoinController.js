@@ -16,6 +16,7 @@ function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,l
 	$scope.loadgraph = true;
 	$scope.amounttoconvert="";
 	$scope.convertedamount= "";
+
 	coin.getLangList();
 
 	var myChart;
@@ -98,12 +99,6 @@ if(type=='converted' && $scope.convertedamount!= ""){
 
 }
 };
-
-function setMetas(){
-
-// Set the meta for the coin page over here
-
-}
 
 $scope.getGraphInterval = function(interval){
 

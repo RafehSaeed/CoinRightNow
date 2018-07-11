@@ -7,6 +7,7 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,l
 
 	defineScopeVariables();
 	getArticleList();
+
 	$scope.missingImages = [];
 	$scope.limitnum= 0;
 	$scope.coinID= $routeParams.id;
@@ -17,6 +18,8 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,l
 	$rootScope.topPerformer;
 	$rootScope.worstPerformer;
 	$rootScope.selectedLanguage;
+	$scope.globaldata ;
+	getGlobalData();
 
 //Looping through the first 100 elements
 $scope.incrementLimit = function() {
@@ -89,6 +92,17 @@ function getArticleList(){
 	console.log($scope.articles);
 	});
 }
+
+// get global stats data
+function getGlobalData(){
+
+	console.log('I have been summoned')
+	coin.getGlobalData().then(function(n){
+		$scope.globaldata = n.data;
+		console.log($scope.globaldata);
+	})
+}
+
 
 //define rootscope variables with checks
 function defineScopeVariables(){

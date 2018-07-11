@@ -7,11 +7,11 @@
 				<table class="table table-bordered table-striped homepagelist animated fadeIn con-white global_data ">
 					<thead>
 						<tr>
-							<td class="display-5">Cryptocurrencies: 1324 </td>
-							<td class="display-5">Markets: 150</td>
-							<td class="display-5">Market Cap: $9,000</td>
-							<td class="display-5">BTC Dominance: $6,000</td>
-							<td class="display-5"><span class="float-right">24h Vol: $15,000</span></td>
+							<td class="display-5">Cryptocurrencies: {{globaldata.active_cryptocurrencies}} </td>
+							<td class="display-5">Markets: {{globaldata.active_markets}}</td>
+							<td class="display-5">Market Cap: ${{globaldata.quotes.USD.total_market_cap|currency:""}}</td>
+							<td class="display-5">BTC Dominance: {{globaldata.bitcoin_percentage_of_market_cap}}%</td>
+							<td class="display-5"><span class="float-right">24h Vol: ${{globaldata.quotes.USD.total_volume_24h|currency:""}}</span></td>
 						</tr>
 					</thead>
 	<!-- 				<tbody>

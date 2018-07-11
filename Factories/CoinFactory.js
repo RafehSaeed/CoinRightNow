@@ -29,6 +29,14 @@ var coin= function($http,$rootScope){
 		});
 	}
 
+	function getGlobalData(){
+		return $http.get('http://api.coinrightnow.com/globaldata')
+			.then(function(response) {
+			 return response.data;
+		});
+	}
+
+
 	function getTopPerformer() {
 		return $http.get('http://api.coinrightnow.com/gettopperformers')
 			.then(function(response) {
@@ -126,7 +134,8 @@ var coin= function($http,$rootScope){
 		convertPrice: convertPrice,
 		getTopPerformer: getTopPerformer,
 		getLanguages: getLanguages,
-		addMissingImage: addMissingImage
+		addMissingImage: addMissingImage,
+		getGlobalData: getGlobalData
 	};
 
 };
