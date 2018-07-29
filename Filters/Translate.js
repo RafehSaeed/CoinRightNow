@@ -1,6 +1,5 @@
-(function(){
+// (function(){
 
-var app = angular.module('coinrightnow');
 
 //
 function translate($rootScope){
@@ -120,8 +119,7 @@ function translate($rootScope){
 	};
 }
 
-app.filter('translate',['$rootScope',translate]);
- translate.$stateful = true;
- return translate;
-})();
+export default translate;
+
+// })();
 

@@ -1,10 +1,6 @@
-(function () {
+// (function () {
 
-  angular
-    .module('coinrightnow')
-    .service('authentication', authentication);
 
-  authentication.$inject = ['$http', '$window' ,'$location'];
   function authentication ($http, $window ,$location) {
 
     var saveToken = function (token) {
@@ -42,19 +38,19 @@
       }
     };
 
-    register = function(user) {
+    var register = function(user) {
       return $http.post('http://localhost:5000/register', user).then(function(response){
         saveToken(response.data.token);
       });
     };
 
-    login = function(user) {
+    var login = function(user) {
       return $http.post('http://localhost:5000/login', user).then(function(response) {
         saveToken(response.data.token);
       });
     };
 
-    logout = function() {
+    var logout = function() {
       $window.localStorage.removeItem('mean-token');
         $location.path('/');
     };
@@ -70,5 +66,5 @@
     };
   }
 
-
-})();
+export default authentication
+// })();

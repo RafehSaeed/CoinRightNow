@@ -1,10 +1,9 @@
-(function(){
+// (function(){
 
 //Factory for fetching cryptocurrency information from the API
-var app = angular.module('coinrightnow');
-
 
 var coin= function($http,$rootScope){
+	
 
 	// Stores language information 
 	var lang;
@@ -140,7 +139,6 @@ var coin= function($http,$rootScope){
 
 };
 
+export default coin;
 
-app.factory("coin",coin);
-
-}());
+// }());

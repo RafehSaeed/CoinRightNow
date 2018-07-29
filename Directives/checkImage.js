@@ -1,7 +1,5 @@
-(function(){
+// (function(){
 
-
-var app = angular.module('coinrightnow');
 
 function coin(coin){
 	return {
@@ -16,5 +14,4 @@ function coin(coin){
 	}
 }
 
-app.directive('errSrc',['coin' , coin]);
-}());
+export default coin;

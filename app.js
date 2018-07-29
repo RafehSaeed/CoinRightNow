@@ -1,4 +1,4 @@
-(function() {
+// (function() {
 
 
 var app = angular.module('coinrightnow', ['ngRoute','ui.bootstrap','angularUtils.directives.dirDisqus','ui.tinymce']);
@@ -85,4 +85,5 @@ function(n){
     return this.length>n ? this.substr(0,n-1)+'...' : this.toString();
 };
 
-}());
+export default app;
+// }());

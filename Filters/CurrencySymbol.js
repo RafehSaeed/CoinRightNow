@@ -1,4 +1,4 @@
-(function(){
+// (function(){
 
 var app = angular.module('coinrightnow');
 
@@ -44,6 +44,6 @@ function getCurrencySymbol(){
 	};
 }
 
-app.filter('getCurrencySymbol',getCurrencySymbol);
-})();
+// })();
 
+export default getCurrencySymbol;

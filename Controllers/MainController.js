@@ -1,6 +1,3 @@
-(function(){
-
-
 
 function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,lang,$route) {
 
@@ -96,7 +93,6 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,l
 	// get global stats data
 	function getGlobalData(){
 
-		console.log('I have been summoned')
 		coin.getGlobalData().then(function(n){
 			$scope.globaldata = n.data;
 			console.log($scope.globaldata);
@@ -132,9 +128,6 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,l
 
 }
 
-module.exports = {
-MainController: MainController
-};
 
-})();
+export default MainController;
 

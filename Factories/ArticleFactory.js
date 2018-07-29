@@ -1,7 +1,7 @@
-(function(){
+// (function(){
 
 //Factory for fetching cryptocurrency information from the API
-var app = angular.module('coinrightnow');
+// var app = angular.module('coinrightnow');
 
 var article= function($http){
 
@@ -36,6 +36,6 @@ var article= function($http){
 
 };
 
-app.factory("article",article);
+export default article;
 
-}());
+// }());
