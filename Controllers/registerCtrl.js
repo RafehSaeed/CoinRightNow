@@ -1,10 +1,5 @@
-(function () {
+// (function () {
 
-	angular
-		.module('coinrightnow')
-		.controller('registerCtrl', registerCtrl);
-
-	registerCtrl.$inject = ['$location', 'authentication'];
 	function registerCtrl($location, authentication) {
 		var vm = this;
 		$scope.onSubmit= vm.onSubmit;
@@ -28,4 +23,5 @@
 
 	}
 
-})();
+export default registerCtrl;
+// })();

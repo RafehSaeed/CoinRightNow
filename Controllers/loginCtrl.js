@@ -1,6 +1,3 @@
-(function () {
-
-  var app = angular.module('coinrightnow');
 
   function loginCtrl($rootScope,$location, authentication) {
     console.log('loaded');
@@ -23,6 +20,4 @@
     };  
   }
 
-  app.controller('loginCtrl',['$rootScope','$location','authentication', loginCtrl]);
-
-})();
+export default loginCtrl;

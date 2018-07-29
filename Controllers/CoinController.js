@@ -1,6 +1,6 @@
-(function(){
+// (function(){
 
-var app = angular.module('coinrightnow');
+// var app = angular.module('coinrightnow');
 
 function CoinController ($rootScope,$scope,$interval,coin,$routeParams,$filter,lang, $route) {
 
@@ -311,6 +311,6 @@ var ctx = document.getElementById("myChart");
 }
 
 }
-app.controller('CoinController',['$rootScope','$scope','$timeout','coin','$routeParams','$filter', 'lang', '$route', CoinController]);
 
-})();
+export default CoinController;
+// })();

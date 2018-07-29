@@ -1,6 +1,6 @@
-(function () {
+// (function () {
 
-var app = angular.module('coinrightnow');
+// var app = angular.module('coinrightnow');
 
 	function ArticleController ($scope,$routeParams,article,$sce ,$uibModal) {
 
@@ -72,6 +72,6 @@ var app = angular.module('coinrightnow');
         }
     }
 
-app.controller('ArticleController',['$scope','$routeParams','article','$sce', '$uibModal' ,ArticleController]);
-})();
+export default ArticleController;
+// })();
 
