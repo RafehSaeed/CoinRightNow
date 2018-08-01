@@ -64,7 +64,7 @@ $routeProvider.
         $location.path('/');
       }
 
-       if ($location.path() === '/admin'  && !authentication.isLoggedIn()) {
+       if (($location.path() === '/admin' ||  $location.path() ==='/createarticle' )  && !authentication.isLoggedIn()) {
         $location.path('/');
       }
   });
