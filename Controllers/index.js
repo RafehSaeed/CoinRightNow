@@ -1,6 +1,5 @@
-// import angular from 'angular
 
-// var app = angular.module('coinrightnow');.
+// Webpack Stuff
 
 import app from '../app'
 import translate from '../Filters/translate'
@@ -15,7 +14,7 @@ import ArticleController from './ArticleController'
 import loginCtrl from "./loginCtrl"
 import AdminController from "./AdminController"
 import registerCtrl from './registerCtrl'
-// var MainController= require('./MainController').MainController;
+
 
 app.filter('translate',['$rootScope',translate]);
 app.controller('MainController',['$rootScope','$scope','$timeout','coin','$routeParams', 'article', 'lang','$route', MainController]);
@@ -30,11 +29,4 @@ app.controller('loginCtrl',['$rootScope','$location','authentication', loginCtrl
 app.controller('AdminController',['$rootScope','$scope','authentication', AdminController]);
 app.controller('registerCtrl', ['$location', 'authentication',registerCtrl]);
 
-
-
-// 
-// Add other controllers like so:
-// angular.module('MyApp').controller('LoginCtrl', LoginCtrl);
-// Don't forget to add new import statements
-// at the top for each new Controller
 

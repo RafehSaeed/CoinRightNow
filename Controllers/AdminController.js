@@ -1,6 +1,6 @@
-(function () {
+// (function () {
 
-var app = angular.module('coinrightnow');
+// var app = angular.module('coinrightnow');
 
 	function AdminController ($rootScope,$scope,authentication) {
 
@@ -23,7 +23,5 @@ var app = angular.module('coinrightnow');
 		}
 }
 
-
-app.controller('AdminController',['$rootScope','$scope','authentication', AdminController]);
-})();
+// })();
 

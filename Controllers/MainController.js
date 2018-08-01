@@ -25,6 +25,16 @@ function MainController ($rootScope,$scope,$interval,coin,$routeParams,article,l
 		$scope.limitnum = $scope.limitnum % $scope.coins.length;
 	};
 
+	//Looping through the first 100 elements
+	$scope.decrementLimit = function() {
+		console.log('decrementing here')
+
+		$scope.limitnum -= 10; 
+		$scope.limitnum = $scope.limitnum % $scope.coins.length;
+	};
+
+
+
 	//Getting first 100 coins
 	function getCoinList () {
 
